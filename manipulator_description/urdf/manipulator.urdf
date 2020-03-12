@@ -30,19 +30,19 @@
   <!-- Motor 1 -->
   <link name="Motor1">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/motor1.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0 " />
+      <origin xyz="0 0 0" rpy="1.571 0 0 " />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/motor1.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0 "/>
+      <origin xyz="0 0 0" rpy="1.571 0 0 "/>
       <mass value="0.856"/>
       <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />
     </inertial>
@@ -50,7 +50,7 @@
   <joint name="base_motor1" type="fixed">
     <parent link="Base"/>
     <child link="Motor1"/>
-    <origin xyz="0 0 0.09" rpy="1.571 0 1.571" />
+    <origin xyz="0 0 0.09" rpy="0 0 1.571" />
     <axis xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
@@ -111,19 +111,19 @@
  <!-- Elo 1 -->
    <link name="Elo1">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="-3.14 0 0" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/elo1.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="-3.14 0 0" />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/elo1.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="-3.14 0 0"/>
       <mass value="0.15040432"/>
       <inertia ixx="3.45063e+1"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="1.07762e+2" iyz="0.00000e+0" izz="1.38659e+2" />
     </inertial>
@@ -131,7 +131,7 @@
   <joint name="motor1_elo1" type="continuous">
     <parent link="Motor1"/>
     <child link="Elo1"/>
-    <origin xyz="0.0 0.045 0.0" rpy="1.571 0 0" />
+    <origin xyz="0.0 0.0 0.036" rpy="3.14 0 0" />
     <axis xyz="0 0 1" rpy="0 0 0"/>
   </joint>
 
@@ -139,19 +139,19 @@
  <!-- Motor 2 -->
   <link name="Motor2">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/motor2.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/motor2.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="1.571 0 0"/>
       <mass value="0.856"/>
       <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />
     </inertial>
@@ -159,7 +159,7 @@
   <joint name="elo1_motor2" type="fixed">
     <parent link="Elo1"/>
     <child link="Motor2"/>
-    <origin xyz="-0.04 0.0 -0.027" rpy="0 1.571 1.571" />
+    <origin xyz="-0.04 0.0 -0.027" rpy="-1.571 1.571 1.571" />
     <axis xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 
@@ -167,19 +167,19 @@
   <!-- Fix Motor2 -->
    <link name="Fix_Motor2">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="1.571 0 0" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/fixmotor2.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0 " />
+      <origin xyz="0 0 0" rpy="1.571 0 0 " />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/fixmotor2.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <origin xyz="0 0 0" rpy="1.571 0 0"/>
       <mass value="0.03239855"/>
       <inertia ixx="9.57551961e-6"  ixy="-1.52519365e-14"  ixz="7.17291197e-16" iyy="9.41926366e-6" iyz="1.37735170e-11" izz="1.88295847e-5" />
     </inertial>
@@ -187,7 +187,7 @@
   <joint name="motor2_fix" type="fixed">
     <parent link="Motor2"/>
     <child link="Fix_Motor2"/>
-    <origin xyz="0.0 -0.094 0.0" rpy="1.571 0 0" />
+    <origin xyz="0.0 0.0 -0.093" rpy="1.571 0 0" />
   </joint>
 
    <!-- Frame Motor2 -->
@@ -220,19 +220,19 @@
    <!-- Elo 2-->
    <link name="Elo2">
     <visual>
-      <origin xyz="0 0.22765252  -0.02935000" rpy="0 0 0" />
+      <origin xyz="-0.029 0.22765252  ${0.030-0.02935000}" rpy="0 1.571 0" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/elo2.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0.22765252 -0.02935000" rpy="0 0 0 " />
+      <origin xyz="-0.029 0.22765252 ${0.030-0.02935000}" rpy="0 1.571 0 " />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/elo2.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0.22765252  -0.02935000" rpy="0 0 0"/>
+      <origin xyz="-0.029 0.22765252  ${0.030-0.02935000}" rpy="0 1.571 0"/>
       <mass value="0.88616841"/>
       <inertia ixx="1.58419493e-2"  ixy="-2.56476794e-4"  ixz="1.21455620e-6" iyy="1.77005347e-3" iyz="2.29322588e-4" izz="1.67884775e-2" />
     </inertial>
@@ -241,8 +241,8 @@
     <parent link="Motor2"/>
     <child link="Elo2"/>
     <limit effort="1000.0" lower="-1.77" upper="1.77" velocity="0.5"/>
-    <origin xyz="${0.2275-0.22765252} -0.04 ${-0.067+0.0381+0.02935}" rpy="0 0 -1.571"/>
-    <axis xyz="1 0 0" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 -0.04" rpy="0 0 -1.571"/>
+    <axis xyz="0 0 1" rpy="0 0 0"/>
   </joint>
 
 
@@ -269,7 +269,7 @@
   <joint name="motor3r_elo2" type="fixed">
     <parent link="Elo2"/>
     <child link="Motor3R"/>
-    <origin xyz="0.026 ${0.47211676-0.02086310} -0.03" rpy="0 1.571 0"/>
+    <origin xyz="-0.026 0.455 -0.027" rpy="0 3.14 0"/>
     <!-- <axis xyz="0 0 1" rpy="0 0 0"/> -->
   </joint>
 
@@ -277,19 +277,19 @@
   <!-- Motor 3 T-->
    <link name="Motor3T">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0.75" />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0.75" />
       <geometry>
 	      <mesh filename="package://manipulator_description/meshes/motor3T.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0.75 " />
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0.75 " />
       <geometry>
         <mesh filename="package://manipulator_description/meshes/motor3T.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0.75"/>
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0.75"/>
       <mass value="0.16499216"/>
       <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
     </inertial>
@@ -297,7 +297,7 @@
   <joint name="motor3t_elo2" type="fixed">
     <parent link="Elo2"/>
     <child link="Motor3T"/>
-    <origin xyz="-0.026 ${0.47211676-0.02086310} -0.03" rpy="0 -1.571 0"/>
+    <origin xyz="-0.026 0.455 0.027" rpy="0 0 0"/>
     <!-- <axis xyz="0 0 1" rpy="0 0 0"/> -->
   </joint>
 
