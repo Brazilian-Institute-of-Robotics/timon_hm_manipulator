@@ -173,10 +173,9 @@ Visualization Manager:
                     Motor3R:
                       Motor3T:
                         Elo3:
-                          Frame4:
-                            {}
                           Motor4:
-                            {}
+                            Frame4:
+                              {}
                   Fix_Motor2:
                     {}
       Update Interval: 0
@@ -209,25 +208,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.9570484161376953
+      Distance: 1.961931586265564
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.3522811233997345
-        Y: 0.22889269888401031
-        Z: 0.19573533535003662
+        X: 0.4189867377281189
+        Y: 0.18824943900108337
+        Z: 0.21973325312137604
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4297970235347748
+      Pitch: 0.7647976875305176
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.758626937866211
+      Yaw: 3.488632917404175
     Saved: ~
 Window Geometry:
   Displays:

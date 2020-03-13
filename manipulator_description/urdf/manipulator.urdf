@@ -325,7 +325,7 @@
     <parent link="Motor3T"/>
     <child link="Elo3"/>
     <limit effort="1000.0" lower="-1.46" upper="2.46" velocity="0.5"/>
-    <origin xyz="0 ${0.019-0.02} -0.0375" rpy="0 0 0"/>
+    <origin xyz="0 0.001 -0.0375" rpy="0 0 0"/>
     <axis xyz="0 0 1" rpy="0 0 0"/> 
   </joint>
 
@@ -376,11 +376,11 @@
       <inertia ixx="4.49588271e-6"  ixy="0.00000000e+0"  ixz="0.00000000e+0" iyy="1.08113872e-5" iyz="0.00000000e+0" izz="1.12040418e-5" />
     </inertial>
     </link>
-  <joint name="elo3_frame4" type="revolute">
-    <parent link="Elo3"/>
+  <joint name="motor4_frame4" type="revolute">
+    <parent link="Motor4"/>
     <child link="Frame4"/>
     <limit effort="1000.0" lower="-1.90" upper="1.90" velocity="0.5"/>
-    <origin xyz="0 0.45 0.012" rpy="0 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1" rpy="0 0 0"/> 
   </joint>
   
