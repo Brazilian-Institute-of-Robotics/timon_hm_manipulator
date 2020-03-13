@@ -2,15 +2,15 @@
 <COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
 
   <asset>
-    <created>2020-03-11T11:41:42</created>
-    <modified>2020-03-11T11:41:42</modified>
+    <created>2020-03-13T11:40:40</created>
+    <modified>2020-03-13T11:40:40</modified>
     <unit meter="1" name="Meters"/>
     <up_axis>Z_UP</up_axis>
   </asset>
 
   <library_visual_scenes>
     <visual_scene id="ID1">
-      <node id="ID2" name="5e68ce7640bffe155d96d826">
+      <node id="ID2" name="5e6b7138d0cd1812abc40325">
         <node>
           <matrix>1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
           <instance_node url="#ID3"/>

@@ -75,6 +75,11 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        Elo3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
@@ -125,6 +130,8 @@ Visualization Manager:
           Value: false
         Elo2:
           Value: false
+        Elo3:
+          Value: true
         Fix_Motor2:
           Value: false
         Motor1:
@@ -150,9 +157,9 @@ Visualization Manager:
                 Motor2:
                   Elo2:
                     Motor3R:
-                      {}
-                    Motor3T:
-                      {}
+                      Motor3T:
+                        Elo3:
+                          {}
                   Fix_Motor2:
                     {}
       Update Interval: 0
@@ -185,7 +192,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.7975093126296997
+      Distance: 1.3844704627990723
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -200,10 +207,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9353997111320496
+      Pitch: 1.0997967720031738
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.956762790679932
+      Yaw: 3.713611125946045
     Saved: ~
 Window Geometry:
   Displays:

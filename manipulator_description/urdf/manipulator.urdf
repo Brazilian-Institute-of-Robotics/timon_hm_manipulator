@@ -269,7 +269,7 @@
   <joint name="motor3r_elo2" type="fixed">
     <parent link="Elo2"/>
     <child link="Motor3R"/>
-    <origin xyz="-0.026 0.455 -0.027" rpy="0 3.14 0"/>
+    <origin xyz="-0.028 0.451 -0.024" rpy="0 3.14 0"/>
     <!-- <axis xyz="0 0 1" rpy="0 0 0"/> -->
   </joint>
 
@@ -294,39 +294,40 @@
       <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
     </inertial>
     </link>
-  <joint name="motor3t_elo2" type="fixed">
-    <parent link="Elo2"/>
+  <joint name="motor3r_motor3t" type="fixed">
+    <parent link="Motor3R"/>
     <child link="Motor3T"/>
-    <origin xyz="-0.026 0.455 0.027" rpy="0 0 0"/>
+    <origin xyz="0 0 -0.05" rpy="0 3.14 0"/>
     <!-- <axis xyz="0 0 1" rpy="0 0 0"/> -->
   </joint>
 
   <!-- Elo 3-->
-   <!-- <link name="Elo3">
+   <link name="Elo3">
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0.75" />
+      <origin xyz="-0.01 0.02 0" rpy="0 1.571 0" />
       <geometry>
-	      <mesh filename="package://manipulator_description/meshes/motor3T.dae" />
+	      <mesh filename="package://manipulator_description/meshes/elo3.dae" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0.75 " />
+      <origin xyz="-0.01 0.02 0" rpy="0 1.571 0 " />
       <geometry>
-        <mesh filename="package://manipulator_description/meshes/motor3T.dae" />
+        <mesh filename="package://manipulator_description/meshes/elo3.dae" />
       </geometry>
     </collision>
     <inertial>
-      <origin xyz="0 0 0" rpy="0 0 0.75"/>
-      <mass value="0.16499216"/>
-      <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
+      <origin xyz="-0.01 0.02 0" rpy="0 1.571 0"/>
+      <mass value="0.59823526"/>
+      <inertia ixx="9.21291416e-3"  ixy="3.08958647e-8"  ixz="-1.61573936e-11" iyy="5.96766733e-4" iyz="5.09431795e-6" izz="9.25476040e-3" />
     </inertial>
     </link>
-  <joint name="motor3t_elo2" type="fixed">
-    <parent link="Elo2"/>
-    <child link="Motor3T"/>
-    <origin xyz="-0.026 ${0.47211676-0.02086310} -0.03" rpy="0 -1.571 0"/>
+  <joint name="motores_elo3" type="revolute">
+    <parent link="Motor3T"/>
+    <child link="Elo3"/>
+    <limit effort="1000.0" lower="-1.46" upper="2.46" velocity="0.5"/>
+    <origin xyz="0 ${0.019-0.02} -0.0375" rpy="0 0 0"/>
     <axis xyz="0 0 1" rpy="0 0 0"/> 
-  </joint> -->
+  </joint>
 
   
 
