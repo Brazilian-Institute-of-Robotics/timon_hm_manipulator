@@ -9,7 +9,7 @@ Panels:
         - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
-    Tree Height: 732
+    Tree Height: 728
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -60,69 +60,55 @@ Visualization Manager:
       Enabled: true
       Links:
         All Links Enabled: true
-        Base:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Elo1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Elo2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Elo3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
-        Fix_Motor2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        Frame4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         Link Tree Style: Links in Alphabetic Order
-        Motor1:
+        timon_link0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Motor2:
+        timon_link1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Motor3R:
+        timon_link2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Motor3T:
+        timon_link3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        Motor4:
+        timon_link4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        base_link:
+        timon_link5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
+        timon_link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        timon_link7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        timon_link8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -134,57 +120,47 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        Base:
-          Value: false
-        Elo1:
-          Value: false
-        Elo2:
+        timon_link0:
           Value: true
-        Elo3:
-          Value: false
-        Fix_Motor2:
-          Value: false
-        Frame4:
-          Value: false
-        Motor1:
-          Value: false
-        Motor2:
-          Value: false
-        Motor3R:
-          Value: false
-        Motor3T:
-          Value: false
-        Motor4:
-          Value: false
-        base_link:
-          Value: false
+        timon_link1:
+          Value: true
+        timon_link2:
+          Value: true
+        timon_link3:
+          Value: true
+        timon_link4:
+          Value: true
+        timon_link5:
+          Value: true
+        timon_link6:
+          Value: true
+        timon_link7:
+          Value: true
+        timon_link8:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          Base:
-            Motor1:
-              Elo1:
-                Motor2:
-                  Elo2:
-                    Motor3R:
-                      Motor3T:
-                        Elo3:
-                          Motor4:
-                            Frame4:
-                              {}
-                  Fix_Motor2:
-                    {}
+        timon_link0:
+          timon_link1:
+            timon_link2:
+              timon_link3:
+                timon_link4:
+                  timon_link5:
+                    timon_link6:
+                      timon_link7:
+                        timon_link8:
+                          {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: timon_link0
     Frame Rate: 30
   Name: root
   Tools:
@@ -208,33 +184,33 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.075496196746826
+      Distance: 0.935841977596283
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.15796250104904175
-        Y: 0.14715629816055298
-        Z: 0.31236445903778076
+        X: 0.08376455307006836
+        Y: 0.2865932583808899
+        Z: 0.34855806827545166
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.37479832768440247
+      Pitch: 0.4297970235347748
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.803634166717529
+      Yaw: 4.758626937866211
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1029
+  Height: 1025
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000367fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000367000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000367fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d00000367000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073d0000003efc0100000002fb0000000800540069006d006501000000000000073d000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000004b80000036700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016a00000363fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003d00000363000000c900fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f00000363fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073010000003d00000363000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073d0000003efc0100000002fb0000000800540069006d006501000000000000073d000002eb00fffffffb0000000800540069006d00650100000000000004500000000000000000000004b80000036300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
