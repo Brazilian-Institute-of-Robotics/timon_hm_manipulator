@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
-    <xacro:macro name="timon_arm" params="arm_id:='timon' description_pkg:='manipulator_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
+  <xacro:macro name="timon_arm" params="arm_id:='timon' description_pkg:='manipulator_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
     <link name="${arm_id}_link0">
       <visual>
         <geometry>
@@ -221,109 +221,6 @@
       <child link="${arm_id}_link8"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-0.95" upper="2.36" velocity="0.5"/>
-    </joint>
-
-    <link name="${arm_id}_link9">
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link9.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link9.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.16499216"/>
-        <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
-      </inertial>
-    </link>
-    <joint name="${arm_id}_joint9" type="fixed">
-      <origin rpy="0.0 -1.571 -1.571" xyz="0 0.41 0.013"/>
-      <parent link="${arm_id}_link8"/>
-      <child link="${arm_id}_link9"/>
-    </joint>
-
-    <link name="${arm_id}_link10">
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link10.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link10.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
-        <mass value="0.007"/>
-        <inertia ixx="1.48840827e-6"  ixy="2.49592487e-8"  ixz="5.30644674e-12" iyy="2.08108627e-6" iyz="2.38181240e-14" izz="6.88193128e-7" />
-      </inertial>
-    </link>
-    <joint name="${arm_id}_joint10" type="continuous">
-      <origin rpy="0 0 1.571" xyz="0 0 0.025"/>
-      <parent link="${arm_id}_link9"/>
-      <child link="${arm_id}_link10"/>
-      <axis xyz="0 0 1" rpy="0 0 0"/>
-    </joint>
-
-    <link name="${arm_id}_link11">
-      <visual>
-        <origin xyz="0.0225 -0.007 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link11.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0225 -0.007 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link11.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0225 -0.007 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.16499216"/>
-        <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
-      </inertial>
-    </link>
-    <joint name="${arm_id}_joint11" type="fixed">
-      <origin rpy="1.5701 0.0 0.0" xyz="0.0 -0.001 0.055"/>
-      <parent link="${arm_id}_link10"/>
-      <child link="${arm_id}_link11"/>
-    </joint>
-
-    <link name="${arm_id}_link12">
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.571 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link12.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.571 0.0" />
-        <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link12.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 1.571 0.0"/>
-        <mass value="0.01873963"/>
-        <inertia ixx="4.49588271e-6"  ixy="0.00000000e+0"  ixz="0.00000000e+0" iyy="1.08113872e-5" iyz="0.00000000e+0" izz="1.12040418e-5" />
-      </inertial>
-    </link>
-    <joint name="${arm_id}_joint12" type="revolute">
-      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <parent link="${arm_id}_link11"/>
-      <child link="${arm_id}_link12"/>
-      <axis xyz="0 0 1"/>
-      <limit effort="1000.0" lower="-1.90" upper="1.90" velocity="0.5"/>
     </joint>
 
   </xacro:macro>
