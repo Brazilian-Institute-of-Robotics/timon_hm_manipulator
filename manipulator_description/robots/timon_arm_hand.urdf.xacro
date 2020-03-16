@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
+  <xacro:include filename="$(find franka_description)/robots/timon_arm.xacro"/>
+  <xacro:include filename="$(find franka_description)/robots/hand.xacro"/>
+  <xacro:timon_arm />
+  <xacro:hand ns="timon" rpy="0 0 ${-pi/4}" connected_to="timon_link8"/>
+</robot>
