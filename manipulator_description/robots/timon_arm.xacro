@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
   <xacro:macro name="timon_arm" params="arm_id:='timon' description_pkg:='manipulator_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
-    <!-- <link name="${arm_id}_link0">
+    <!--<link name="${arm_id}_link0">
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link0.dae"/>
