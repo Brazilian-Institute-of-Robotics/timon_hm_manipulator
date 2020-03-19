@@ -9,7 +9,7 @@
       </visual>
       <collision>
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link0.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link0.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -28,7 +28,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="1.571 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link1.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link1.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -53,7 +53,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="-3.14 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link2.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link2.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -63,6 +63,7 @@
       </inertial>
     </link>
     <joint name="${arm_id}_joint2" type="continuous">
+      <safety_controller k_position="100.0" k_velocity="40.0"/>
       <origin rpy="3.14 0 0" xyz="0 0 0.036"/>
       <parent link="${arm_id}_link1"/>
       <child link="${arm_id}_link2"/>
@@ -79,7 +80,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="1.571 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link3.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link3.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -104,7 +105,7 @@
       <collision>
         <origin xyz="0 0 0" rpy="1.571 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link4.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link4.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -129,7 +130,7 @@
       <collision>
         <origin xyz="-0.0292 0.2289 -0.04" rpy="0 1.571 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link5.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link5.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -139,7 +140,8 @@
       </inertial>
     </link>
     <joint name="${arm_id}_joint5" type="revolute">
-      <origin rpy="0 -1.571 -1.571" xyz="-0.0008 0.093 0"/>
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.77" soft_upper_limit="1.77"/>
+      <origin rpy="0 -1.571 -1.571" xyz="-0.0008 0.093 0.001"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 0 1"/>
@@ -156,7 +158,7 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 -0.75" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link6.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link6.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -181,7 +183,7 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 0.75" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link7.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link7.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -206,7 +208,7 @@
       <collision>
         <origin xyz="-0.01 0.015 0.0" rpy="0.0 1.571 0.0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/collision/link8.stl"/>
+          <mesh filename="package://${description_pkg}/meshes/visual/link8.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -216,11 +218,63 @@
       </inertial>
     </link>
     <joint name="${arm_id}_joint8" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.95" soft_upper_limit="2.36"/>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.001 -0.0375"/>
       <parent link="${arm_id}_link7"/>
       <child link="${arm_id}_link8"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-0.95" upper="2.36" velocity="0.5"/>
+    </joint>
+
+    <link name="${arm_id}_link9">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/visual/link9.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/visual/link9.dae"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <mass value="0.16499216"/>
+        <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
+      </inertial>
+    </link>
+    <joint name="${arm_id}_joint9" type="fixed">
+      <origin rpy="0 -1.571 -1.571" xyz="0 0.41 0.013"/>
+      <parent link="${arm_id}_link8"/>
+      <child link="${arm_id}_link9"/>
+    </joint>
+
+    <link name="${arm_id}_link10">
+      <visual>
+        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/visual/link10.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/visual/link10.dae"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
+        <mass value="0.007"/>
+        <inertia ixx="1.48840827e-6"  ixy="2.49592487e-8"  ixz="5.30644674e-12" iyy="2.08108627e-6" iyz="2.38181240e-14" izz="6.88193128e-7" />
+      </inertial>
+    </link>
+    <joint name="${arm_id}_joint10" type="continuous">
+      <origin rpy="0 0 1.571" xyz="0 0 0.025"/>
+      <parent link="${arm_id}_link9"/>
+      <child link="${arm_id}_link10"/>
+      <axis xyz="0 0 1" rpy="0 0 0"/>
     </joint>
 
   </xacro:macro>

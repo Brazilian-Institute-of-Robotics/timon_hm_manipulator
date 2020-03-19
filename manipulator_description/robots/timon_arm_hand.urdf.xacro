@@ -3,5 +3,5 @@
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/hand.xacro"/>
   <xacro:timon_arm />
-  <xacro:hand ns="timon" rpy="0 -1.571 -1.571" xyz="0 0.41 0.013" connected_to="timon_link8"/>
+  <xacro:hand ns="timon" rpy="1.5701 0.0 0.0" xyz="0.0 -0.001 0.055" connected_to="timon_link10"/>
 </robot>
