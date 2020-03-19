@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
   <xacro:macro name="timon_arm" params="arm_id:='timon' description_pkg:='manipulator_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
-    <link name="${arm_id}_link0">
+    <!-- <link name="${arm_id}_link0">
       <visual>
         <geometry>
           <mesh filename="package://${description_pkg}/meshes/visual/link0.dae"/>
@@ -17,7 +17,7 @@
         <mass value="2.6"/>
         <inertia ixx="7.77716e+3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="4.619e+4" iyz="0.00000e+0" izz="5.29561e+4" />
       </inertial>
-    </link>
+    </link> -->
     <link name="${arm_id}_link1">
       <visual>
         <origin xyz="0 0 0" rpy="1.571 0 0" />
@@ -37,11 +37,11 @@
         <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />
       </inertial>
     </link>
-    <joint name="${arm_id}_joint1" type="fixed">
+    <!-- <joint name="${arm_id}_joint1" type="fixed">
       <origin rpy="0 0 1.571" xyz="0 0 0.09"/>
       <parent link="${arm_id}_link0"/>
       <child link="${arm_id}_link1"/>
-    </joint>
+    </joint> -->
 
     <link name="${arm_id}_link2">
       <visual>
