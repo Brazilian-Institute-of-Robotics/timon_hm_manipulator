@@ -1,8 +1,0 @@
-prefix=/home/vinicius/timon_hm_manipulator/install
-
-Name: manipulator_description
-Description: Description of manipulator_description
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

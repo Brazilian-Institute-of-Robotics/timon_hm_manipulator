@@ -1,8 +1,0 @@
-prefix=/home/vinicius/timon_hm_manipulator/install
-
-Name: challenger_gazebo
-Description: Description of challenger_gazebo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
