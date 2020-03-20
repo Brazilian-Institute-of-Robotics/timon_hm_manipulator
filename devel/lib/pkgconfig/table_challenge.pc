@@ -1,0 +1,8 @@
+prefix=/home/vinicius/timon_hm_manipulator/devel
+
+Name: table_challenge
+Description: Description of table_challenge
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

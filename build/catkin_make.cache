@@ -1,0 +1,2 @@
+manipulator_description:manipulator_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/vinicius/timon_hm_manipulator/devel -DCMAKE_INSTALL_PREFIX=/home/vinicius/timon_hm_manipulator/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/vinicius/timon_hm_manipulator/install
+
+Name: manipulator_gazebo
+Description: Description of manipulator_gazebo
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
