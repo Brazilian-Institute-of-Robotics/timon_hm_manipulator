@@ -1,0 +1,10 @@
+controller_list:
+  - name: fake_timon_arm_controller
+    joints:
+      - timon_joint1
+      - timon_joint4
+      - timon_joint7
+      - timon_joint9
+  - name: fake_timon_hand_controller
+    joints:
+      - timon_hand_joint_1
