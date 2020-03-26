@@ -17,7 +17,7 @@
 
     <include>
       <uri>model://button_challenger</uri>
-      <pose> -0.5 0 1.7 0 0 0 </pose>
+      <pose> -0.5 0 1.7 0 0 1.57 </pose>
     </include>
     
   </world>
