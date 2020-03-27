@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<robot name="world_challenger" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!--Base link-->
+  <link name="world">
+  </link>
+
+<xacro:include filename="$(find manipulator_description)/urdf/table_box.xacro"/>
+<xacro:include filename="$(find manipulator_description)/urdf/base.xacro"/>
+
+</robot>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot name="table_challenger" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!--Table_box-->
+  <link name="table_box">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://manipulator_description/meshes/table.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://manipulator_description/meshes/table.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="85.98546073"/>
+      <inertia ixx="1.65745940e+1" ixy="1.89812718e-3" ixz="1.18207006e+0" iyx="1.89812718e-3" iyy="3.80854663e+1" iyz="1.49789551e-3" izx="1.18207006e+0" izy="1.49789551e-3" izz="3.24742396e+1"/>
+    </inertial>
+    </link>
+    <joint name="table_to_world" type="fixed">
+      <parent link="world"/>
+      <child link="table_box"/>
+      <origin rpy="0 0 0" xyz="0 0 1.50"/>
+    </joint>
+</robot>
