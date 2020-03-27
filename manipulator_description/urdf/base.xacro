@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
 <robot name="manipulador_base" xmlns:xacro="http://ros.org/wiki/xacro">
 
-<!--Base_to_manipulator-->
-  <link name="base_to_manipulator">
-    <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://manipulator_description/meshes/basem.dae"/>
-      </geometry>
-    </visual>
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <geometry>
-        <mesh filename="package://manipulator_description/meshes/basem.stl"/>
-      </geometry>
-    </collision>
-    <inertial>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="2.86661792"/>
-      <inertia ixx="8.72078676e-3" ixy="-9.55785583e-9" ixz="0" iyx="-9.55785583e-9" iyy="4.66430350e-2" iyz="0" izx="0" izy="-0" izz="5.35109282e-2"/>
-    </inertial>
+  <!--Base_to_manipulator-->
+    <link name="base_to_manipulator">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/basem.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/basem.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="2.86661792"/>
+        <inertia ixx="8.72078676e-3" ixy="-9.55785583e-9" ixz="0" iyx="-9.55785583e-9" iyy="4.66430350e-2" iyz="0" izx="0" izy="-0" izz="5.35109282e-2"/>
+      </inertial>
     </link>
-    <joint name="base_to_world1" type="fixed">
-      <parent link="world"/>
-      <child link="base_to_manipulator"/>
-      <origin rpy="0 0 1.57" xyz="0.45 0 1.56"/>
-    </joint>
-
+      <joint name="base_to_world1" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_to_manipulator"/>
+        <origin rpy="0 0 0" xyz="0.45 0 0"/>
+      </joint>
+   
 </robot>
