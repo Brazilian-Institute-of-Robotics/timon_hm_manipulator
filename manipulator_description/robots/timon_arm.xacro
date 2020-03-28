@@ -1,6 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
   <xacro:macro name="timon_arm" params="arm_id:='timon' description_pkg:='manipulator_description' connected_to:='' xyz:='0 0 0' rpy:='0 0 0'">
+    <link name="invisible_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.000001 0.000001 0.000001"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.000001 0.000001 0.000001"/>
+        </geometry>
+      </collision>
+    </link>
     <link name="${arm_id}_link0">
       <visual>
         <origin xyz="0 0 0" rpy="1.571 0 0" />
@@ -20,9 +34,9 @@
         <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />
       </inertial>
     </link>
-     <joint name ="base_to_base_link" type="fixed">
-        <origin rpy="0 0 -1.571" xyz="0 0 0.1"/>
-        <parent link="base_to_manipulator"/>
+     <joint name ="invisble_joint" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="invisible_link"/>
         <child link = "${arm_id}_link0"/>
       </joint>
 

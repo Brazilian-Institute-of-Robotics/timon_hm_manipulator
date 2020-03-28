@@ -8,53 +8,8 @@
         <origin xyz="${xyz}" rpy="${rpy}"/>
       </joint>
     </xacro:unless>
+
     <link name="${ns}_hand">
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://manipulator_description/meshes/visual/link9.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://manipulator_description/meshes/collision/link9.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-        <mass value="0.16499216"/>
-        <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
-      </inertial>
-    </link>
-
-    <link name="${ns}_hand1">
-      <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://manipulator_description/meshes/visual/link10.dae"/>
-        </geometry>
-      </visual>
-      <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0" />
-        <geometry>
-          <mesh filename="package://manipulator_description/meshes/collision/link10.stl"/>
-        </geometry>
-      </collision>
-      <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="1.571 0.0 0.0"/>
-        <mass value="0.007"/>
-        <inertia ixx="1.48840827e-6"  ixy="2.49592487e-8"  ixz="5.30644674e-12" iyy="2.08108627e-6" iyz="2.38181240e-14" izz="6.88193128e-7" />
-      </inertial>
-    </link>
-    <joint name="${ns}_hand_joint1" type="continuous">
-      <origin rpy="0 0 1.571" xyz="0 0 0.025"/>
-      <parent link="${ns}_hand"/>
-      <child link="${ns}_hand1"/>
-      <axis xyz="0 0 1" rpy="0 0 0"/>
-    </joint>
-
-    <link name="${ns}_hand2">
       <visual>
         <origin xyz="0.0225 -0.007 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
@@ -64,7 +19,7 @@
       <collision>
         <origin xyz="0.0225 -0.007 0.0" rpy="0.0 0.0 0.0" />
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/collision/link11.stl"/>
+          <mesh filename="package://manipulator_description/meshes/visual/link11.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -73,13 +28,8 @@
         <inertia ixx="7.88952550e-5"  ixy="-3.13065901e-9"  ixz="4.40693303e-9" iyy="4.39861799e-5" iyz="-2.02737764e-6" izz="6.23603662e-5" />
       </inertial>
     </link>    
-    <joint name="${ns}_hand_joint_2" type="fixed">
-      <origin rpy="1.5701 0.0 0.0" xyz="0.0 -0.001 0.055"/>
-      <parent link="${ns}_hand1"/>
-      <child link="${ns}_hand2"/>
-    </joint>
 
-   <link name="${ns}_hand3">
+   <link name="${ns}_hand1">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 1.571 0.0" />
         <geometry>
@@ -89,7 +39,7 @@
       <collision>
         <origin xyz="0.0 0.0 0.0" rpy="0.0 1.571 0.0" />
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/collision/link12.stl"/>
+          <mesh filename="package://manipulator_description/meshes/visual/link12.dae"/>
         </geometry>
       </collision>
       <inertial>
@@ -98,12 +48,24 @@
         <inertia ixx="4.49588271e-6"  ixy="0.00000000e+0"  ixz="0.00000000e+0" iyy="1.08113872e-5" iyz="0.00000000e+0" izz="1.12040418e-5" />
       </inertial>
     </link> 
-    <joint name="${ns}_hand_joint_3" type="revolute">
+    <joint name="${ns}_hand_joint_1" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.90" soft_upper_limit="1.90"/>
       <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-      <parent link="${ns}_hand2"/>
-      <child link="${ns}_hand3"/>
+      <parent link="${ns}_hand"/>
+      <child link="${ns}_hand1"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-1.90" upper="1.90" velocity="0.5"/>
     </joint> 
+
+    <transmission name="trans_timon_hand_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="timon_hand_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="timon_hand_joint_1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
   </xacro:macro>
 </robot>
