@@ -1,9 +1,10 @@
 controller_list:
-  -name: timon/arm_controller
-  action_ns: follow_joint_trajectory
-  type: FollowJointTrajectory
-  joints: 
-    - timon_joint1
-    - timon_joint4
-    - timon_joint7
-    - timon_joint9
+       - name: timon/arm_controller
+         action_ns: follow_joint_trajectory
+         type: FollowJointTrajectory
+         default: true
+         joints:
+            - timon_joint1
+            - timon_joint4
+            - timon_joint7
+            - timon_joint9

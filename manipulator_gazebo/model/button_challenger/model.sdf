@@ -1,0 +1,29 @@
+<?xml version='1.0' ?>
+<sdf version='1.6'>
+  <model name="button_challenger">
+    <pose>0 0 0 0 0 0</pose>
+    <static>1</static>
+    <link name="workbench1">
+      <visual name="visual">
+        <geometry>
+          <mesh><uri>file://button_challenger/mesh/button.dae</uri></mesh>
+        </geometry>
+      </visual>
+      <collision name='collision'>
+        <geometry>
+          <mesh><uri>file://button_challenger/mesh/button.dae</uri></mesh>
+        </geometry>
+        <surface>
+          <bounce/>
+          <friction>
+            <ode/>
+          </friction>
+          <contact>
+            <ode/>
+          </contact>
+        </surface>
+      </collision>
+      <gravity>1</gravity>
+    </link>
+  </model>
+</sdf>
