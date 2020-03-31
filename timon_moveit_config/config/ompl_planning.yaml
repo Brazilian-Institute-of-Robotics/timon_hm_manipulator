@@ -147,7 +147,7 @@ timon_arm:
     - SPARS
     - SPARStwo
 timon_hand:
-  default_planner_config: ""
+  default_planner_config: None
   planner_configs:
     - SBL
     - EST

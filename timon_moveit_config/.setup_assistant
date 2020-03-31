@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/timon.srdf
   CONFIG:
-    author_name: Timon Robotics
-    author_email: migueel.nery@hotmail.com
-    generated_timestamp: 1585097762
+    author_name: "timon "
+    author_email: migueelnery@gmail.com
+    generated_timestamp: 1585515587

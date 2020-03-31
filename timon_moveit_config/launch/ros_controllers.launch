@@ -6,6 +6,10 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="timon_arm_controller "/>
+    output="screen" ns="/timon"
+            args="--namespace=/timon
+            joint_state_controller
+            timon_arm_controller
+            --timeout 20"/>
 
 </launch>

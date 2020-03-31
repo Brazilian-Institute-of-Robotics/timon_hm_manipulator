@@ -56,5 +56,16 @@
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-1.90" upper="1.90" velocity="0.5"/>
     </joint> 
+
+    <transmission name="trans_timon_hand_joint_1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="timon_hand_joint_1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="timon_hand_joint_1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
   </xacro:macro>
 </robot>

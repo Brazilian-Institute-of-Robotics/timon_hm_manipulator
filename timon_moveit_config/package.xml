@@ -5,8 +5,8 @@
   <description>
      An automatically generated package with all the configuration and launch files for using the timon with the MoveIt! Motion Planning Framework
   </description>
-  <author email="migueel.nery@hotmail.com">Timon Robotics</author>
-  <maintainer email="migueel.nery@hotmail.com">Timon Robotics</maintainer>
+  <author email="migueelnery@gmail.com">timon </author>
+  <maintainer email="migueelnery@gmail.com">timon </maintainer>
 
   <license>BSD</license>
 
