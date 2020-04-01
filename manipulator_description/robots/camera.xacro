@@ -25,7 +25,7 @@
     </link>
 
     <gazebo reference="camera">
-      <sensor type="camera" name="camera_top">
+      <sensor type="camera" name="camera_timon">
         <update_rate>30.0</update_rate>
         <camera name="head">
             <horizontal_fov>1.3962634</horizontal_fov>
@@ -40,7 +40,7 @@
             </clip>
         </camera>
         <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
-            <!-- <robotNamespace>raja</robotNamespace> -->
+            <robotNamespace>timon</robotNamespace>
             <alwaysOn>true</alwaysOn>
             <updateRate>0.0</updateRate>
             <cameraName>camera_top</cameraName>
