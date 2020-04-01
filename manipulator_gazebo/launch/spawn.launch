@@ -27,7 +27,7 @@
             --timeout 60"/>
 
         <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen"> 
-            <remap from="/joint_states" to="/revel/joint_states"/>
+            <!-- <remap from="/joint_states" to="/timon/joint_states"/> -->
         </node>
         <!-- rqt -->
         <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
