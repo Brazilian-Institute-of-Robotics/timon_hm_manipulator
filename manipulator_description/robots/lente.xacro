@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="lente">
+
+
+
+
+    <link name="lente">
+      <visual>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/lente.dae"/>
+        </geometry>
+      </visual>
+      <collision>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <geometry>
+          <mesh filename="package://manipulator_description/meshes/lente.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <mass value="0.00989067"/>
+        <inertia ixx="2.43868009e-7" ixy="0" ixz="0" iyx="0" iyy="4.47751769e-7" iyz="0" izx="0" izy="0" izz="2.43868009e-7"/>
+      </inertial>
+    </link>
+
+
+       
+
+</robot>
