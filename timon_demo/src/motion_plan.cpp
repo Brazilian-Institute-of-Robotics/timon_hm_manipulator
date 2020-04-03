@@ -130,10 +130,10 @@ int main(int argc, char** argv)
   move_group.setStartState(start_state2);
   //POSE
   geometry_msgs::Pose target_pose2;
-   target_pose2.orientation.w = 0.383254;
-   target_pose2.orientation.x = 0.594309;
-   target_pose2.orientation.y = -0.59499;
-   target_pose2.orientation.z = 0.381969;
+   target_pose2.orientation.w =  0.383166;
+   target_pose2.orientation.x = 0.593944;
+   target_pose2.orientation.y = -0.595274; 
+   target_pose2.orientation.z = 0.382181;
    target_pose2.position.x = -0.000319611;
    target_pose2.position.y = -0.71035;
    target_pose2.position.z = 0.2208;
