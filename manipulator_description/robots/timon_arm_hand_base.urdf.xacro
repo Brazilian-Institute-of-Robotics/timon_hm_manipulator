@@ -3,6 +3,7 @@
   <link name ="base_link">
   </link>
   <xacro:include filename="$(find manipulator_description)/urdf/caixa.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/>
   <xacro:include filename="$(find manipulator_description)/urdf/base.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm_hand.urdf.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/>
