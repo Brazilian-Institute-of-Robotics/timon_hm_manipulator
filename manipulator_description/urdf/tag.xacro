@@ -9,11 +9,11 @@
         <collision>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.2 0.2 0.2"/>   
+                <box size="0.1 0.1 0.1"/>   
             </geometry>    
         </collision>   
         <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/> 
+            <origin xyz="0.0 0.0 0.0" rpy="-1.571 1.571 0.0"/> 
             <geometry>
                 <mesh filename="package://manipulator_description/meshes/tag.dae"/>
             </geometry>   
@@ -27,5 +27,11 @@
             <mu2>0.1</mu2>
             <fdir1>1 0 0</fdir1>
         </gazebo>
+
+    <joint name="caixa_to_tag" type="fixed">
+        <origin rpy="0 0 0" xyz="0.0 -0.10 0.10"/>
+        <parent link="caixa"/>
+        <child link = "box_tag"/>
+    </joint> 
 
 </robot>
