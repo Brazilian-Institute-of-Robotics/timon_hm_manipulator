@@ -4,9 +4,17 @@
   </link>
   <xacro:include filename="$(find manipulator_description)/urdf/base.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm_hand.urdf.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/>
     <joint name ="base_to_base_link" type="fixed">
         <origin rpy="0 0 -1.571" xyz="0 0 0.1"/>
         <parent link="base_to_manipulator"/>
         <child link = "invisible_link"/>
     </joint>
+
+    <joint name ="base_to_camera" type="fixed">
+        <origin rpy="-1.571 3.1415 -1.571" xyz="0.0661 0.426 0.0123"/>
+        <parent link="timon_link7"/>
+        <child link = "camera"/>
+    </joint>
+
 </robot>
