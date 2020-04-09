@@ -22,5 +22,6 @@
     <arg name="verbose"       value="$(arg verbose)"/>
   </include>
   <include file="$(find manipulator_gazebo)/launch/spawn.launch" />
+  <include file="$(find manipulator_gazebo)/launch/spawn_box.launch" />
 
 </launch>

@@ -2,12 +2,12 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon_base">
   <link name ="base_link">
   </link>
-  <xacro:include filename="$(find manipulator_description)/urdf/caixa.xacro"/>
-  <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/>
+  <!-- <xacro:include filename="$(find manipulator_description)/urdf/caixa.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/> -->
   <xacro:include filename="$(find manipulator_description)/urdf/base.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm_hand.urdf.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/>
-  <xacro:include filename="$(find manipulator_description)/urdf/tag.xacro"/>
+  <!-- <xacro:include filename="$(find manipulator_description)/urdf/tag.xacro"/> -->
     <joint name ="base_to_base_link" type="fixed">
         <origin rpy="0 0 -1.571" xyz="0 0 0.1"/>
         <parent link="base_to_manipulator"/>

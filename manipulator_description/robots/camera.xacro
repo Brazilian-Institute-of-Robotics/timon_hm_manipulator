@@ -43,7 +43,7 @@
             <robotNamespace>timon</robotNamespace>
             <alwaysOn>true</alwaysOn>
             <updateRate>0.0</updateRate>
-            <cameraName>camera_top</cameraName>
+            <cameraName>camera</cameraName>
             <imageTopicName>image_raw</imageTopicName>
             <cameraInfoTopicName>camera_info</cameraInfoTopicName>
             <frameName>camera</frameName>
