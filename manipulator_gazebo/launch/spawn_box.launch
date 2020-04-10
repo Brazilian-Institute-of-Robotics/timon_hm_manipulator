@@ -3,7 +3,7 @@
 <group ns="/box">
         <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/urdf/box.urdf.xacro'" />
-        <arg name="x" default="-0.5"/>
+        <arg name="x" default="-0.4"/>
         <arg name="y" default="0.0"/>
         <arg name="z" default="1.56"/>
         <node name="box_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"

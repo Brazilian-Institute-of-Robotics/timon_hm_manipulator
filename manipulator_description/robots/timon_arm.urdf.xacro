@@ -1,5 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
+  <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+          <robotNamespace>timon</robotNamespace>
+      </plugin>
+  </gazebo>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm.xacro" />
   <xacro:timon_arm />
 </robot>

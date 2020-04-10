@@ -16,7 +16,7 @@
       
  
         <!-- Load controllers -->
-        <rosparam command="load" file="$(find manipulator_description)/config/joints.yaml" /> 
+        <rosparam command="load" file="$(find manipulator_description)/config/joints5.yaml" /> 
         
         <!-- Controllers -->
         <node name="controller_spawner" pkg="controller_manager" type="spawner"

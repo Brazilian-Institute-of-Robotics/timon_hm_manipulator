@@ -73,16 +73,6 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        box_tag:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caixa:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         camera:
           Alpha: 1
           Show Axes: false
@@ -93,22 +83,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        timon_hand:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_hand1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
         timon_link0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         timon_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        timon_link10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        timon_link11:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -168,21 +158,17 @@ Visualization Manager:
           Value: false
         base_to_manipulator:
           Value: false
-        box_tag:
-          Value: true
-        caixa:
-          Value: true
         camera:
           Value: true
         invisible_link:
           Value: false
-        timon_hand:
-          Value: false
-        timon_hand1:
-          Value: false
         timon_link0:
           Value: false
         timon_link1:
+          Value: false
+        timon_link10:
+          Value: false
+        timon_link11:
           Value: false
         timon_link2:
           Value: false
@@ -195,7 +181,7 @@ Visualization Manager:
         timon_link6:
           Value: false
         timon_link7:
-          Value: true
+          Value: false
         timon_link8:
           Value: false
         timon_link9:
@@ -221,12 +207,9 @@ Visualization Manager:
                                 {}
                               timon_link8:
                                 timon_link9:
-                                  timon_hand:
-                                    timon_hand1:
+                                  timon_link10:
+                                    timon_link11:
                                       {}
-          caixa:
-            box_tag:
-              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -257,25 +240,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 1.971595048904419
+      Distance: 1.0254908800125122
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.08376455307006836
-        Y: 0.2865932583808899
-        Z: 0.34855806827545166
+        X: -0.036458853632211685
+        Y: 0.5168871283531189
+        Z: 0.6180979013442993
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9947975873947144
+      Pitch: 0.6447979211807251
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.313610553741455
+      Yaw: 4.873615741729736
     Saved: ~
 Window Geometry:
   Displays:

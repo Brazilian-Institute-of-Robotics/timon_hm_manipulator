@@ -6,19 +6,19 @@
 
     <link name="camera">
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 -1.571 0" xyz="0 0 0"/>
         <geometry>
           <mesh filename="package://manipulator_description/meshes/camera.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 -1.571 0" xyz="0 0 0"/>
         <geometry>
           <mesh filename="package://manipulator_description/meshes/camera.stl"/>
         </geometry>
       </collision>
       <inertial>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 -1.571 0" xyz="0 0 0"/>
         <mass value="0.12163455"/>
         <inertia ixx="2.11041984e-5" ixy="-9.60070950e-7" ixz="-9.64986145e-8" iyx="-9.60070950e-7" iyy="4.52382361e-5" iyz="-2.48143698e-8" izx="-9.64986145e-8" izy="-2.48143698e-8" izz="4.92072530e-5"/>
       </inertial>
@@ -30,8 +30,8 @@
         <camera name="head">
             <horizontal_fov>1.3962634</horizontal_fov>
             <image>
-                <width>1366</width>
-                <height>768</height>
+                <width>2592</width>
+                <height>2048</height>
                 <format>R8G8B8</format>
             </image>
             <clip>

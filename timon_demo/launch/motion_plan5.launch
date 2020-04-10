@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="motion_plan5" pkg="timon_demo" type="motion_plan5" respawn="false" output="screen">
+	<remap from="/joint_states" to="/timon/joint_states"/>
+  </node>
+
+</launch>

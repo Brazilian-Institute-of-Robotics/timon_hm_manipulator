@@ -5,7 +5,7 @@
   <!-- <xacro:include filename="$(find manipulator_description)/urdf/caixa.xacro"/>
   <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/> -->
   <xacro:include filename="$(find manipulator_description)/urdf/base.xacro"/>
-  <xacro:include filename="$(find manipulator_description)/robots/timon_arm_hand.urdf.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/robots/timon_arm.urdf.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/>
   <!-- <xacro:include filename="$(find manipulator_description)/urdf/tag.xacro"/> -->
     <joint name ="base_to_base_link" type="fixed">
@@ -15,7 +15,7 @@
     </joint>
 
     <joint name ="base_to_camera" type="fixed">
-        <origin rpy="-1.571 3.1415 -1.571" xyz="0.0661 0.426 0.0123"/>
+        <origin rpy="-1.571 3.1415 0" xyz="0.0661 0.426 0.0123"/>
         <parent link="timon_link7"/>
         <child link = "camera"/>
     </joint>
