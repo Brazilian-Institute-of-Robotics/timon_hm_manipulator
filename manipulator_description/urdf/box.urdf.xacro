@@ -4,7 +4,7 @@
   <link name="map">
   </link>  
   <xacro:include filename="$(find manipulator_description)/urdf/caixa.xacro"/>
-  <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/>
+  <!-- <xacro:include filename="$(find manipulator_description)/urdf/box_aruco.xacro"/> -->
   <xacro:include filename="$(find manipulator_description)/urdf/tag.xacro"/>
   
 
