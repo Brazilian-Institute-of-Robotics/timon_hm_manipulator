@@ -21,10 +21,10 @@
         <inertia ixx="8.72078676e-3" ixy="-9.55785583e-9" ixz="0" iyx="-9.55785583e-9" iyy="4.66430350e-2" iyz="0" izx="0" izy="-0" izz="5.35109282e-2"/>
       </inertial>
     </link>
-      <joint name="base_to_world1" type="fixed">
+      <!-- <joint name="base_to_world1" type="fixed">
         <parent link="base_link"/>
         <child link="base_to_manipulator"/>
         <origin rpy="0 0 0" xyz="0.6 0 0"/>
       </joint>
-   
+    -->
 </robot>
