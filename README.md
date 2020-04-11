@@ -1,12 +1,12 @@
 # Timon-HM Manipulator
-<img src="https://i.ibb.co/M2nPsrL/readme.jpg">
+<center><img src="https://i.ibb.co/M2nPsrL/readme.jpg" class="centerImage"></center>
 
 Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons.
 
 ## Open Source software and packages related to Timon-HM manipulator
 ### Software
-- ROS Melodic: http://wiki.ros.org/melodic/Installation/Ubuntu
-- MoveIt: https://moveit.ros.org/install/
+- [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+- [MoveIt](https://moveit.ros.org/install)
 ### Packages
 - ros-melodic-ros-control 
 - ros-melodic-gazebo-ros-control 
@@ -15,12 +15,13 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 - ros-melodic-joint-state-controller
 - ros-melodic-position-controllers
 - ros-melodic-trac-ik-kinematics-plugin
+- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_ajusts)
 
 ## Launchers
 ### Gazebo:
 `$ roslaunch manipulator_gazebo gazebo.launch`
 
-### Rviz:
+### Timon-HM MoveIt package:
 `$ roslaunch manipulator_gazebo moveit_demo.launch`
 
 ### Search the visual marker:
@@ -40,7 +41,7 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 || Joint 3, Joint 4, Joint 5: 1,003,846 pulse/rev|
 |Motors| Joint 1, Joint 2: H54-200-S500-R (200W) |
 | | Joint 3(2), Joint 4, Joint 5: MX-106 (65W) |
-|Operating Range| Joint 1: -π (rad)  ~  π (rad)|
+|Operating Range| Joint 1: -π/2 (rad)  ~  π/2 (rad)|
 | | Joint 2: -π/2(rad)  ~  π/2 (rad) |
 | | Joint 3: -π/2(rad)  ~  3π/4 (rad) |
 | | Joint 4: -π(rad)  ~  π (rad) |
@@ -54,8 +55,17 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 ## Dimension
 <img src="https://i.ibb.co/TK2LZQf/planta-2-D.jpg">
 
-## Workspace
 ## Home Position
+## Workspace
+### XY
+<img src="https://i.ibb.co/McfSktY/workspace-XY.png">
+
+### XZ
+<img src="https://i.ibb.co/zb2L9Zn/workspace-XZ.png">
+
+### YZ
+<img src="https://i.ibb.co/HX1GPFy/workspace-YZ.png">
+
 ## DH Configuration
 <img src="https://i.ibb.co/P1BK3Xh/dh-configuration.png">
 
@@ -64,8 +74,8 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 | LINK | Link Lenght (mm) | Link Twist (rad) | Joint Offset (mm) | DXL Angle (rad) |
 |:---:|:---:|:---:|:---:|:---:|
 |1|0|π/2|12|0|
-|2|452||0|<img src="https://i.ibb.co/3F274Yt/eaq1.png" width="70%">|
-|3|30|-π/2|0|<img src="https://i.ibb.co/WH5JmSy/eq2.png" width="70%">|
+|2|452||0|<img src="https://i.ibb.co/Qrbhxsk/eaq1.png" width="70%">|
+|3|30|-π/2|0|<img src="https://i.ibb.co/Yd8bTp3/eq2.png" width="70%">|
 |4|0|π/2|491|0|
 |5|0|0|0|0|
 
