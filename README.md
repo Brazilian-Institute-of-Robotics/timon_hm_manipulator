@@ -1,7 +1,7 @@
 # Timon-HM Manipulator
-<img src="https://cdn.discordapp.com/attachments/692023775218106389/698197836969541702/readme.png">
+<img src="https://i.ibb.co/M2nPsrL/readme.jpg">
 
-Timon-HM é um manipulador que está sendo projetado, simulado e construído com o intuito de atender demandas relacionadas ao reconhecimento de marcadores visuais e em resposta realizar o acionamento de interruptores, chaves ou botões.
+Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons.
 
 ## Open Source software and packages related to Timon-HM manipulator
 ### Software
@@ -15,6 +15,17 @@ Timon-HM é um manipulador que está sendo projetado, simulado e construído com
 - ros-melodic-joint-state-controller
 - ros-melodic-position-controllers
 - ros-melodic-trac-ik-kinematics-plugin
+
+## Launchers
+### Gazebo:
+`$ roslaunch manipulator_gazebo gazebo.launch`
+
+### Rviz:
+`$ roslaunch manipulator_gazebo moveit_demo.launch`
+
+### Search the visual marker:
+`$ roslaunch timon_demo  motion_plan5.launch`
+
 # Timon-HM specifications
 
 ## Specifications table
@@ -41,13 +52,22 @@ Timon-HM é um manipulador que está sendo projetado, simulado e construído com
 |Communication Baudrate |  1 Mbps |
 
 ## Dimension
+<img src="https://i.ibb.co/TK2LZQf/planta-2-D.jpg">
+
 ## Workspace
 ## Home Position
 ## DH Configuration
 <img src="https://i.ibb.co/P1BK3Xh/dh-configuration.png">
 
 ### DH parameters
-<img src="https://i.ibb.co/YyJ2cy5/tabela-dh.png">
+
+| LINK | Link Lenght (mm) | Link Twist (rad) | Joint Offset (mm) | DXL Angle (rad) |
+|:---:|:---:|:---:|:---:|:---:|
+|1|0|π/2|12|0|
+|2|452||0|<img src="https://i.ibb.co/3F274Yt/eaq1.png" width="70%">|
+|3|30|-π/2|0|<img src="https://i.ibb.co/WH5JmSy/eq2.png" width="70%">|
+|4|0|π/2|491|0|
+|5|0|0|0|0|
 
 ## Mass Property
 ### Coordinate
