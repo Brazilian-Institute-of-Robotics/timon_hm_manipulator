@@ -1,0 +1,23 @@
+debug: true
+image_topic: /timon/camera/image_raw
+enable_tf: false
+marker_dictionary: 0
+markers_length: [90] # length in mm.
+markers_90: [4] # Markers id with length 150.
+camera_matrix: [1544.5179908685989, 0.0, 1296.5, 0.0, 1544.5179908685989, 1024.5, 0.0, 0.0, 1.0]
+camera_distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
+static_variance: true
+static_camera_transform: true
+static_marker: false
+static_markers_id: [4]
+map_tf_name: tag_aruco_4
+base_tf_name: timon_link11
+marker_tf_name: tag_aruco_
+camera_tf_name: virtual_camera
+pose_topic: pose
+variance_matrix: [0.01, 0, 0, 0, 0, 0, 
+                  0, 0.01, 0, 0, 0, 0,
+                  0, 0, 0.01, 0, 0, 0,
+                  0, 0, 0, 0.01, 0, 0,
+                  0, 0, 0, 0, 0.01, 0,
+                  0, 0, 0, 0, 0, 0.01]

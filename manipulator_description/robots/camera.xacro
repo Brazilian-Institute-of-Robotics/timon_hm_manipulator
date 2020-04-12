@@ -23,6 +23,14 @@
         <inertia ixx="2.11041984e-5" ixy="-9.60070950e-7" ixz="-9.64986145e-8" iyx="-9.60070950e-7" iyy="4.52382361e-5" iyz="-2.48143698e-8" izx="-9.64986145e-8" izy="-2.48143698e-8" izz="4.92072530e-5"/>
       </inertial>
     </link>
+    <link name="virtual_camera">
+    </link>
+    <joint name ="virtual_camera" type="fixed">
+        <origin rpy="0 -1.5701 0" xyz="0 0 0"/>  <!--rpy="1.5701 3.1415 1.5701"-->
+        <parent link="camera"/>
+        <child link = "virtual_camera"/>
+    </joint>
+
 
     <gazebo reference="camera">
       <sensor type="camera" name="camera_timon">

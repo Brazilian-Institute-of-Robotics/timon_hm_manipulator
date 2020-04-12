@@ -11,7 +11,7 @@
     </asset>
     <library_images>
         <image id="texture0" name="texture0">
-            <init_from>tag.png</init_from>
+            <init_from>tag_4.png</init_from>
         </image>
     </library_images>
     <library_materials>
