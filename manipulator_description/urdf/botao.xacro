@@ -23,7 +23,7 @@
     </inertial>
   </link>
 
- <joint name="base_to_botao" type="fixed">
+ <joint name="caixa_to_botao" type="fixed">
     <parent link="caixa"/>
     <child link="botao"/>
     <origin rpy="1.571 0 0" xyz="0 -0.1165 0.215"/>

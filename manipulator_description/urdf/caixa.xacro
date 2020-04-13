@@ -23,10 +23,5 @@
     </inertial>
   </link>
 
- <joint name="base_to_caixa" type="fixed">
-    <parent link="map"/>
-    <child link="caixa"/>
-    <origin rpy="0 0 1.571" xyz="0 0 0"/>
-  </joint> 
 
 </robot>
