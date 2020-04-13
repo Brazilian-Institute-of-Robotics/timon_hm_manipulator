@@ -64,81 +64,17 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        base_to_manipulator:
+        botao:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera:
+        caixa:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        invisible_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link10:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link9:
+        tag_aruco_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -154,69 +90,30 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_link:
-          Value: false
-        base_to_manipulator:
-          Value: false
-        camera:
+        botao:
           Value: true
-        invisible_link:
-          Value: false
-        timon_link0:
-          Value: false
-        timon_link1:
-          Value: false
-        timon_link10:
-          Value: false
-        timon_link11:
-          Value: false
-        timon_link2:
-          Value: false
-        timon_link3:
-          Value: false
-        timon_link4:
-          Value: false
-        timon_link5:
-          Value: false
-        timon_link6:
-          Value: false
-        timon_link7:
-          Value: false
-        timon_link8:
-          Value: false
-        timon_link9:
-          Value: false
+        caixa:
+          Value: true
+        tag_aruco_4:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          base_to_manipulator:
-            invisible_link:
-              timon_link0:
-                timon_link1:
-                  timon_link2:
-                    timon_link3:
-                      timon_link4:
-                        timon_link5:
-                          timon_link6:
-                            timon_link7:
-                              camera:
-                                {}
-                              timon_link8:
-                                timon_link9:
-                                  timon_link10:
-                                    timon_link11:
-                                      {}
+        caixa:
+          botao:
+            {}
+          tag_aruco_4:
+            {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_to_manipulator
+    Fixed Frame: caixa
     Frame Rate: 30
   Name: root
   Tools:
@@ -247,18 +144,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.036458853632211685
-        Y: 0.5168871283531189
-        Z: 0.6180979013442993
+        X: -0.09971079230308533
+        Y: 0.018563903868198395
+        Z: 0.31616777181625366
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6447979211807251
+      Pitch: -0.07520174235105515
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.873615741729736
+      Yaw: 3.438605785369873
     Saved: ~
 Window Geometry:
   Displays:

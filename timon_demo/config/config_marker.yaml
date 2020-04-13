@@ -13,7 +13,7 @@ static_markers_id: [4]
 map_tf_name: tag_aruco_4
 base_tf_name: timon_link11
 marker_tf_name: tag_aruco_
-camera_tf_name: virtual_camera
+camera_tf_name: timon_link11
 pose_topic: pose
 variance_matrix: [0.01, 0, 0, 0, 0, 0, 
                   0, 0.01, 0, 0, 0, 0,

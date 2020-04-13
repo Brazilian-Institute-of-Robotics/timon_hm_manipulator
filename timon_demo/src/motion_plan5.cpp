@@ -1,3 +1,5 @@
+#include <ros/ros.h>
+#include <geometry_msgs/PoseWithCovarianceStamped.h>
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
 
@@ -14,13 +16,21 @@
 
 
 
+
 #include <tf/tf.h>
+geometry_msgs::PoseWithCovarianceStamped button_pose {};
+
+void printpose(const geometry_msgs::PoseWithCovarianceStamped& msg){
+   
+  button_pose = msg;
+  //std::cout << button_pose;
+  }
 
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "motion_plan");
-  ros::NodeHandle node_handle;
-  ros::AsyncSpinner spinner(1);
+  ros::NodeHandle nh;
+  ros::AsyncSpinner spinner(2);
   spinner.start();
   static const std::string PLANNING_GROUP = "timon_arm";
   moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
@@ -37,10 +47,9 @@ int main(int argc, char** argv)
   visual_tools.trigger();
   ROS_INFO_NAMED( "Reference frame: %s", move_group.getPlanningFrame().c_str());
   ROS_INFO_NAMED("End effector link: %s", move_group.getEndEffectorLink().c_str());
-
-  // visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to start the demo");
+  
   std::cout << move_group.getCurrentPose();
-  // sleep(15.0);
+  geometry_msgs::PoseWithCovarianceStamped button_pose;
 //ADDING FLOOR
   // Define a collision object ROS message.
   moveit_msgs::CollisionObject collision_object;
@@ -102,123 +111,97 @@ int main(int argc, char** argv)
 //  joint_group_positions0[3] = 0;
 
 //  move_group.setJointValueTarget(joint_group_positions0);
-  // visual_tools.prompt("Press 'next'");
+
   sleep(2.0);
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-  bool success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-  ROS_INFO_NAMED("Visualizing plan 1 (pose goal) %s", success ? "" : "FAILED");
-  
-
-  // Visualizing plans
-  // ^^^^^^^^^^^^^^^^^
-  // We can also visualize the plan as a line with markers in RViz.
-//  ROS_INFO_NAMED("tutorial", "Visualizing plan 1 as trajectory line");
-//  visual_tools.publishAxisLabeled(target_pose1, "pose1");
-//  visual_tools.publishText(text_pose, "Pose Goal", rvt::WHITE, rvt::XLARGE);
-//  visual_tools.publishTrajectoryLine(my_plan.trajectory_, joint_model_group);
-//  visual_tools.trigger();
-  // visual_tools.prompt("Press 'next'"); 
+  move_group.plan(my_plan);
+ 
   sleep(2.0);                                                    
   move_group.execute(my_plan);
   
-  // visual_tools.prompt("Press 'next'");                                                     
-  sleep(4.0);
-  std::cout << move_group.getCurrentState();
-//   visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
+                                                 
+  sleep(2.0);
+  ros::Subscriber sub = nh.subscribe("/marker_localization/pose",1, printpose);
   
-  robot_state::RobotState start_state2(*move_group.getCurrentState());
-  move_group.setStartState(start_state2);
-  //POSE
-   target_pose.orientation.w =  0.189936;
-   target_pose.orientation.x = -0.680563;
-   target_pose.orientation.y = 0.192746; 
-   target_pose.orientation.z = -0.680888;
-   target_pose.position.x = -0.000105726;
-   target_pose.position.y =-0.630134;
-   target_pose.position.z = 0.239391;
-  move_group.setPoseTarget(target_pose);
- 
-  sleep(2.0);
-//JUNTAS
-//  moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
-//  std::vector<double> joint_group_positions;
-//  current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
-// //  joint_group_positions[0] = 0;
-//   joint_group_positions[1] = -0.7;
-//   joint_group_positions[2] = 1.3;
-// //  joint_group_positions[3] = 0;
-//  move_group.setJointValueTarget(joint_group_positions);
+  sleep(1.0);
+  //double position_x {};
+  std::cout << ::button_pose.pose.pose.position;
+  std::cout << ::button_pose.pose.pose.position;
+  std::cout << ::button_pose.pose.pose.position.x;
+  std::cout << ::button_pose.pose.pose.position.y;
+  //std::cout<<position_x;
+  //std::cout << move_group.getCurrentPose();
 
-  success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-  ROS_INFO_NAMED("tutorial", "Visualizing plan 2 (joint space goal) %s", success ? "" : "FAILED");
-
-  sleep(2.0);  
-  // visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
-  move_group.execute(my_plan); 
-
-
-//   visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
-  sleep(2.0);
-
-    robot_state::RobotState start_state3(*move_group.getCurrentState());
-  move_group.setStartState(start_state3);
-  //POSE
+  
+//   robot_state::RobotState start_state2(*move_group.getCurrentState());
+//   move_group.setStartState(start_state2);
+//   //POSE
 //    target_pose.orientation.w =  0.189936;
 //    target_pose.orientation.x = -0.680563;
 //    target_pose.orientation.y = 0.192746; 
 //    target_pose.orientation.z = -0.680888;
-   target_pose.position.x = 0.00017605;
-   target_pose.position.y =-0.792074;
-   target_pose.position.z = 0.141905;
-  move_group.setPoseTarget(target_pose);
+//    target_pose.position.x = -0.000105726;
+//    target_pose.position.y =-0.630134;
+//    target_pose.position.z = 0.239391;
+//   move_group.setPoseTarget(target_pose);
  
-  sleep(2.0);
+//   sleep(2.0);
 
-  success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-  ROS_INFO_NAMED("tutorial", "Visualizing plan 2 (joint space goal) %s", success ? "" : "FAILED");
+//   move_group.plan(my_plan);
+  
 
-  sleep(2.0); 
-  move_group.execute(my_plan); 
-  sleep(2.0);
+//   sleep(2.0);  
+//   move_group.execute(my_plan); 
 
-  robot_state::RobotState start_state4(*move_group.getCurrentState());
-  move_group.setStartState(start_state4);
 
+
+//   sleep(2.0);
+
+//     robot_state::RobotState start_state3(*move_group.getCurrentState());
+//   move_group.setStartState(start_state3);
 //   //POSE
-//   //  geometry_msgs::Pose target_pose3;
-//   //  target_pose3.orientation.w = 0;
-//   //  target_pose3.position.x = 0.0;
-//   //  target_pose3.position.y = 0.1;
-//   //  target_pose3.position.z = 0.99;
-//   //  move_group.setPoseTarget(target_pose3);
 
-// //JUNTAS 
+//    target_pose.position.x = 0.00017605;
+//    target_pose.position.y =-0.792074;
+//    target_pose.position.z = 0.141905;
+//   move_group.setPoseTarget(target_pose);
+ 
+//   sleep(2.0);
 
- moveit::core::RobotStatePtr current_state3 = move_group.getCurrentState();
- std::vector<double> joint_group_positions3;
- current_state3->copyJointGroupPositions(joint_model_group, joint_group_positions3);
- joint_group_positions3[0] = 0;
- joint_group_positions3[1] = 0;
- joint_group_positions3[2] = 0;
- joint_group_positions3[3] = 0;
- move_group.setJointValueTarget(joint_group_positions3);
-
- success = (move_group.plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-
-  sleep(2.0);
-//ROS_INFO_NAMED("tutorial", "Visualizing plan 1 (pose goal) %s", success ? "" : "FAILED");
-
-//   visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
-move_group.execute(my_plan);
+//   move_group.plan(my_plan);
   
-//   visual_tools.prompt("Press 'next' in the RvizVisualToolsGui window to continue the demo");
 
+//   sleep(2.0); 
+//   move_group.execute(my_plan); 
+//   sleep(2.0);
+
+//   //BACK TO UP POSITION
   
-  // REMOVE OBJECTS
-  // visual_tools.prompt("Press 'next'");  
-  sleep(2.0);   
-  std::cout << move_group.getCurrentPose();
-  ROS_INFO_NAMED("tutorial", "Remove the object from the world");
+//   robot_state::RobotState start_state4(*move_group.getCurrentState());
+//   move_group.setStartState(start_state4);
+//  //JUNTAS 
+
+//  moveit::core::RobotStatePtr current_state3 = move_group.getCurrentState();
+//  std::vector<double> joint_group_positions3;
+//  current_state3->copyJointGroupPositions(joint_model_group, joint_group_positions3);
+//  joint_group_positions3[0] = 0;
+//  joint_group_positions3[1] = 0;
+//  joint_group_positions3[2] = 0;
+//  joint_group_positions3[3] = 0;
+//  move_group.setJointValueTarget(joint_group_positions3);
+
+//  move_group.plan(my_plan);
+
+//   sleep(2.0);
+
+// move_group.execute(my_plan);  
+
+
+//   sleep(2.0);   
+//   std::cout << move_group.getCurrentPose();
+  
+  
+  //REMOVE OBJECTS
    std::vector<std::string> object_ids;
   object_ids.push_back(collision_object.id);
   planning_scene_interface.removeCollisionObjects(object_ids);
@@ -230,6 +213,6 @@ move_group.execute(my_plan);
 
 
 
-ros::shutdown();
+ros::waitForShutdown(); 
   return 0;
-}
+} 
