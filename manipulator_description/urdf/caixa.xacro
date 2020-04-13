@@ -19,14 +19,14 @@
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <mass value="7.83641898"/>
-      <inertia ixx="1.14585569e-1" ixy="0" ixz="-4.92675504e-9" iyx="0" iyy="1.11284013e-1" iyz="-9.69960810e-4" izx="-4.92675504e-9" izy="-9.69960810e-4" izz="8.63706684e-2"/>
+      <inertia ixx="1.14439574e-1" ixy="0" ixz="-4.92675504e-9" iyx="0" iyy="1.11258168e-1" iyz="-1.02434023e-3" izx="-4.92675504e-9" izy="-1.02434023e-3" izz="8.62491763e-2"/>
     </inertial>
   </link>
 
- <!-- <joint name="base_to_caixa" type="fixed">
+ <joint name="base_to_caixa" type="fixed">
     <parent link="map"/>
     <child link="caixa"/>
     <origin rpy="0 0 1.571" xyz="0 0 0"/>
-  </joint>  -->
+  </joint> 
 
 </robot>
