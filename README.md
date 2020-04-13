@@ -56,6 +56,8 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 <img src="https://i.ibb.co/TK2LZQf/planta-2-D.jpg">
 
 ## Home Position
+<img src="https://i.ibb.co/VTdpTWw/begin-timon.png">
+
 ## Workspace
 ### XY
 <img src="https://i.ibb.co/McfSktY/workspace-XY.png">
