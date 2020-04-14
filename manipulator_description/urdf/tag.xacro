@@ -29,8 +29,8 @@
         </gazebo>
 
     <joint name="box_to_tag" type="fixed">
-        <origin rpy="1.571 0 0" xyz="0.0 -0.103 0.1"/> <!--"0.0 -0.103 0.1" -->
-        <parent link="caixa"/>
+        <origin rpy="0 0 0" xyz="0.0 -0.1 -0.013"/> <!--"0.0 -0.103 0.1" -->
+        <parent link="botao"/>
         <child link = "tag_aruco_4"/>
     </joint> 
 

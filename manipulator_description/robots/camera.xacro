@@ -26,7 +26,7 @@
     <link name="virtual_camera">
     </link>
     <joint name ="virtual_camera" type="fixed">
-        <origin rpy="0 -1.5701 0" xyz="0 0 0"/>  <!--rpy="1.5701 3.1415 1.5701"-->
+        <origin rpy="-1.5701 0 -1.5701" xyz="0 0 0"/>  <!--rpy="1.5701 3.1415 1.5701"-->
         <parent link="camera"/>
         <child link = "virtual_camera"/>
     </joint>

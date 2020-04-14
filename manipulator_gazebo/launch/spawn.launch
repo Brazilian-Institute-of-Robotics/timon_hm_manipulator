@@ -5,9 +5,9 @@
         
         <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/robots/timon_arm_hand_base.urdf.xacro'" />
-        <arg name="x" default="0.6"/> 
+        <arg name="x" default="0"/> 
         <arg name="y" default="0"/> 
-        <arg name="z" default="1.56"/>
+        <arg name="z" default="0"/>
         
         
         <!-- Spawn the robot model -->

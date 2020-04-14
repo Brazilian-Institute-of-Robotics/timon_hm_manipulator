@@ -124,38 +124,33 @@ int main(int argc, char** argv)
   ros::Subscriber sub = nh.subscribe("/marker_localization/pose",1, printpose);
   
   sleep(1.0);
-  //double position_x {};
-  std::cout << ::button_pose.pose.pose.position;
-  std::cout << ::button_pose.pose.pose.position;
-  std::cout << ::button_pose.pose.pose.position.x;
-  std::cout << ::button_pose.pose.pose.position.y;
-  //std::cout<<position_x;
+
   //std::cout << move_group.getCurrentPose();
 
   
-//   robot_state::RobotState start_state2(*move_group.getCurrentState());
-//   move_group.setStartState(start_state2);
+   robot_state::RobotState start_state2(*move_group.getCurrentState());
+   move_group.setStartState(start_state2);
 //   //POSE
-//    target_pose.orientation.w =  0.189936;
-//    target_pose.orientation.x = -0.680563;
-//    target_pose.orientation.y = 0.192746; 
-//    target_pose.orientation.z = -0.680888;
-//    target_pose.position.x = -0.000105726;
-//    target_pose.position.y =-0.630134;
-//    target_pose.position.z = 0.239391;
-//   move_group.setPoseTarget(target_pose);
+    target_pose.orientation.w =  0.189936;
+    target_pose.orientation.x = -0.680563;
+    target_pose.orientation.y = 0.192746; 
+    target_pose.orientation.z = -0.680888;
+    target_pose.position.x = -0.000105726;
+    target_pose.position.y = -0.630134;
+    target_pose.position.z = 0.239391;
+   move_group.setPoseTarget(target_pose);
  
-//   sleep(2.0);
+   sleep(2.0);
 
-//   move_group.plan(my_plan);
+   move_group.plan(my_plan);
   
 
-//   sleep(2.0);  
-//   move_group.execute(my_plan); 
+   sleep(2.0);  
+   move_group.execute(my_plan); 
 
 
 
-//   sleep(2.0);
+   sleep(2.0);
 
 //     robot_state::RobotState start_state3(*move_group.getCurrentState());
 //   move_group.setStartState(start_state3);
