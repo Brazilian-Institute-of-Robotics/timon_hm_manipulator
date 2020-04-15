@@ -56,9 +56,6 @@ include_directories(
  ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(motion_plan src/motion_plan.cpp)
-target_link_libraries(motion_plan ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-install(TARGETS motion_plan DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 add_executable(motion_plan5 src/motion_plan5.cpp)
 target_link_libraries(motion_plan5 ${catkin_LIBRARIES} ${Boost_LIBRARIES})

@@ -11,14 +11,5 @@
       <uri>model://table_challenger</uri>
       <pose> 0 0 1.5 0 0 0 </pose>
     </include>
-    <!-- <include>
-      <uri>model://button_challenger</uri>
-      <pose> -0.55 0 1.7 0 0 1.57 </pose>
-    </include> -->
-    <!-- <include>
-      <uri>model://base_manipulator</uri>
-      <pose> 0.47 0 1.55 0 0 1.57 </pose>
-    </include>
-     -->
   </world>
 </sdf>

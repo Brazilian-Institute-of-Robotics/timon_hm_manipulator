@@ -7,7 +7,7 @@
   <xacro:include filename="$(find manipulator_description)/urdf/botao.xacro"/>
 
   <joint name="base_to_box" type="fixed">
-    <origin xyz="-0.4 0.0 1.56" rpy="0 0 1.571"/>   <!--vertical: xyz="-0.4 0.0 1.56" rpy="0 0 1.571"--> <!-- horizontal: xyz="-0.4 0.0 1.66" rpy="0 0 -1.571"-->
+    <origin xyz="-0.4 0.0 1.66" rpy="0 0 -1.571"/>   <!--vertical: xyz="-0.4 0.0 1.56" rpy="0 0 1.571"--> <!-- horizontal: xyz="-0.4 0.0 1.66" rpy="0 0 -1.571"-->
     <parent link="box_link"/>
     <child link="caixa"/>    
   </joint>

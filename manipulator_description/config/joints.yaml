@@ -9,17 +9,12 @@ arm_controller:
      - timon_joint4
      - timon_joint7
      - timon_joint9
+     - timon_joint11
   gains:
       timon_joint1: { p: 100, d: 1, i: 1, i_clamp: 1 }
       timon_joint4: { p: 100, d: 1, i: 1, i_clamp: 1 }
       timon_joint7: { p: 100, d: 1, i: 1, i_clamp: 1 }
       timon_joint9: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      timon_joint11: { p: 100, d: 1, i: 1, i_clamp: 1 }
   
-  state_publish_rate: 25                
-# joint_group_position_controller:
-#   type: position_controllers/JointGroupPositionController
-#   joints:
-#      - timon_joint1
-#      - timon_joint4
-#      - timon_joint7
-#      - timon_joint9
+  state_publish_rate: 25 
