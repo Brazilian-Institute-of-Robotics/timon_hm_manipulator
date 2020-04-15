@@ -64,6 +64,14 @@ add_executable(motion_plan5 src/motion_plan5.cpp)
 target_link_libraries(motion_plan5 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS motion_plan5 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+add_executable(tf_listener src/tf_listener.cpp)
+target_link_libraries(tf_listener ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS tf_listener DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
+add_executable(joint_tests src/joint_tests.cpp)
+target_link_libraries(joint_tests ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS joint_tests DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

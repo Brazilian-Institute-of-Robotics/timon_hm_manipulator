@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="joint_tests" pkg="timon_demo" type="joint_tests" respawn="false" output="screen">
+	<remap from="/joint_states" to="/timon/joint_states"/>
+  </node>
+
+</launch>
