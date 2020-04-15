@@ -29,7 +29,7 @@
         </gazebo>
 
     <joint name="box_to_tag" type="fixed">
-        <origin rpy="0 0 3.1415" xyz="0.0 -0.1 -0.013"/> <!--caixa na vertical: rpy="0 0 0" -->
+        <origin rpy="0 0 0" xyz="0.0 -0.1 -0.013"/> <!--caixa na vertical: rpy="0 0 0" -->  <!-- horizontal: rpy="0 0 3.1415" -->
         <parent link="botao"/>
         <child link = "tag_aruco_4"/>
     </joint> 

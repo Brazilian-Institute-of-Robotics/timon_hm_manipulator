@@ -108,8 +108,8 @@ int main(int argc, char** argv)
     target_pose.orientation.y = 0.47662; 
     target_pose.orientation.z = -0.523895; 
    target_pose.position.x = 0.000603714;
-   target_pose.position.y = -0.425967;
-   target_pose.position.z = 0.345978;
+   target_pose.position.y = -0.335967;
+   target_pose.position.z = 0.275978;
     move_group.setPoseTarget(target_pose);
 
   // sleep(2.0);
@@ -206,7 +206,7 @@ int main(int argc, char** argv)
     robot_state::RobotState start_state3(*move_group.getCurrentState());
     move_group.setStartState(start_state3);
 
-    target_pose.position.y -=0.017;
+    target_pose.position.y -=0.051;
     move_group.setPoseTarget(target_pose);
 
     move_group.plan(my_plan);  
@@ -219,10 +219,11 @@ int main(int argc, char** argv)
     robot_state::RobotState start_state4(*move_group.getCurrentState());
     move_group.setStartState(start_state4);
 
-    target_pose.position.y +=0.017;
+    target_pose.position.y +=0.051;
     move_group.setPoseTarget(target_pose);
     
-    move_group.plan(my_plan);  
+    move_group.plan(my_plan); 
+    move_group.execute(my_plan);  
 }
 
 //BACK TO UP POSITION

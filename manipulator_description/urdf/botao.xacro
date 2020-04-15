@@ -28,7 +28,7 @@
  <joint name="caixa_to_botao" type="fixed">
     <parent link="caixa"/>
     <child link="botao"/>
-    <origin rpy="0 0 0" xyz="0 0.215 0.1165"/> <!-- caixa na vertical: <origin rpy="1.571 0 0" xyz="0 -0.1165 0.215"/> -->
+    <origin rpy="1.571 0 0" xyz="0 -0.1165 0.215"/> <!--vertical: rpy="1.571 0 0" xyz="0 -0.1165 0.215" --> <!-- horizontal: rpy="0 0 0" xyz="0 0.215 0.1165"-->
     <!-- <axis xyz="0 1 0"/>
     <limit lower="0.0" upper="0.00" effort="1" velocity="1"/> -->
   </joint> 
