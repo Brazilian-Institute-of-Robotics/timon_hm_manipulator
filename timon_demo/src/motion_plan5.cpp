@@ -93,7 +93,7 @@ int main(int argc, char** argv)
 
   std::vector<moveit_msgs::CollisionObject> collision_objects;
   collision_objects.push_back(collision_object);
-  collision_objects.push_back(collision_object1);
+  // collision_objects.push_back(collision_object1);
 
   planning_scene_interface.addCollisionObjects(collision_objects);
 
@@ -101,7 +101,7 @@ int main(int argc, char** argv)
 
   robot_state::RobotState start_state(*move_group.getCurrentState());
   move_group.setStartState(start_state);
- //POSE
+ //BEGIN POSE 
     geometry_msgs::Pose target_pose;
     target_pose.orientation.w = 0.474989;
     target_pose.orientation.x = -0.522257;
@@ -111,17 +111,6 @@ int main(int argc, char** argv)
    target_pose.position.y = -0.425967;
    target_pose.position.z = 0.345978;
     move_group.setPoseTarget(target_pose);
-
-//JUNTAS
-//  moveit::core::RobotStatePtr current_state0 = move_group.getCurrentState();
-//  std::vector<double> joint_group_positions0;
-//  current_state0->copyJointGroupPositions(joint_model_group, joint_group_positions0);
-//  joint_group_positions0[0] = 0;  //positivo esquerda , negativo direita , gira a base
-//  joint_group_positions0[1] = 0;  //  positivo abaixo, negativo acima, segundo link
-//  joint_group_positions0[2] = 2; // positivo pra frente, negativo pra trás, terceiro link
-//  joint_group_positions0[3] = 0;
-
-//  move_group.setJointValueTarget(joint_group_positions0);
 
   // sleep(2.0);
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
@@ -139,7 +128,7 @@ int main(int argc, char** argv)
   //GETTING BUTTON POSE
   tf::StampedTransform transform;
   try{
-  ros::Time now = ros::Time::now();
+  // ros::Time now = ros::Time::now();
   listener.waitForTransform("/fake_botao", "/invisible_link", 
                            ros::Time(0), ros::Duration(2.0));
   listener.lookupTransform("/fake_botao", "/invisible_link",
@@ -149,9 +138,7 @@ int main(int argc, char** argv)
   ROS_ERROR("%s",ex.what());
   ros::Duration(1.0).sleep();
   }
-  // std::cout << transform.getOrigin().z() << std::endl;
 
-    //  ROS_INFO("tf is good");
 
   
   // sleep(1.0);
@@ -171,8 +158,8 @@ int main(int argc, char** argv)
     // std::cout<<"Pose alvo y: " << target_pose.position.y << "  " << "Pose alvo z: " << target_pose.position.z;
 
    move_group.setGoalPositionTolerance(0.001);
-   move_group.setGoalOrientationTolerance(0.2);
-   move_group.setPlanningTime(10);
+   move_group.setGoalOrientationTolerance(0.3);
+   move_group.setPlanningTime(20);
    move_group.setPoseTarget(target_pose);
  
   //  sleep(2.0);
@@ -186,7 +173,7 @@ int main(int argc, char** argv)
     robot_state::RobotState start_state3(*move_group.getCurrentState());
     move_group.setStartState(start_state3);
 
-    target_pose.position.y -=0.015;
+    target_pose.position.y -=0.017;
     move_group.setPoseTarget(target_pose);
     // sleep(2.0);
     move_group.plan(my_plan);  
@@ -199,7 +186,7 @@ int main(int argc, char** argv)
     robot_state::RobotState start_state4(*move_group.getCurrentState());
     move_group.setStartState(start_state4);
 
-    target_pose.position.y +=0.015;
+    target_pose.position.y +=0.017;
     move_group.setPoseTarget(target_pose);
     // sleep(2.0);
     move_group.plan(my_plan);  
@@ -208,24 +195,7 @@ int main(int argc, char** argv)
     // sleep(2.0);
 
 
-
-//   //POSE
-
-//    target_pose.position.x = 0.00017605;
-//    target_pose.position.y =-0.792074;
-//    target_pose.position.z = 0.141905;
-//   move_group.setPoseTarget(target_pose);
- 
-//   sleep(2.0);
-
-//   move_group.plan(my_plan);
-  
-
-//   sleep(2.0); 
-//   move_group.execute(my_plan); 
-//   sleep(2.0);
-
-  //BACK TO UP POSITION
+//BACK TO UP POSITION
   
   robot_state::RobotState start_state5(*move_group.getCurrentState());
   move_group.setStartState(start_state5);
@@ -265,6 +235,6 @@ move_group.execute(my_plan);
 
 
 
-ros::waitForShutdown(); 
+ros::shutdown(); 
   return 0;
 } 
