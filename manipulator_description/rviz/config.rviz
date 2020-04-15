@@ -64,89 +64,29 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_to_manipulator:
+        botao:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        camera:
+        box_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        caixa:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        invisible_link:
+        fake_botao:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        tag_aruco_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        timon_link0:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link10:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link11:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        timon_link9:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        virtual_camera:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        world:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -158,72 +98,36 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
-        base_to_manipulator:
+        botao:
           Value: true
-        camera:
-          Value: false
-        invisible_link:
-          Value: false
-        timon_link0:
-          Value: false
-        timon_link1:
-          Value: false
-        timon_link10:
-          Value: false
-        timon_link11:
-          Value: false
-        timon_link2:
-          Value: false
-        timon_link3:
-          Value: false
-        timon_link4:
-          Value: false
-        timon_link5:
-          Value: false
-        timon_link6:
-          Value: false
-        timon_link7:
-          Value: false
-        timon_link8:
-          Value: false
-        timon_link9:
-          Value: false
-        virtual_camera:
+        box_link:
           Value: true
-        world:
-          Value: false
+        caixa:
+          Value: true
+        fake_botao:
+          Value: true
+        tag_aruco_4:
+          Value: true
       Marker Scale: 0.5
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        world:
-          base_to_manipulator:
-            invisible_link:
-              timon_link0:
-                timon_link1:
-                  timon_link2:
-                    timon_link3:
-                      timon_link4:
-                        timon_link5:
-                          timon_link6:
-                            timon_link7:
-                              camera:
-                                virtual_camera:
-                                  {}
-                              timon_link8:
-                                timon_link9:
-                                  timon_link10:
-                                    timon_link11:
-                                      {}
+        box_link:
+          caixa:
+            botao:
+              fake_botao:
+                {}
+              tag_aruco_4:
+                {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: invisible_link
+    Fixed Frame: caixa
     Frame Rate: 30
   Name: root
   Tools:

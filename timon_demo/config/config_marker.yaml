@@ -7,7 +7,7 @@ markers_100: [4] # Markers id with length 90.
 camera_matrix: [1544.5179908685989, 0.0, 1296.5, 0.0, 1544.5179908685989, 1024.5, 0.0, 0.0, 1.0]
 camera_distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
 static_variance: false
-static_camera_transform: true
+static_camera_transform: false
 static_marker: false
 static_markers_id: [4]
 map_tf_name: box_link

@@ -139,12 +139,45 @@ int main(int argc, char** argv)
   ros::Duration(1.0).sleep();
   }
 
+  // std::cout<<"Transform Rotation w: "<< transform.getRotation().w();
+  if (transform.getRotation().w() >= 0.99) {
+      robot_state::RobotState start_state6(*move_group.getCurrentState());
+      move_group.setStartState(start_state6);
+      
+      //POSE
+      target_pose.position.x = -transform.getOrigin().x();
+      target_pose.position.y = -transform.getOrigin().y();
+      target_pose.position.z = -transform.getOrigin().z();
+      move_group.setGoalPositionTolerance(0.001);
+      move_group.setGoalOrientationTolerance(0.3);
+      move_group.setPlanningTime(20);
+      move_group.setPoseTarget(target_pose);
 
+      move_group.plan(my_plan);
+      move_group.execute(my_plan);
+
+      //PRESS BUTTON
+
+      robot_state::RobotState start_state7(*move_group.getCurrentState());
+      move_group.setStartState(start_state7);
+
+      //  target_pose.position.y +=0.040; 
+       target_pose.position.z -=0.050;       
+       move_group.setPoseTarget(target_pose);
+       move_group.plan(my_plan);  
+       move_group.execute(my_plan); 
+
+      robot_state::RobotState start_state8(*move_group.getCurrentState());
+      move_group.setStartState(start_state8);
+
+      //  target_pose.position.y +=0.040; 
+       target_pose.position.z +=0.050;       
+       move_group.setPoseTarget(target_pose);
+       move_group.plan(my_plan);  
+       move_group.execute(my_plan); 
   
-  // sleep(1.0);
-
-  //std::cout << move_group.getCurrentPose();
-
+  }
+  else{  
    robot_state::RobotState start_state2(*move_group.getCurrentState());
    move_group.setStartState(start_state2);
 //   //POSE
@@ -162,11 +195,11 @@ int main(int argc, char** argv)
    move_group.setPlanningTime(20);
    move_group.setPoseTarget(target_pose);
  
-  //  sleep(2.0);
+
    move_group.plan(my_plan);  
-  //  sleep(2.0);  
+ 
    move_group.execute(my_plan); 
-  //  sleep(2.0);
+
 
 
     //PRESS BUTTON
@@ -175,11 +208,11 @@ int main(int argc, char** argv)
 
     target_pose.position.y -=0.017;
     move_group.setPoseTarget(target_pose);
-    // sleep(2.0);
+
     move_group.plan(my_plan);  
-    // sleep(2.0);  
+
     move_group.execute(my_plan); 
-    // sleep(2.0);
+
 
 
 
@@ -188,12 +221,9 @@ int main(int argc, char** argv)
 
     target_pose.position.y +=0.017;
     move_group.setPoseTarget(target_pose);
-    // sleep(2.0);
+    
     move_group.plan(my_plan);  
-    // sleep(2.0);  
-    move_group.execute(my_plan); 
-    // sleep(2.0);
-
+}
 
 //BACK TO UP POSITION
   
@@ -213,13 +243,12 @@ int main(int argc, char** argv)
 
  move_group.plan(my_plan);
 
-  // sleep(2.0);
+
 
 move_group.execute(my_plan);  
 
 
-  // sleep(2.0);   
-//   std::cout << move_group.getCurrentPose();
+
   
   
   //REMOVE OBJECTS
