@@ -24,8 +24,11 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 ### Timon-HM MoveIt package:
 `$ roslaunch manipulator_gazebo moveit_demo.launch`
 
-### Search the visual marker:
-`$ roslaunch timon_demo  motion_plan5.launch`
+### BIR MARKER:
+`$ roslaunch timon_demo bir_marker_localization.launch`
+
+### Search Marker and Push Button:
+`$ roslaunch timon_demo  push_button.launch`
 
 # Timon-HM specifications
 
