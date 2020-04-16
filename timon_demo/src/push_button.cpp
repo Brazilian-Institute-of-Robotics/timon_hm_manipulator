@@ -109,7 +109,7 @@ int main(int argc, char** argv)
     target_pose.orientation.z = -0.523895; 
    target_pose.position.x = 0.000603714;
    target_pose.position.y = -0.335967;
-   target_pose.position.z = 0.275978;
+   target_pose.position.z = 0.305978;
     move_group.setPoseTarget(target_pose);
 
   // sleep(2.0);
@@ -136,7 +136,7 @@ int main(int argc, char** argv)
   }
   catch (tf::TransformException &ex) {
   ROS_ERROR("%s",ex.what());
-  ros::Duration(1.0).sleep();
+  // ros::Duration(1.0).sleep();
   }
 
   //CHECK BOX ORIENTATION

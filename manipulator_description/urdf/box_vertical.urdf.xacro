@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon">
+  <link name ="box_link">
+  </link>
+  <xacro:include filename="$(find manipulator_description)/urdf/caixa_vertical.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/urdf/tag_vertical.xacro"/>
+  <xacro:include filename="$(find manipulator_description)/urdf/botao_vertical.xacro"/>
+
+  <joint name="base_to_box" type="fixed">
+    <origin xyz="-0.4 0.0 1.56" rpy="0 0 1.571"/>  
+    <parent link="box_link"/>
+    <child link="caixa"/>    
+  </joint>
+</robot>
+
