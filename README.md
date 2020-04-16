@@ -1,7 +1,7 @@
 # Timon-HM Manipulator
 <center><img src="https://i.ibb.co/M2nPsrL/readme.jpg" class="centerImage"></center>
 
-Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons.
+Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
 
 ## Open Source software and packages related to Timon-HM manipulator
 ### Software
@@ -15,7 +15,7 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 - ros-melodic-joint-state-controller
 - ros-melodic-position-controllers
 - ros-melodic-trac-ik-kinematics-plugin
-- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_ajusts)
+- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings) (Branch: final_settings)
 
 ## Launchers
 ### Gazebo:
@@ -29,6 +29,9 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 
 ### Search Marker and Push Button:
 `$ roslaunch timon_demo  push_button.launch`
+
+## How to change a box orientation
+For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
 
 # Timon-HM specifications
 
@@ -45,10 +48,10 @@ Timon-HM is a manipulator that is being designed, simulated and built in order t
 |Motors| Joint 1, Joint 2: H54-200-S500-R (200W) |
 | | Joint 3(2), Joint 4, Joint 5: MX-106 (65W) |
 |Operating Range| Joint 1: -π/2 (rad)  ~  π/2 (rad)|
-| | Joint 2: -π/2(rad)  ~  π/2 (rad) |
-| | Joint 3: -π/2(rad)  ~  3π/4 (rad) |
-| | Joint 4: -π(rad)  ~  π (rad) |
-| | Joint 5: -π/2(rad)  ~  π/2 (rad) |
+| | Joint 2: -π/2 (rad)  ~  π/2 (rad) |
+| | Joint 3: -π/2 (rad)  ~  3π/4 (rad) |
+| | Joint 4: -π (rad)  ~  π (rad) |
+| | Joint 5: -π/2 (rad)  ~  π/2 (rad) |
 |Camera| Teledyne Genie Nano |
 |Position sensor type| Homing: Absolute Encoder |
 | | Control: Incremental Encoder  |
