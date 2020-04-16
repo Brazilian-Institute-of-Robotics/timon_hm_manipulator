@@ -57,9 +57,9 @@ include_directories(
 )
 
 
-add_executable(motion_plan5 src/motion_plan5.cpp)
-target_link_libraries(motion_plan5 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-install(TARGETS motion_plan5 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+add_executable(push_button src/push_button.cpp)
+target_link_libraries(push_button ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS push_button DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 add_executable(tf_listener src/tf_listener.cpp)
 target_link_libraries(tf_listener ${catkin_LIBRARIES} ${Boost_LIBRARIES})

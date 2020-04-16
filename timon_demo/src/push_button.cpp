@@ -21,7 +21,7 @@
 
 int main(int argc, char** argv)
 {
-  ros::init(argc, argv, "motion_plan");
+  ros::init(argc, argv, "push_button");
   ros::NodeHandle nh;
   ros::AsyncSpinner spinner(2);
   spinner.start();
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
   visual_tools.loadRemoteControl();
   Eigen::Isometry3d text_pose = Eigen::Isometry3d::Identity();
   text_pose.translation().z() = 1.75;
-  visual_tools.publishText(text_pose, "MoveGroupInterface Demo", rvt::WHITE, rvt::XLARGE);
+  visual_tools.publishText(text_pose, "Timon push_button demonstration", rvt::WHITE, rvt::XLARGE);
   visual_tools.trigger();
   ROS_INFO_NAMED( "Reference frame: %s", move_group.getPlanningFrame().c_str());
   ROS_INFO_NAMED("End effector link: %s", move_group.getEndEffectorLink().c_str());
@@ -139,7 +139,7 @@ int main(int argc, char** argv)
   ros::Duration(1.0).sleep();
   }
 
-  // std::cout<<"Transform Rotation w: "<< transform.getRotation().w();
+  //CHECK BOX ORIENTATION
   if (transform.getRotation().w() >= 0.99) {
       robot_state::RobotState start_state6(*move_group.getCurrentState());
       move_group.setStartState(start_state6);
@@ -259,9 +259,9 @@ move_group.execute(my_plan);
   planning_scene_interface.removeCollisionObjects(object_ids);
 
 
-  // Show text in RViz of status
-  visual_tools.publishText(text_pose, "Object removed", rvt::WHITE, rvt::XLARGE);
-  visual_tools.trigger();
+  // // Show text in RViz of status
+  // visual_tools.publishText(text_pose, "Object removed", rvt::WHITE, rvt::XLARGE);
+  // visual_tools.trigger();
 
 
 
