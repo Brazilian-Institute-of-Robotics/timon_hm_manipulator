@@ -17,21 +17,21 @@
     </link>
     <link name="${arm_id}_link0">
       <visual>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link1.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_1.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link1.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_1.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="1.571 0 0 "/>
-        <mass value="0.856"/>
-        <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />
+        <origin xyz="0 0 0" rpy="0 0 0 "/>
+        <mass value="3.72486532"/>
+        <inertia ixx="0.011"  ixy="-9.466e-9"  ixz="-0.00000563" iyy="0.04868026" iyz="0" izz="0.05388592" />
       </inertial>
     </link>
      <joint name ="invisble_joint" type="fixed">
@@ -42,109 +42,111 @@
 
     <link name="${arm_id}_link1">
       <visual>
-        <origin xyz="0 0 0" rpy="-3.14 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link2.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_2.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="-3.14 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link2.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_2.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="-3.14 0 0 "/>
-        <mass value="0.15040432"/>
-        <inertia ixx="3.45063e+1"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="1.07762e+2" iyz="0.00000e+0" izz="1.38659e+2" />   
+        <origin xyz="0 0 0" rpy="0 0 0 "/>
+        <mass value="1.00643107"/>
+        <inertia ixx="0.00055282"  ixy="0"  ixz="-0.00005159" iyy="0.00152712" iyz="0.00000e+0" izz="0.00141817" />   
       </inertial>
     </link>
     <joint name="${arm_id}_joint1" type="continuous">
       <safety_controller k_position="100.0" k_velocity="40.0"/>
-      <origin rpy="3.14 0 0" xyz="0 0 0.036"/>
+      <origin rpy="0 0 0" xyz="0 0 0.12715351"/>
       <parent link="${arm_id}_link0"/>
       <child link="${arm_id}_link1"/>
       <axis xyz="0 0 1" rpy="0 0 0"/>
     </joint>
-
+ 
     <link name="${arm_id}_link2">
       <visual>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link3.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_3.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link3.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_3.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="1.571 0 0 "/>
-        <mass value="0.856"/>
-        <inertia ixx="1.26094285e-3"  ixy="0.00000e+0"  ixz="0.00000e+0" iyy="3.79002180e-4" iyz="-5.78993250e-9" izz="1.26040377e-3" />  
+        <origin xyz="0 0 0" rpy="0 0 0 "/>
+        <mass value="1.96131158"/>
+        <inertia ixx="0.0593682"  ixy="0.00019981"  ixz="0.0024082" iyy="0.06052018" iyz="-0.00320203" izz="0.00314458" />  
       </inertial>
     </link>
-    <joint name="${arm_id}_joint2" type="fixed">
-      <origin rpy="-1.571 1.571 1.571" xyz="-0.04 0.0 -0.039"/>
+    <joint name="${arm_id}_joint2" type="continuous">
+      <origin rpy="0 0 0" xyz="0 0 0.03900000"/>
       <parent link="${arm_id}_link1"/>
       <child link="${arm_id}_link2"/>
+      <axis xyz="-1 0 0" rpy="0 0 0"/>
     </joint>
 
     <link name="${arm_id}_link3">
       <visual>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link4.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_4.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0 0 0" rpy="1.571 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link4.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_4.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0 0 0" rpy="1.571 0 0 "/>
-        <mass value="0.03239855"/>
-        <inertia ixx="9.57551961e-6"  ixy="-1.52519365e-14"  ixz="7.17291197e-16" iyy="9.41926366e-6" iyz="1.37735170e-11" izz="1.88295847e-5" /> 
+        <origin xyz="0 0 0" rpy="0 0 0 "/>
+        <mass value="1.96131158"/>
+        <inertia ixx="0.0593682"  ixy="0.00019981"  ixz="0.0024082" iyy="0.06052018" iyz="-0.00320203" izz="0.00314458" /> 
       </inertial>
     </link>
-    <joint name="${arm_id}_joint3" type="fixed">
-      <origin rpy="1.571 0.0 0.0" xyz="0.0 0.0 -0.093"/>
+    <joint name="${arm_id}_joint3" type="continuous">
+      <origin rpy="0 0.0 0.0" xyz="0 0.02683555 0.46242180"/>
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
+      <axis xyz="-1 0 0" rpy="0 0 0"/>
     </joint>
 
     <link name="${arm_id}_link4">
       <visual>
-        <origin xyz="-0.0292 0.2289 -0.04" rpy="0 1.571 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link5.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_5.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="-0.0292 0.2289 -0.04" rpy="0 1.571 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link5.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_5.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="-0.0292 0.2289 -0.04" rpy="0 1.571 0 "/>
-        <mass value="1.09212028"/>
-        <inertia ixx="2.47891806e-2"  ixy="-5.41904580e-4"  ixz="-2.41956050e-7" iyy="1.48343837e-3" iyz="-8.20873087e-6" izz="2.53662704e-2" /> 
+        <origin xyz="0 0 0" rpy="0 0 0 "/>
+        <mass value="0.37561629"/>
+        <inertia ixx="0.00025385"  ixy="0"  ixz="0" iyy="0.00011288" iyz="0.00000228" izz="0.00025011" /> 
       </inertial>
     </link>
     <joint name="${arm_id}_joint4" type="revolute">
       <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.77" soft_upper_limit="1.77"/>
-      <origin rpy="0 -1.571 -1.571" xyz="-0.0008 0.093 0.001"/>
+      <origin rpy="0 0 0" xyz="0.00739115 -0.03075115 0.44053087"/>
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-1.77" upper="1.77" velocity="0.5"/>
     </joint>
-
+<!--
     <link name="${arm_id}_link5">
       <visual>
         <origin xyz="0.0 0.0 0.0" rpy="0 0 -0.75" />
@@ -377,7 +379,7 @@
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
-    </transmission>
+    </transmission> -->
  
 
   </xacro:macro>
