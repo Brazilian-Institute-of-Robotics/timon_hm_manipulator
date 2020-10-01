@@ -5,16 +5,18 @@ joint_state_controller:
 arm_controller:
   type: position_controllers/JointTrajectoryController
   joints:
-     - timon_joint1
-     - timon_joint4
-     - timon_joint7
-     - timon_joint9
-     - timon_joint11
+     - id_1
+     - id_2
+     - id_3
+     - id_4
+     - id_5
+     
   gains:
-      timon_joint1: { p: 100, d: 1, i: 1, i_clamp: 1 }
-      timon_joint4: { p: 100, d: 1, i: 1, i_clamp: 1 }
-      timon_joint7: { p: 100, d: 1, i: 1, i_clamp: 1 }
-      timon_joint9: { p: 100, d: 1, i: 1, i_clamp: 1 }
-      timon_joint11: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      id_1: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      id_2: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      id_3: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      id_4: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      id_5: { p: 100, d: 1, i: 1, i_clamp: 1 }
+      
   
   state_publish_rate: 25 
