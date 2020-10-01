@@ -140,37 +140,41 @@
     </link>
     <joint name="${arm_id}_joint4" type="revolute">
       <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.77" soft_upper_limit="1.77"/>
-      <origin rpy="0 0 0" xyz="0.00739115 -0.03075115 0.44053087"/>
+      <origin rpy="0 0 0" xyz="-0.00739115 -0.03075115 0.44053087"/>
+      <!-- 0.00739115 -->
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
       <axis xyz="0 0 1"/>
       <limit effort="1000.0" lower="-1.77" upper="1.77" velocity="0.5"/>
     </joint>
-<!--
+
     <link name="${arm_id}_link5">
       <visual>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 -0.75" />
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link6.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_6.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 -0.75" />
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://${description_pkg}/meshes/visual/link6.dae"/>
+          <mesh filename="package://${description_pkg}/meshes/JeRoTIMON/id_6.dae"/>
         </geometry>
       </collision>
       <inertial>
-        <origin xyz="0.0 0.0 0.0" rpy="0 0 -0.75 "/>
+        <origin xyz="0.0 0.0 0.0" rpy="0 0 0 "/>
         <mass value="0.16505359"/>
         <inertia ixx="7.89080915e-5"  ixy="-3.13361612e-9"  ixz="4.40720922e-9" iyy="4.40037283e-5" iyz="-2.02636752e-6" izz="6.23905424e-5" />
       </inertial>
     </link>
-    <joint name="${arm_id}_joint5" type="fixed">
-      <origin rpy="0 0 0" xyz="0.03 0.451 -0.015"/>
+    <joint name="${arm_id}_joint5" type="continuous">
+      <origin rpy="0 0 0" xyz="0 0 0.027"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
+      <axis xyz="0 1 0" rpy="0 0 0"/>
     </joint>
+<!--
+
 
     <link name="${arm_id}_link6">
       <visual>
