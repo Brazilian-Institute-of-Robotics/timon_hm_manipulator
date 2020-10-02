@@ -17,8 +17,8 @@
       </collision>
       <inertial>
         <origin rpy="0 0 0" xyz="0 0 0"/>
-        <mass value="1000.86661792"/>
-        <inertia ixx="8.72078676e-1" ixy="-9.55785583e-7" ixz="0" iyx="-9.55785583e-7" iyy="4.66430350" iyz="0" izx="0" izy="-0" izz="5.35109282"/>
+        <mass value="10000.86661792"/>
+        <inertia ixx="8.72078676" ixy="-9.55785583e-7" ixz="0" iyx="-9.55785583e-7" iyy="4.66430350" iyz="0" izx="0" izy="-0" izz="5.35109282"/>
       </inertial>
     </link>
       <!-- <joint name="base_to_world1" type="fixed">
