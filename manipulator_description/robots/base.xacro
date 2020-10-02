@@ -6,13 +6,13 @@
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/basem.dae"/>
+          <mesh filename="package://manipulator_description/meshes/JeRoTIMON/base.dae"/>
         </geometry>
       </visual>
       <collision>
         <origin rpy="0 0 0" xyz="0 0 0"/>
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/basem.stl"/>
+          <mesh filename="package://manipulator_description/meshes/JeRoTIMON/base.stl"/>
         </geometry>
       </collision>
       <inertial>
