@@ -140,7 +140,7 @@
       </inertial>
     </link>
     <joint name="suport_cam" type="fixed">
-      <origin rpy="0 0.0 0.0" xyz="-0.00754115 -0.03075116 0.37653086"/>
+      <origin rpy="0 0.0 3.1415" xyz="-0.00754115 -0.03075116 0.37653086"/>
       <parent link="${arm_id}_link3"/>
       <child link="${arm_id}_link4"/>
       <axis xyz="0 0 0" rpy="0 0 0"/>

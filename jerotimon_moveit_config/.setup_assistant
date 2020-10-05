@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: timon
     author_email: miguel.vieira@fbter.org.br
-    generated_timestamp: 1601918425
+    generated_timestamp: 1601920832

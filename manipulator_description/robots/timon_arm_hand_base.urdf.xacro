@@ -4,38 +4,23 @@
   </link>
   <xacro:include filename="$(find manipulator_description)/robots/base.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm.urdf.xacro"/>
-<<<<<<< HEAD
-  <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/>
-  
-    <joint name ="world_to_base" type="fixed">
-        <origin rpy="0 0 0" xyz="0.0 0 0.0"/>
-=======
    <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/> 
   
     <joint name ="world_to_base" type="fixed">
         <origin rpy="0 0 0" xyz="0.0 0 -0.01"/>
->>>>>>> f451ba46d1161c3b1b89d31203e39e97da13cce7
         <parent link="world"/>
         <child link = "base_to_manipulator"/>
     </joint>
 
     <joint name ="base_to_timon" type="fixed">
-<<<<<<< HEAD
-        <origin rpy="0 0 0" xyz="0 0 0.0"/>
-=======
-        <origin rpy="0 0 3.1415" xyz="0 0 0"/>
->>>>>>> f451ba46d1161c3b1b89d31203e39e97da13cce7
+        <origin rpy="0 0 0" xyz="0 0 0"/>
         <parent link="world"/>
         <child link = "invisible_link"/>
     </joint>
 
     <joint name ="base_to_camera" type="fixed">
-<<<<<<< HEAD
-        <origin rpy="0 -1.5751 -1.5751" xyz="0.0 -0.07 -0.0435"/>
-=======
         <origin rpy="0 -1.57 -1.57" xyz="0 0.07134918 0.02016139"/>
         <!-- <origin rpy="-1.571 3.1415 -1.571" xyz="0.0661 0.426 0.0123"/> -->
->>>>>>> f451ba46d1161c3b1b89d31203e39e97da13cce7
         <parent link="timon_link4"/>
         <child link = "camera"/>
     </joint>

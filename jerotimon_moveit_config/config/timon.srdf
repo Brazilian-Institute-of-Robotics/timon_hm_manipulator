@@ -15,6 +15,7 @@
         <joint name="id_1" />
         <joint name="id_2" />
         <joint name="id_3" />
+        <joint name="suport_cam" />
         <joint name="id_4" />
         <joint name="id_5" />
     </group>
@@ -22,7 +23,7 @@
     <group_state name="home" group="arm">
         <joint name="id_1" value="0" />
         <joint name="id_2" value="-1.5751" />
-        <joint name="id_3" value="3.0721" />
+        <joint name="id_3" value="3.1" />
         <joint name="id_4" value="1.5751" />
         <joint name="id_5" value="0" />
     </group_state>
@@ -35,9 +36,14 @@
     <disable_collisions link1="invisible_link" link2="timon_link3" reason="Never" />
     <disable_collisions link1="invisible_link" link2="timon_link4" reason="Never" />
     <disable_collisions link1="invisible_link" link2="timon_link5" reason="Never" />
+    <disable_collisions link1="invisible_link" link2="timon_link6" reason="Never" />
     <disable_collisions link1="timon_link0" link2="timon_link1" reason="Adjacent" />
     <disable_collisions link1="timon_link1" link2="timon_link2" reason="Adjacent" />
+    <disable_collisions link1="timon_link1" link2="timon_link4" reason="Never" />
     <disable_collisions link1="timon_link2" link2="timon_link3" reason="Adjacent" />
     <disable_collisions link1="timon_link3" link2="timon_link4" reason="Adjacent" />
+    <disable_collisions link1="timon_link3" link2="timon_link5" reason="Default" />
     <disable_collisions link1="timon_link4" link2="timon_link5" reason="Adjacent" />
+    <disable_collisions link1="timon_link4" link2="timon_link6" reason="Never" />
+    <disable_collisions link1="timon_link5" link2="timon_link6" reason="Adjacent" />
 </robot>
