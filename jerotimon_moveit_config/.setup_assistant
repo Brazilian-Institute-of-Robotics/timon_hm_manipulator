@@ -6,6 +6,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/timon.srdf
   CONFIG:
-    author_name: jerotimon
+    author_name: timon
     author_email: miguel.vieira@fbter.org.br
-    generated_timestamp: 1601640295
+    generated_timestamp: 1601918425

@@ -22,7 +22,7 @@
     <group_state name="home" group="arm">
         <joint name="id_1" value="0" />
         <joint name="id_2" value="-1.5751" />
-        <joint name="id_3" value="3.1415" />
+        <joint name="id_3" value="3.0721" />
         <joint name="id_4" value="1.5751" />
         <joint name="id_5" value="0" />
     </group_state>
