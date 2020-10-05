@@ -2,18 +2,18 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="timon_base">
   <link name = "world">
   </link>
-  <!-- <xacro:include filename="$(find manipulator_description)/robots/base.xacro"/> -->
+  <xacro:include filename="$(find manipulator_description)/robots/base.xacro"/>
   <xacro:include filename="$(find manipulator_description)/robots/timon_arm.urdf.xacro"/>
    <xacro:include filename="$(find manipulator_description)/robots/camera.xacro"/> 
   
-    <!-- <joint name ="world_to_base" type="fixed">
-        <origin rpy="0 0 0" xyz="0.6 0 1.56"/>
+    <joint name ="world_to_base" type="fixed">
+        <origin rpy="0 0 0" xyz="0.0 0 -0.01"/>
         <parent link="world"/>
         <child link = "base_to_manipulator"/>
-    </joint> -->
+    </joint>
 
     <joint name ="base_to_timon" type="fixed">
-        <origin rpy="0 0 -1.571" xyz="0 0 0.1"/>
+        <origin rpy="0 0 3.1415" xyz="0 0 0"/>
         <parent link="world"/>
         <child link = "invisible_link"/>
     </joint>
