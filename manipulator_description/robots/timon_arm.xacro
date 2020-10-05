@@ -113,7 +113,7 @@
       </inertial>
     </link>
     <joint name="id_3" type="continuous">
-      <origin rpy="0 0.0 0.0" xyz="0 0.02683555 0.46242180"/>
+      <origin rpy="0 0.0 -3.14" xyz="-0.01400000 0.02683555 0.46242180"/>
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
       <axis xyz="-1 0 0" rpy="0 0 0"/>
