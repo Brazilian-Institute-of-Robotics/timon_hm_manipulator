@@ -2,8 +2,6 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="camera">
 
 
-
-
     <link name="camera">
       <visual>
         <origin rpy="0 0 0" xyz="0 0 0"/>
