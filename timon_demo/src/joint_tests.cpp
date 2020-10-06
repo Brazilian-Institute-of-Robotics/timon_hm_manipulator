@@ -72,60 +72,63 @@ int main(int argc, char** argv)
 
   std::cout << move_group.getCurrentPose();
 
+  target_pose.position.x += 0.1;
+  move_group.setPoseTarget(target_pose);
+  move_group.plan(my_plan);
+  move_group.execute(my_plan);
+
+  // tf::TransformListener listener;
 
 
-  tf::TransformListener listener;
-
-
-  //GETTING BUTTON POSE
-  tf::StampedTransform transform;
-  try{
-  // ros::Time now = ros::Time::now();
-  listener.waitForTransform("/fake_botao", "/invisible_link", 
-                           ros::Time(0), ros::Duration(2.0));
-  listener.lookupTransform("/fake_botao", "/invisible_link",
-                           ros::Time(0), transform);
-  }
-  catch (tf::TransformException &ex) {
-  ROS_ERROR("%s",ex.what());
-  }
-  if (transform.getRotation().z() >= 0.9) {
-      // robot_state::RobotState start_state6(*move_group.getCurrentState());
-      // move_group.setStartState(start_state6);
+  // //GETTING BUTTON POSE
+  // tf::StampedTransform transform;
+  // try{
+  // // ros::Time now = ros::Time::now();
+  // listener.waitForTransform("/fake_botao", "/invisible_link", 
+  //                          ros::Time(0), ros::Duration(2.0));
+  // listener.lookupTransform("/fake_botao", "/invisible_link",
+  //                          ros::Time(0), transform);
+  // }
+  // catch (tf::TransformException &ex) {
+  // ROS_ERROR("%s",ex.what());
+  // }
+  // if (transform.getRotation().z() >= 0.9) {
+  //     // robot_state::RobotState start_state6(*move_group.getCurrentState());
+  //     // move_group.setStartState(start_state6);
       
-      //POSE
-      target_pose.position.x = -transform.getOrigin().x();
-      target_pose.position.y = transform.getOrigin().y();
-      target_pose.position.z = -transform.getOrigin().z();
-      move_group.setGoalPositionTolerance(0.001);
-      move_group.setGoalOrientationTolerance(0.3);
-      move_group.setPlanningTime(20);
-      move_group.setPoseTarget(target_pose);
+  //     //POSE
+  //     target_pose.position.x = -transform.getOrigin().x();
+  //     target_pose.position.y = transform.getOrigin().y();
+  //     target_pose.position.z = -transform.getOrigin().z();
+  //     move_group.setGoalPositionTolerance(0.001);
+  //     move_group.setGoalOrientationTolerance(0.3);
+  //     move_group.setPlanningTime(20);
+  //     move_group.setPoseTarget(target_pose);
 
-      move_group.plan(my_plan);
-      move_group.execute(my_plan);
+  //     move_group.plan(my_plan);
+  //     move_group.execute(my_plan);
 
-      //PRESS BUTTON
+  //     //PRESS BUTTON
 
-      // robot_state::RobotState start_state7(*move_group.getCurrentState());
-      // move_group.setStartState(start_state7);
+  //     // robot_state::RobotState start_state7(*move_group.getCurrentState());
+  //     // move_group.setStartState(start_state7);
 
-      //  target_pose.position.y +=0.040; 
-       target_pose.position.z -=0.050;       
-       move_group.setPoseTarget(target_pose);
-       move_group.plan(my_plan);  
-       move_group.execute(my_plan); 
+  //     //  target_pose.position.y +=0.040; 
+  //      target_pose.position.z -=0.050;       
+  //      move_group.setPoseTarget(target_pose);
+  //      move_group.plan(my_plan);  
+  //      move_group.execute(my_plan); 
 
-      // robot_state::RobotState start_state8(*move_group.getCurrentState());
-      // move_group.setStartState(start_state8);
+  //     // robot_state::RobotState start_state8(*move_group.getCurrentState());
+  //     // move_group.setStartState(start_state8);
 
-      //  target_pose.position.y +=0.040; 
-       target_pose.position.z +=0.050;       
-       move_group.setPoseTarget(target_pose);
-       move_group.plan(my_plan);  
-       move_group.execute(my_plan); 
+  //     //  target_pose.position.y +=0.040; 
+  //      target_pose.position.z +=0.050;       
+  //      move_group.setPoseTarget(target_pose);
+  //      move_group.plan(my_plan);  
+  //      move_group.execute(my_plan); 
   
-  }
+  // }
   ros::waitForShutdown(); 
   return 0;
 } 
