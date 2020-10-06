@@ -77,8 +77,10 @@ int main(int argc, char** argv)
   sleep(1.0);
   target_pose.position.z = 0.45;
   move_group.setPoseTarget(target_pose);
-  move_group.plan(my_plan);
-  move_group.execute(my_plan);
+
+  moveit::planning_interface::MoveGroupInterface::Plan my_plan1;
+  move_group.plan(my_plan1);
+  move_group.execute(my_plan1);
 
   tf::TransformListener listener;
 
@@ -132,8 +134,9 @@ int main(int argc, char** argv)
       //  target_pose.position.y +=0.040; 
        target_pose.position.z +=0.030;       
        move_group.setPoseTarget(target_pose);
-       move_group.plan(my_plan);  
-       move_group.execute(my_plan); 
+       moveit::planning_interface::MoveGroupInterface::Plan my_plan2;
+       move_group.plan(my_plan2);  
+       move_group.execute(my_plan2); 
       
   }
   else
@@ -155,35 +158,32 @@ int main(int argc, char** argv)
    move_group.setPlanningTime(10);
    move_group.setPoseTarget(target_pose);
  
-
-   move_group.plan(my_plan);  
+   moveit::planning_interface::MoveGroupInterface::Plan my_plan3;
+   move_group.plan(my_plan3);  
  
-   move_group.execute(my_plan); 
+   move_group.execute(my_plan3); 
 
 
 
     //PRESS BUTTON
     robot_state::RobotState start_state5(*move_group.getCurrentState());
     move_group.setStartState(start_state5);
-
     target_pose.position.y +=0.031;
     move_group.setPoseTarget(target_pose);
+    moveit::planning_interface::MoveGroupInterface::Plan my_plan4;
+    move_group.plan(my_plan4);  
+    move_group.execute(my_plan4); 
 
-    move_group.plan(my_plan);  
+    //GO BACK
 
-    move_group.execute(my_plan); 
+    // robot_state::RobotState start_state6(*move_group.getCurrentState());
+    // move_group.setStartState(start_state6);
 
-
-
-
-    robot_state::RobotState start_state6(*move_group.getCurrentState());
-    move_group.setStartState(start_state6);
-
-    target_pose.position.y -=0.031;
-    move_group.setPoseTarget(target_pose);
+    // target_pose.position.y -=0.031;
+    // move_group.setPoseTarget(target_pose);
     
-    move_group.plan(my_plan); 
-    move_group.execute(my_plan);  
+    // move_group.plan(my_plan); 
+    // move_group.execute(my_plan);  
   }
   
 
