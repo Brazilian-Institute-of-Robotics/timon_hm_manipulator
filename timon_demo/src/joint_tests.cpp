@@ -67,7 +67,7 @@ int main(int argc, char** argv)
   move_group.plan(my_plan);
  
   // sleep(2.0);                                                    
-  move_group.execute(my_plan);
+  move_group.move();
 
 
   std::cout << move_group.getCurrentPose();
@@ -78,9 +78,9 @@ int main(int argc, char** argv)
   target_pose.position.z = 0.45;
   move_group.setPoseTarget(target_pose);
 
-  moveit::planning_interface::MoveGroupInterface::Plan my_plan1;
-  move_group.plan(my_plan1);
-  move_group.execute(my_plan1);
+  // moveit::planning_interface::MoveGroupInterface::Plan my_plan1;
+  move_group.plan(my_plan);
+  move_group.execute(my_plan);
 
   tf::TransformListener listener;
 
@@ -110,7 +110,7 @@ int main(int argc, char** argv)
       target_pose.position.y = transform.getOrigin().y();
       target_pose.position.z = -transform.getOrigin().z();
       move_group.setGoalPositionTolerance(0.01);
-      move_group.setGoalOrientationTolerance(0.01);
+      move_group.setGoalOrientationTolerance(0.3);
       move_group.setPlanningTime(10);
       move_group.setPoseTarget(target_pose);
 
@@ -134,9 +134,9 @@ int main(int argc, char** argv)
       //  target_pose.position.y +=0.040; 
        target_pose.position.z +=0.030;       
        move_group.setPoseTarget(target_pose);
-       moveit::planning_interface::MoveGroupInterface::Plan my_plan2;
-       move_group.plan(my_plan2);  
-       move_group.execute(my_plan2); 
+      //  moveit::planning_interface::MoveGroupInterface::Plan my_plan2;
+       move_group.plan(my_plan);  
+       move_group.execute(my_plan); 
       
   }
   else
@@ -158,10 +158,10 @@ int main(int argc, char** argv)
    move_group.setPlanningTime(10);
    move_group.setPoseTarget(target_pose);
  
-   moveit::planning_interface::MoveGroupInterface::Plan my_plan3;
-   move_group.plan(my_plan3);  
+  //  moveit::planning_interface::MoveGroupInterface::Plan my_plan3;
+   move_group.plan(my_plan);  
  
-   move_group.execute(my_plan3); 
+   move_group.execute(my_plan); 
 
 
 
@@ -170,9 +170,9 @@ int main(int argc, char** argv)
     move_group.setStartState(start_state5);
     target_pose.position.y +=0.031;
     move_group.setPoseTarget(target_pose);
-    moveit::planning_interface::MoveGroupInterface::Plan my_plan4;
-    move_group.plan(my_plan4);  
-    move_group.execute(my_plan4); 
+    // moveit::planning_interface::MoveGroupInterface::Plan my_plan4;
+    move_group.plan(my_plan);  
+    move_group.execute(my_plan); 
 
     //GO BACK
 
