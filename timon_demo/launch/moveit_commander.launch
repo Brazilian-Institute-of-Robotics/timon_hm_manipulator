@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="commander" pkg="moveit_commander" type="moveit_commander_cmdline.py" respawn="false" output="screen">
+	<remap from="/joint_states" to="/timon/joint_states"/>
+  </node>
+
+</launch>

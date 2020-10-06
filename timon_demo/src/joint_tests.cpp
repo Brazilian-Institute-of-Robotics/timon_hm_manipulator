@@ -18,7 +18,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
   ros::AsyncSpinner spinner(2);
   spinner.start();
-  static const std::string PLANNING_GROUP = "timon_arm";
+  static const std::string PLANNING_GROUP = "arm";
   moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   const robot_state::JointModelGroup* joint_model_group =
@@ -41,26 +41,91 @@ int main(int argc, char** argv)
   move_group.setStartState(start_state);
 
   //JUNTAS
-  moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
-  std::vector<double> joint_group_positions;
-  current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
-  //joint_group_positions[0] = 0;  //positivo esquerda , negativo direita , gira a base
-  //joint_group_positions[1] = 0;  //  positivo abaixo, negativo acima, segundo link
-  //joint_group_positions[2] = 2; // positivo pra frente, negativo pra trás, terceiro link
-  //joint_group_positions[3] = 0;
-  joint_group_positions[4] = 1.1;
+  // moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
+  // std::vector<double> joint_group_positions;
+  // current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
+  // //joint_group_positions[0] = 0;  //positivo esquerda , negativo direita , gira a base
+  // //joint_group_positions[1] = 0;  //  positivo abaixo, negativo acima, segundo link
+  // //joint_group_positions[2] = 2; // positivo pra frente, negativo pra trás, terceiro link
+  // //joint_group_positions[3] = 0;
+  // joint_group_positions[4] = 1.1;
 
-  move_group.setJointValueTarget(joint_group_positions);
+  // move_group.setJointValueTarget(joint_group_positions);
 
-  //sleep(2.0);
+  geometry_msgs::Pose target_pose;
+  target_pose.orientation.w = 0.218820; // 0.474989;
+  target_pose.orientation.x = 0.672372; // -0.522257;
+  target_pose.orientation.y = 0.671502;  // 0.47662;
+  target_pose.orientation.z = -0.221623;  // -0.523895
+  target_pose.position.x = -0.013636; //0.000603714
+  target_pose.position.y = 0.422737; //-0.335967
+  target_pose.position.z = 0.378490; //0.305978
+  move_group.setPoseTarget(target_pose);
+
+  // sleep(2.0);
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
   move_group.plan(my_plan);
  
-  //sleep(2.0);                                                    
+  // sleep(2.0);                                                    
   move_group.execute(my_plan);
+
 
   std::cout << move_group.getCurrentPose();
 
+
+
+  tf::TransformListener listener;
+
+
+  //GETTING BUTTON POSE
+  tf::StampedTransform transform;
+  try{
+  // ros::Time now = ros::Time::now();
+  listener.waitForTransform("/fake_botao", "/invisible_link", 
+                           ros::Time(0), ros::Duration(2.0));
+  listener.lookupTransform("/fake_botao", "/invisible_link",
+                           ros::Time(0), transform);
+  }
+  catch (tf::TransformException &ex) {
+  ROS_ERROR("%s",ex.what());
+  }
+  if (transform.getRotation().z() >= 0.9) {
+      // robot_state::RobotState start_state6(*move_group.getCurrentState());
+      // move_group.setStartState(start_state6);
+      
+      //POSE
+      target_pose.position.x = -transform.getOrigin().x();
+      target_pose.position.y = transform.getOrigin().y();
+      target_pose.position.z = -transform.getOrigin().z();
+      move_group.setGoalPositionTolerance(0.001);
+      move_group.setGoalOrientationTolerance(0.3);
+      move_group.setPlanningTime(20);
+      move_group.setPoseTarget(target_pose);
+
+      move_group.plan(my_plan);
+      move_group.execute(my_plan);
+
+      //PRESS BUTTON
+
+      // robot_state::RobotState start_state7(*move_group.getCurrentState());
+      // move_group.setStartState(start_state7);
+
+      //  target_pose.position.y +=0.040; 
+       target_pose.position.z -=0.050;       
+       move_group.setPoseTarget(target_pose);
+       move_group.plan(my_plan);  
+       move_group.execute(my_plan); 
+
+      // robot_state::RobotState start_state8(*move_group.getCurrentState());
+      // move_group.setStartState(start_state8);
+
+      //  target_pose.position.y +=0.040; 
+       target_pose.position.z +=0.050;       
+       move_group.setPoseTarget(target_pose);
+       move_group.plan(my_plan);  
+       move_group.execute(my_plan); 
+  
+  }
   ros::waitForShutdown(); 
   return 0;
 } 

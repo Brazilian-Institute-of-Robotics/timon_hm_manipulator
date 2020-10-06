@@ -25,7 +25,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
   ros::AsyncSpinner spinner(2);
   spinner.start();
-  static const std::string PLANNING_GROUP = "timon_arm";
+  static const std::string PLANNING_GROUP = "arm";
   moveit::planning_interface::MoveGroupInterface move_group(PLANNING_GROUP);
   moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
   const robot_state::JointModelGroup* joint_model_group =
@@ -102,15 +102,15 @@ int main(int argc, char** argv)
   robot_state::RobotState start_state(*move_group.getCurrentState());
   move_group.setStartState(start_state);
  //BEGIN POSE 
-    geometry_msgs::Pose target_pose;
-    target_pose.orientation.w = 0.474989;
-    target_pose.orientation.x = -0.522257;
-    target_pose.orientation.y = 0.47662; 
-    target_pose.orientation.z = -0.523895; 
-   target_pose.position.x = 0.000603714;
-   target_pose.position.y = -0.335967;
-   target_pose.position.z = 0.305978;
-    move_group.setPoseTarget(target_pose);
+  geometry_msgs::Pose target_pose;
+  target_pose.orientation.w = 0.218820; // 0.474989;
+  target_pose.orientation.x = 0.672372; // -0.522257;
+  target_pose.orientation.y = 0.671502;  // 0.47662;
+  target_pose.orientation.z = -0.221623;  // -0.523895
+  target_pose.position.x = -0.013636; //0.000603714
+  target_pose.position.y = 0.422737; //-0.335967
+  target_pose.position.z = 0.378490; //0.305978
+  move_group.setPoseTarget(target_pose);
 
   // sleep(2.0);
   moveit::planning_interface::MoveGroupInterface::Plan my_plan;
@@ -140,7 +140,7 @@ int main(int argc, char** argv)
   }
 
   //CHECK BOX ORIENTATION
-  if (transform.getRotation().w() >= 0.99) {
+  if (transform.getRotation().z() >= 0.9) {
       robot_state::RobotState start_state6(*move_group.getCurrentState());
       move_group.setStartState(start_state6);
       

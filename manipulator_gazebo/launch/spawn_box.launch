@@ -2,7 +2,7 @@
 <launch>
 <group ns="/box">
         <!-- Robot model -->
-        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/urdf/box_vertical.urdf.xacro'" /> 
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/urdf/box.urdf.xacro'" /> 
                                             <!-- horizontal: box.urdf.xacro // vertical: box_vertical.urdf.xacro-->
         <arg name="x" default="0.0"/>
         <arg name="y" default="0.0"/>

@@ -64,6 +64,11 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_to_manipulator:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         camera:
           Alpha: 1
           Show Axes: false
@@ -123,6 +128,8 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: false
+        base_to_manipulator:
+          Value: true
         camera:
           Value: false
         invisible_link:
@@ -150,15 +157,17 @@ Visualization Manager:
       Show Names: true
       Tree:
         world:
+          base_to_manipulator:
+            {}
           invisible_link:
+            camera:
+              virtual_camera:
+                {}
             timon_link0:
               timon_link1:
                 timon_link2:
                   timon_link3:
                     timon_link4:
-                      camera:
-                        virtual_camera:
-                          {}
                       timon_link5:
                         {}
       Update Interval: 0
@@ -198,18 +207,18 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.04741205647587776
-        Y: -0.10897273570299149
-        Z: 0.9974503517150879
+        X: -0.018406007438898087
+        Y: -0.09509886056184769
+        Z: 1.0016027688980103
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: -0.07520132511854172
+      Pitch: 1.2547967433929443
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.9317915439605713
+      Yaw: 3.1667957305908203
     Saved: ~
 Window Geometry:
   Displays:
