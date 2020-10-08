@@ -1,8 +1,8 @@
 joint_state_controller:
   type: joint_state_controller/JointStateController
-  publish_rate: 50
+  publish_rate: 1000
 
-arm_controller:
+arm:
   type: position_controllers/JointTrajectoryController
   joints:
      - id_1

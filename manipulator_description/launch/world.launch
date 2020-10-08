@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
   <param name="robot_description"
-    command="$(find xacro)/xacro --inorder '$(find manipulator_description)/robots/timon_arm_hand_base.urdf.xacro'" />
+    command="$(find xacro)/xacro --inorder '$(find manipulator_description)/robots/timon_arm.urdf.xacro'" />
   <!-- send fake joint values -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="use_gui" value="TRUE"/>
@@ -10,4 +10,5 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/>
   <!-- Show in Rviz   -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find manipulator_description)/rviz/config.rviz"/>
+   <remap from="/joint_states" to="/timon/joint_states"/>
 </launch>
