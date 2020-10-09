@@ -19,6 +19,10 @@
     <arg name="rviz_config" value="$(find jerotimon_moveit_config)/launch/moveit.rviz"/>
 </include>
 
+<include file="$(find manipulator_gazebo)/launch/box_real.launch">
+ <!-- <arg name="rviz_config" value="$(find manipulator_gazebo)/launch/box_real.rviz"/> -->
+</include>
+
 <!-- Given the published joint states, publish tf for the robot links -->
 <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 
