@@ -5,14 +5,17 @@
         
         <!-- Robot model -->
         <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/robots/timon_arm_hand_base.urdf.xacro'" />
-        <arg name="x" default="0"/> 
-        <arg name="y" default="0"/> 
-        <arg name="z" default="0"/>
+        <arg name="x" default="0.579810"/> 
+        <arg name="y" default="0.000234"/> 
+        <arg name="z" default="1.570393"/>
+        <arg name="roll" default="0"/> 
+        <arg name="pitch" default="0"/> 
+        <arg name="yaw" default="1.57"/>
         
         
         <!-- Spawn the robot model -->
         <node name="mybot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-              args="-urdf -param robot_description -model timon -x $(arg x) -y $(arg y) -z $(arg z)" />
+              args="-urdf -param robot_description -model timon -x $(arg x) -y $(arg y) -z $(arg z) -R $(arg roll) -P $(arg pitch) -Y $(arg yaw) " />
       
  
         <!-- Load controllers -->
