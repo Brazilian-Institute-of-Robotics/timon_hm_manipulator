@@ -109,6 +109,7 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
+  move_group.execute(my_plan);
 
   // geometry_msgs::Pose target_pose;      //COMANDO NO ESPAÇO DAS POSES
   // target_pose.orientation.w = 0.067434; // 0.474989;
@@ -129,9 +130,9 @@ int main(int argc, char** argv)
 
   // }
 
-  ROS_INFO("Comeca timer");
-  sleep(10);
-  ROS_INFO("termina timer");                                                    
+  // ROS_INFO("Comeca timer");
+  // sleep(10);
+  // ROS_INFO("termina timer");                                                    
   // move_group.move();
 
 
@@ -156,9 +157,9 @@ int main(int argc, char** argv)
   // ros::Time now = ros::Time::now();
   std::cout << i;
   i = i+1;
-  listener.waitForTransform("/fake_botao", "/invisible_link", 
+  listener.waitForTransform("/invisible_link", "/fake_botao", 
                            ros::Time(0), ros::Duration(2.0));
-  listener.lookupTransform("/fake_botao", "/invisible_link",
+  listener.lookupTransform("/invisible_link", "/fake_botao",
                            ros::Time(0), transform);
     
   }
@@ -179,7 +180,9 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  sleep (10.0);}
+  move_group.execute(my_plan);
+  // sleep (10.0);
+  }
 
 
   if(i == 3){
@@ -196,8 +199,9 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
+  move_group.execute(my_plan);
   i=0;
-  sleep (10.0);
+  // sleep (10.0);
   }
 
   if(i == 1){
@@ -214,7 +218,8 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  sleep (10.0);
+  move_group.execute(my_plan);
+  // sleep (10.0);
   }
 
   // if(i == 4){
@@ -247,7 +252,7 @@ int main(int argc, char** argv)
   // move_group.plan(my_plan);
   // while(move_group.plan(my_plan).val == -1){
   //   move_group.plan(my_plan);
-  // }
+ // }
   // sleep (10.0);
   // }
 
@@ -291,7 +296,7 @@ int main(int argc, char** argv)
   goto posicao;
   }
 
-   ROS_INFO("Saiu loop");
+   ROS_INFO("Aruco Detectado");
 
 
  
@@ -310,7 +315,7 @@ int main(int argc, char** argv)
       target_pose.orientation.z =-0.016693;  // -0.523895
       target_pose.position.x = transform.getOrigin().x();  
       target_pose.position.y = transform.getOrigin().y();
-      target_pose.position.z = -transform.getOrigin().z();
+      target_pose.position.z = transform.getOrigin().z();
       move_group.setGoalPositionTolerance(0.01);
       move_group.setGoalOrientationTolerance(0.05); //0.3
       move_group.setPlanningTime(10);
@@ -320,9 +325,10 @@ int main(int argc, char** argv)
       while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
+      move_group.execute(my_plan); 
       
 
-      sleep(10.0);
+      // sleep(10.0);
       // move_group.execute(my_plan);
 
       //PRESS BUTTON
@@ -335,13 +341,18 @@ int main(int argc, char** argv)
        planning_scene_interface.removeCollisionObjects(object_ids);
 
        //ADDING CONSTRAINT TO END EFFECTOR
+        float w, x, y, z;
+        x = move_group.getCurrentPose().pose.orientation.x;
+        y = move_group.getCurrentPose().pose.orientation.y;
+        z = move_group.getCurrentPose().pose.orientation.z;
+        w = move_group.getCurrentPose().pose.orientation.w;
        moveit_msgs::OrientationConstraint ocm;
         ocm.link_name = "timon_link6";
         ocm.header.frame_id = "world";
-        ocm.orientation.w = 0.017736;
-        ocm.orientation.x = 0.686437;
-        ocm.orientation.y =  0.726780;
-        ocm.orientation.z = -0.016693;
+        ocm.orientation.w = w;
+        ocm.orientation.x = x;
+        ocm.orientation.y = y;
+        ocm.orientation.z = z;
         ocm.absolute_x_axis_tolerance = 0.3;
         ocm.absolute_y_axis_tolerance = 0.3;
         ocm.absolute_z_axis_tolerance = 0.3;
@@ -357,11 +368,12 @@ int main(int argc, char** argv)
        while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
+       move_group.execute(my_plan);
       // //  move_group.execute(my_plan); 
 
       // // robot_state::RobotState start_state4(*move_group.getCurrentState());
       // // move_group.setStartState(start_state4);
-      sleep(5.0);
+      // sleep(5.0);
 
       //  target_pose.position.z +=0.11;       
       //  move_group.setPoseTarget(target_pose);
@@ -381,6 +393,7 @@ int main(int argc, char** argv)
        while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
+       move_group.execute(my_plan);
       //  move_group.execute(my_plan); 
       
   }
@@ -390,23 +403,22 @@ int main(int argc, char** argv)
   //  move_group.setStartState(start_state4);
 //   //POSE
     ROS_INFO("Caixa Na Orientação Vertical");
-
     geometry_msgs::Pose target_pose;
       // target_pose.orientation.w = 0.017736; // 0.474989;
       // target_pose.orientation.x = 0.686437; // -0.522257;
       // target_pose.orientation.y = 0.726780;  // 0.47662;
       // target_pose.orientation.z =-0.016693;  // -0.523895
-    target_pose.orientation.w =  0.55374; //0.553749;
-    target_pose.orientation.x = -0.41269; //-0.412694;
-    target_pose.orientation.y =  0.62298; //0.622989; 
-    target_pose.orientation.z =  0.36732; //0.367326;
+    target_pose.orientation.w = transform.getRotation().w();//0.55374; //0.553749;
+    target_pose.orientation.x = transform.getRotation().x();//-0.41269; //-0.412694;
+    target_pose.orientation.y = transform.getRotation().y();// 0.62298; //0.622989; 
+    target_pose.orientation.z = transform.getRotation().z();// 0.36732; //0.367326;
     target_pose.position.x = transform.getOrigin().x();
-    target_pose.position.y = transform.getOrigin().z();
-    target_pose.position.z = transform.getOrigin().y();
+    target_pose.position.y = transform.getOrigin().y();
+    target_pose.position.z = transform.getOrigin().z();
     // std::cout<<"Pose alvo y: " << target_pose.position.y << "  " << "Pose alvo z: " << target_pose.position.z;
 
-   move_group.setGoalPositionTolerance(0.1);
-   move_group.setGoalOrientationTolerance(0.3);
+   move_group.setGoalPositionTolerance(0.001);
+   move_group.setGoalOrientationTolerance(1.0);
    move_group.setPlanningTime(25);
    move_group.setPoseTarget(target_pose);
  
@@ -415,56 +427,70 @@ int main(int argc, char** argv)
       while (move_group.plan(my_plan).val != 1){
     move_group.plan(my_plan);
     }
-    sleep(10.0);
+    move_group.execute(my_plan);
+    // sleep(10.0);
     // moveit_msgs::CollisionObject box_collision;
     // std::vector<std::string> object_ids;
     // object_ids.push_back(box_collision.id);
     // planning_scene_interface.removeCollisionObjects(object_ids);
   //  move_group.execute(my_plan); 
 
-      moveit_msgs::OrientationConstraint ocm;
-      ocm.link_name = "timon_link6";
-      ocm.header.frame_id = "world";
-      ocm.orientation.w =  0.55374;
-      ocm.orientation.x = -0.41269;
-      ocm.orientation.y =  0.62298;
-      ocm.orientation.z = 0.36732;
-      ocm.absolute_x_axis_tolerance = 0.3;
-      ocm.absolute_y_axis_tolerance = 0.3;
-      ocm.absolute_z_axis_tolerance = 0.3;
-      ocm.weight = 1.0;
+    //ADDING ORIENTATION CONSTRAINT
+    //  float w, x, y, z;
+    //  x = move_group.getCurrentPose().pose.orientation.x;
+    //  y = move_group.getCurrentPose().pose.orientation.y;
+    //  z = move_group.getCurrentPose().pose.orientation.z;
+    //  w = move_group.getCurrentPose().pose.orientation.w;
+    //  std :: cout << w;
+    //  std::cout << move_group.getCurrentPose().pose.orientation;
+      // moveit_msgs::OrientationConstraint ocm;
+      // ocm.link_name = "timon_link6";
+      // ocm.header.frame_id = "world";
+      // ocm.orientation.w = w;
+      // ocm.orientation.x = x;
+      // ocm.orientation.y = y;
+      // ocm.orientation.z = z;
+      // ocm.absolute_x_axis_tolerance = 2;
+      // ocm.absolute_y_axis_tolerance = 2;
+      // ocm.absolute_z_axis_tolerance = 2;
+      // ocm.weight = 0.1;
 
-      moveit_msgs::Constraints test_constraints;
-      test_constraints.orientation_constraints.push_back(ocm);
-      move_group.setPathConstraints(test_constraints);
+      // moveit_msgs::Constraints test_constraints;
+      // test_constraints.orientation_constraints.push_back(ocm);
+      // move_group.setPathConstraints(test_constraints);
 
 
     //PRESS BUTTON
-    robot_state::RobotState start_state5(*move_group.getCurrentState());
-    move_group.setStartState(start_state5);
-    target_pose.position.y +=0.154;
+    // robot_state::RobotState start_state5(*move_group.getCurrentState());
+    // move_group.setStartState(start_state5);
+    // target_pose.orientation.w = w; // 0.474989;
+    // target_pose.orientation.x = x; // -0.522257;
+    // target_pose.orientation.y = y;  // 0.47662;
+    // target_pose.orientation.z = z;  // -0.523895
+    target_pose.position.y +=0.12;
     move_group.setPoseTarget(target_pose);
     // moveit::planning_interface::MoveGroupInterface::Plan my_plan4;
     move_group.plan(my_plan);  
      while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
-    sleep(5.0);
-    move_group.clearPathConstraints();
+    move_group.execute(my_plan); 
+    // sleep(5.0);
+    // move_group.clearPathConstraints();
 
-    moveit::core::RobotStatePtr current_state4 = move_group.getCurrentState();
-      std::vector<double> joint_group_positions4;
-     current_state4->copyJointGroupPositions(joint_model_group, joint_group_positions4);
-      // joint_group_positions3[0] = 0.07;
-      joint_group_positions4[1] = -0.7;
-      // joint_group_positions4[2] = 1.0;
-      // joint_group_positions3[3] = 1.57;
-      // joint_group_positions3[4] = 1.21;
-     move_group.setJointValueTarget(joint_group_positions4);
-       move_group.plan(my_plan);  
-       while (move_group.plan(my_plan).val != 1){
-       move_group.plan(my_plan);
-       }
+    // moveit::core::RobotStatePtr current_state4 = move_group.getCurrentState();
+    //   std::vector<double> joint_group_positions4;
+    //  current_state4->copyJointGroupPositions(joint_model_group, joint_group_positions4);
+    //   // joint_group_positions3[0] = 0.07;
+    //   joint_group_positions4[1] = -0.7;
+    //   // joint_group_positions4[2] = 1.0;
+    //   // joint_group_positions3[3] = 1.57;
+    //   // joint_group_positions3[4] = 1.21;
+    //  move_group.setJointValueTarget(joint_group_positions4);
+    //    move_group.plan(my_plan);  
+    //    while (move_group.plan(my_plan).val != 1){
+    //    move_group.plan(my_plan);
+    //    }
     // move_group.execute(my_plan); 
 
     //GO BACK

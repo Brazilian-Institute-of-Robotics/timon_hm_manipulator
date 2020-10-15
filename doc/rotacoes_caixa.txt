@@ -1,8 +1,4 @@
 CAIXA NA VERTICAL:
-tf echo /fake_botao /invisible_link
-- Translation: [0.017, -0.124, 0.753]  [x -z y] ???
-- Rotation: in Quaternion [-0.728, -0.011, -0.005, 0.685]
-            in RPY (radian) [-1.632, -0.023, 0.009]
 
 tf_echo /invisible_link /fake_botao
 At time 1602767494.623
