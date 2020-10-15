@@ -200,7 +200,7 @@
       </inertial>
     </link>
     <joint name="id_5" type="revolute">
-      <origin rpy="0 0 1.5751" xyz="0 0 0.02699559"/>
+      <origin rpy="0 0 0" xyz="0 0 0.02699559"/>
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 -1 0" rpy="0 0 0"/>

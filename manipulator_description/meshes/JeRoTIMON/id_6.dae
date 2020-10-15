@@ -2,8 +2,8 @@
 <COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
 
   <asset>
-    <created>2020-10-05T14:44:55</created>
-    <modified>2020-10-05T14:44:55</modified>
+    <created>2020-10-15T19:20:43</created>
+    <modified>2020-10-15T19:20:43</modified>
     <unit meter="1" name="Meters"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -135,7 +135,7 @@
         <technique sid="COMMON">
           <lambert>
             <diffuse>
-              <color>0.290196 0.172549 0.113725 1</color>
+              <color>0.4 0.4 0.4 1</color>
             </diffuse>
           </lambert>
         </technique>
