@@ -35,7 +35,7 @@
   <joint name ="botao_fake" type ="fixed">
     <parent link="botao"/>
     <child link="fake_botao"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 1.0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.2"/>
   </joint>
     
 

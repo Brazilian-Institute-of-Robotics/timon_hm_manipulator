@@ -28,7 +28,7 @@
         <child link = "virtual_camera"/>
     </joint>
 
-<!-- 
+
     <gazebo reference="camera">
       <sensor type="camera" name="camera_timon">
         <update_rate>30.0</update_rate>
@@ -60,6 +60,6 @@
             <distortionT2>0.0</distortionT2>
         </plugin>
       </sensor>
-    </gazebo>        -->
+    </gazebo>       
 
 </robot>
