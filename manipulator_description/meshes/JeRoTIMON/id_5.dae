@@ -2,8 +2,8 @@
 <COLLADA version="1.4.1" xmlns="http://www.collada.org/2005/11/COLLADASchema">
 
   <asset>
-    <created>2020-10-15T13:55:02</created>
-    <modified>2020-10-15T13:55:02</modified>
+    <created>2020-10-15T19:13:06</created>
+    <modified>2020-10-15T19:13:06</modified>
     <unit meter="1" name="Meters"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -12,15 +12,15 @@
     <visual_scene id="ID1">
       <node id="ID2" name="id_5_atualizado">
         <node>
-          <matrix>-8.32667e-16 -8.88178e-16 -1 -0.042 -4.44089e-16 1 -8.88178e-16 3.46945e-17 1 4.44089e-16 -8.32667e-16 0.027 0 0 0 1</matrix>
+          <matrix>-1.11022e-16 1 -8.88178e-16 -2.40807e-16 -5.77316e-15 8.88178e-16 1 0.042 1 -1.46136e-27 5.77316e-15 0.027 0 0 0 1</matrix>
           <instance_node url="#ID3"/>
         </node>
         <node>
-          <matrix>-2.26798e-30 6.66134e-16 1 0.045 1 -1.57772e-30 8.88178e-16 2.1616e-16 8.88178e-16 1 -6.43929e-15 0.027 0 0 0 1</matrix>
+          <matrix>1 -1.26218e-29 8.88178e-16 -4.40481e-17 1.06496e-29 0 -1 -0.045 8.88178e-16 1 -5.77316e-15 0.027 0 0 0 1</matrix>
           <instance_node url="#ID12"/>
         </node>
         <node>
-          <matrix>-9.98402e-31 6.66134e-16 1 -1.56476e-19 1 -1.57772e-30 -9.98402e-31 4.5378e-18 -1.57772e-30 1 6.66134e-16 0.003 0 0 0 1</matrix>
+          <matrix>1 -1.26218e-29 -7.98722e-30 4.5378e-18 7.98722e-30 0 -1 1.56476e-19 -1.26218e-29 1 1.06581e-14 0.003 0 0 0 1</matrix>
           <instance_node url="#ID19"/>
         </node>
       </node>
