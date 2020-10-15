@@ -65,6 +65,10 @@ add_executable(tf_listener src/tf_listener.cpp)
 target_link_libraries(tf_listener ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS tf_listener DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+add_executable(add_objects src/add_objects.cpp)
+target_link_libraries(add_objects ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS add_objects DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 add_executable(joint_tests src/joint_tests.cpp)
 target_link_libraries(joint_tests ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS joint_tests DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

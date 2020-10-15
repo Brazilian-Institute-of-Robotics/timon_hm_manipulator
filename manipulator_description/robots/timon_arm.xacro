@@ -64,7 +64,7 @@
       <parent link="${arm_id}_link0"/>
       <child link="${arm_id}_link1"/>
       <axis xyz="0 0 1" rpy="0 0 0"/>
-      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/> <!--  -0.783    0.783-->
+      <limit effort="1000.0" lower="-0.8" upper="0.8" velocity="0.5"/> <!--  -0.783    0.783-->
     </joint>
  
     <link name="${arm_id}_link2">
@@ -91,7 +91,7 @@
       <parent link="${arm_id}_link1"/>
       <child link="${arm_id}_link2"/>
       <axis xyz="-1 0 0" rpy="0 0 0"/>
-      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/> <!-- -1.5708   1.5708-->
+      <limit effort="1000.0" lower="-1.5708" upper="1.5708" velocity="0.5"/> <!-- -1.5708   1.5708-->
     </joint>
 
     <link name="${arm_id}_link3">
@@ -118,7 +118,7 @@
       <parent link="${arm_id}_link2"/>
       <child link="${arm_id}_link3"/>
       <axis xyz="-1 0 0" rpy="0 0 0"/>
-      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>  <!-- -0.74    3.03-->
+      <limit effort="1000.0" lower="-0.74" upper="3.03" velocity="0.5"/>  <!-- -0.74    3.03-->
     </joint>
 
 
@@ -177,7 +177,7 @@
       <parent link="${arm_id}_link4"/>
       <child link="${arm_id}_link5"/>
       <axis xyz="0 0 -1"/>
-      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>   <!-- -1.5708     1.5708  -->
+      <limit effort="1000.0" lower="-1.5708" upper="1.5708" velocity="0.5"/>   <!-- -1.5708     1.5708  -->
     </joint>
 
     <link name="${arm_id}_link6">
@@ -204,7 +204,7 @@
       <parent link="${arm_id}_link5"/>
       <child link="${arm_id}_link6"/>
       <axis xyz="0 1 0" rpy="0 0 0"/>
-      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/> <!-- -1.5708     1.5708  -->
+      <limit effort="1000.0" lower="-1.5708" upper="1.5708" velocity="0.5"/> <!-- -1.5708     1.5708  -->
     </joint>
 
     <transmission name="trans_timon_joint1">
