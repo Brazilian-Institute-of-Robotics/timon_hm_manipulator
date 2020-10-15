@@ -1,0 +1,38 @@
+CAIXA NA VERTICAL:
+tf echo /fake_botao /invisible_link
+- Translation: [0.017, -0.124, 0.753]  [x -z y] ???
+- Rotation: in Quaternion [-0.728, -0.011, -0.005, 0.685]
+            in RPY (radian) [-1.632, -0.023, 0.009]
+
+tf_echo /invisible_link /fake_botao
+At time 1602767494.623
+- Translation: [-0.032, 0.743, 0.170]    [ x y z correto]
+- Rotation: in Quaternion [0.728, 0.011, 0.005, 0.685]
+   in RPY (radian) [1.632, 0.008, 0.022]
+
+
+CAIXA NA HORIZONTAL (BOTAO PRA CIMA)
+
+
+rosrun tf tf_echo /invisible_link /fake_botao
+At time 1602767682.457
+- Translation: [-0.019, 1.095, 0.339]   (x y z)
+- Rotation: in Quaternion [0.017, 0.028, 0.016, 0.999]
+
+CAIXA NA HORIZONTAL (BOTAO PRO LADO DIREITO)
+ rosrun tf tf_echo /invisible_link /fake_botao
+At time 1602767759.057
+- Translation: [0.045, 1.025, 0.332]
+- Rotation: in Quaternion [0.013, 0.019, -0.704, 0.710]
+            in RPY (radian) [-0.009, 0.046, -1.562]
+
+CAIXA NA HORIZONTAL (BOTAO PRO LADO ESQUERDO)
+
+rosrun tf tf_echo /invisible_link /fake_botao
+At time 1602767935.224
+- Translation: [-0.089, 1.027, 0.337]
+- Rotation: in Quaternion [0.016, 0.022, 0.707, 0.707]
+            in RPY (radian) [0.053, 0.008, 1.571]
+
+
+

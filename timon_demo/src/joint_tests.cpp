@@ -296,7 +296,7 @@ int main(int argc, char** argv)
 
  
   if (transform.getRotation().z() >= 0.9) { 
-    ROS_INFO("Saiu horizontal");   //CAIXA NA HORIZONTAL
+    ROS_INFO("Caixa na Horizontal");   //CAIXA NA HORIZONTAL
       // robot_state::RobotState start_state2(*move_group.getCurrentState());
       // move_group.setStartState(start_state2);
       // ROS_INFO("%f", &transform.getOrigin().x());
@@ -389,7 +389,7 @@ int main(int argc, char** argv)
   //   robot_state::RobotState start_state4(*move_group.getCurrentState());
   //  move_group.setStartState(start_state4);
 //   //POSE
-    ROS_INFO("Saiu vertical");
+    ROS_INFO("Caixa Na Orientação Vertical");
 
     geometry_msgs::Pose target_pose;
       // target_pose.orientation.w = 0.017736; // 0.474989;
