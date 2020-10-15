@@ -19,9 +19,9 @@
     </joint>
 
     <joint name ="base_to_camera" type="fixed">
-        <origin rpy="0 -1.57 -1.57" xyz="0 0.07134918 0.02016139"/>
+        <origin rpy="0 -1.571 0" xyz="0.00015000 0.10012477 0.39638054"/>
         <!-- <origin rpy="-1.571 3.1415 -1.571" xyz="0.0661 0.426 0.0123"/> -->
-        <parent link="timon_link4"/>
+        <parent link="timon_link3"/>
         <child link = "camera"/>
     </joint>
 

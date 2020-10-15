@@ -3,19 +3,19 @@
 
     <link name="camera">
       <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 1.571 0" xyz="-0.04363353 0 0"/>
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/camera.dae"/>
+          <mesh filename="package://manipulator_description/meshes/cam.dae"/>
         </geometry>
       </visual>
       <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 1.571 0" xyz="-0.04363353 0 0"/>
         <geometry>
-          <mesh filename="package://manipulator_description/meshes/camera.stl"/>
+          <mesh filename="package://manipulator_description/meshes/cam.stl"/>
         </geometry>
       </collision>
       <inertial>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 1.571 0" xyz="-0.04363353 0 0"/>
         <mass value="0.12163455"/>
         <inertia ixx="2.11041984e-5" ixy="-9.60070950e-7" ixz="-9.64986145e-8" iyx="-9.60070950e-7" iyy="4.52382361e-5" iyz="-2.48143698e-8" izx="-9.64986145e-8" izy="-2.48143698e-8" izz="4.92072530e-5"/>
       </inertial>
@@ -23,7 +23,7 @@
     <link name="virtual_camera">
     </link>
     <joint name ="virtual_camera" type="fixed">
-        <origin rpy="-1.5701 0 -1.5701" xyz="0 0 0"/>  <!--rpy="1.5701 3.1415 1.5701"-->
+        <origin rpy="0 1.571 0" xyz="0.04363353 0 0 "/>  <!--rpy="1.5701 3.1415 1.5701"-->
         <parent link="camera"/>
         <child link = "virtual_camera"/>
     </joint>
