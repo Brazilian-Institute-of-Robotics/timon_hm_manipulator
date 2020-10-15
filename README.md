@@ -1,6 +1,7 @@
-<img src="https://i.ibb.co/BzWF2ry/caneca-imp.png" align="right" width="180" alt="header pic"/>
+<img src="https://i.ibb.co/Yfj2n1k/jerotimon-logo.png" align="center" width="600" alt="header pic"/>
 
-# BIR 2.0 CHALLENGE - JeRoTIMON Manipulator
+<!-- # BIR 2.0 CHALLENGE - JeRoTIMON Manipulator -->
+
 
 JeRoTIMON is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
 
