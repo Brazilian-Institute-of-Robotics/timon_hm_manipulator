@@ -1,7 +1,10 @@
-# Timon-HM Manipulator
-<center><img src="https://i.ibb.co/M2nPsrL/readme.jpg" class="centerImage"></center>
+<img src="https://i.ibb.co/BzWF2ry/caneca-imp.png" align="right" width="180" alt="header pic"/>
 
-Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
+# BIR 2.0 CHALLENGE - JeRoTIMON Manipulator
+
+JeRoTIMON is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
+
+<!-- <center><img src="https://i.ibb.co/M2nPsrL/readme.jpg" class="centerImage"></center> -->
 
 ## Open Source software and packages related to Timon-HM manipulator
 ### Software
