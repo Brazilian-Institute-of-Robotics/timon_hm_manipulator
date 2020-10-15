@@ -1,5 +1,5 @@
 controller_list:
-  - name: "arm"
+  - name: timon/arm_controller  #"arm"
     action_ns: follow_joint_trajectory
     default: True
     type: FollowJointTrajectory
