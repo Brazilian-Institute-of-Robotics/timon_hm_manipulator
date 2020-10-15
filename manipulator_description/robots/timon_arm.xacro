@@ -35,7 +35,7 @@
       </inertial>
     </link>
      <joint name ="invisble_joint" type="fixed">
-        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <origin rpy="0 0 3.14" xyz="0 0 0"/>
         <parent link="invisible_link"/>
         <child link = "${arm_id}_link0"/>
       </joint>
