@@ -68,7 +68,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 <img src="https://i.ibb.co/VvmGbqQ/dimensions.png">
 
 ## Home Position
-<img src="https://i.ibb.co/VTdpTWw/begin-timon.png">
+<img src="https://i.ibb.co/ypbScLn/manipulator-home.jpg">
 
 ## Workspace
 ### XY
