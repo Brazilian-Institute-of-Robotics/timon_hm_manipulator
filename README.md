@@ -29,7 +29,9 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 ### JeRoTIMON controllers:
 `$ roslaunch timon_arm_controller dxl_controllers.launch`
+
 `$ roslaunch timon_arm_controller dxl_moveit_bridge.launch`
+
 `$ roslaunch timon_arm_controller moveit.launch`
 
 ### Teledyne nano camera
