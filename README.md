@@ -43,24 +43,26 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 | Item  |  JeRoTIMON  |
 | :---: | :---: |
 |  DOF | 5 |
-| Payload| 1.94 kg|
-|Reach| 979 mm|
-|Weight| 7.38 kg|
+| Payload| 2 kg|
+|Reach| 981 mm|
+|Weight (with base) | 10 kg|
+|Weight (without base) | 6.4 kg|
 |Operating voltage | 24 V |
-|Resolution| Joint 1, Joinnt 2: 4096 pulse/rev |
-|| Joint 3, Joint 4, Joint 5: 1,003,846 pulse/rev|
-|Motors| Joint 1, Joint 2: H54-200-S500-R (200W) |
-| | Joint 3(2), Joint 4, Joint 5: MX-106 (65W) |
-|Operating Range| Joint 1: -π/2 (rad)  ~  π/2 (rad)|
-| | Joint 2: -π/2 (rad)  ~  π/2 (rad) |
-| | Joint 3: -π/2 (rad)  ~  3π/4 (rad) |
-| | Joint 4: -π (rad)  ~  π (rad) |
-| | Joint 5: -π/2 (rad)  ~  π/2 (rad) |
-|Camera| Teledyne Genie Nano |
+|Resolution| Joint 1, Joint 2, Joint 3, Joint 4: 1,003,846 pulse/rev |
+||Joint 5: 607,500 pulse/rev|
+|Motors| Joint 1, Joint 2, Joint 3, Joint 4, : PH54-200-S500-R (200W) |
+| | Joint 5: PH42-020-S300-R (20 W) |
+|Operating Range| Joint 1: -45°  ~  45°|
+| | Joint 2: -90°  ~  90° |
+| | Joint 3: -43°  ~  173° |
+| | Joint 4: -90°  ~  90° |
+| | Joint 5: -90°  ~  90° |
+|Camera| Teledyne Genie Nano C290 |
 |Position sensor type| Homing: Absolute Encoder |
 | | Control: Incremental Encoder  |
-|Communications | RS485 |
-|Communication Baudrate |  1 Mbps |
+|Communication | USB |
+|Electrical pattern | RS485 |
+|Communication Baudrate |  57,600 bps |
 
 ## Dimension
 <img src="https://i.ibb.co/VvmGbqQ/dimensions.png">
