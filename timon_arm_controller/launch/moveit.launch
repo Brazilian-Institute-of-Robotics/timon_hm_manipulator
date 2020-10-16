@@ -1,8 +1,8 @@
 <launch>
 
-<rosparam command="load" file="$(find jerotimon_moveit_config)/config/joint_names.yaml"/>
+<rosparam command="load" file="$(find jerotimon_2_moveit_config)/config/joint_names.yaml"/>
 
-<include file="$(find jerotimon_moveit_config)/launch/planning_context.launch">
+<include file="$(find jerotimon_2_moveit_config)/launch/planning_context.launch">
     <arg name="load_robot_description" value="true"/>
 </include>
 
@@ -11,12 +11,12 @@
     <rosparam param="/source_list">[/timon/joint_states]</rosparam>
 </node>
 
-<include file="$(find jerotimon_moveit_config)/launch/move_group.launch">
+<include file="$(find jerotimon_2_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true"/>
 </include>
 
-<include file="$(find jerotimon_moveit_config)/launch/moveit_rviz.launch">
-    <arg name="rviz_config" value="$(find jerotimon_moveit_config)/launch/moveit.rviz"/>
+<include file="$(find jerotimon_2_moveit_config)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find jerotimon_2_moveit_config)/launch/moveit.rviz"/>
 </include>
 
 <include file="$(find manipulator_gazebo)/launch/box_real.launch">

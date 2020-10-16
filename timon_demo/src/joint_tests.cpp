@@ -115,7 +115,7 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  move_group.execute(my_plan);
+  // move_group.execute(my_plan);
 
   // geometry_msgs::Pose target_pose;      //COMANDO NO ESPAÇO DAS POSES
   // target_pose.orientation.w = 0.067434; // 0.474989;
@@ -136,13 +136,13 @@ int main(int argc, char** argv)
 
   // }
 
-  // ROS_INFO("Comeca timer");
-  // sleep(10);
-  // ROS_INFO("termina timer");                                                    
+  ROS_INFO("Comeca timer");
+  sleep(10);
+  ROS_INFO("termina timer");                                                    
   // move_group.move();
 
 
-  std::cout << move_group.getCurrentPose();
+  // std::cout << move_group.getCurrentPose();
 
 
 
@@ -150,6 +150,10 @@ int main(int argc, char** argv)
   double transform_fake_button_x;
   double transform_fake_button_y;
   double transform_fake_button_z;
+  double transform_fake_button_or_x;
+  double transform_fake_button_or_y;
+  double transform_fake_button_or_z;
+  double transform_fake_button_or_w;
   // Define a collision object ROS message.
   moveit_msgs::CollisionObject collision_object; //floor
   collision_object.header.frame_id = move_group.getPlanningFrame();
@@ -171,7 +175,7 @@ int main(int argc, char** argv)
   box_pose.orientation.w = 0.0;
   box_pose.position.x = 0.0;
   box_pose.position.y = 0.0;
-  box_pose.position.z = -0.11;
+  box_pose.position.z = 0.0;
 
   // robot_state::RobotState start_state1(*move_group.getCurrentState());
   // move_group.setStartState(start_state1);
@@ -187,7 +191,7 @@ int main(int argc, char** argv)
   tf::TransformListener listener;
   //GETTING BUTTON POSE
   tf::StampedTransform transform;
-  int i=0;
+  int i=1;
   posicao:
   try{
   // ros::Time now = ros::Time::now();
@@ -201,11 +205,33 @@ int main(int argc, char** argv)
   transform_fake_button_x = transform.getOrigin().x();
   transform_fake_button_y = transform.getOrigin().y();
   transform_fake_button_z = transform.getOrigin().z();
+  transform_fake_button_or_x = transform.getRotation().x();
+  transform_fake_button_or_y = transform.getRotation().y();
+  transform_fake_button_or_z = transform.getRotation().z();
+  transform_fake_button_or_w = transform.getRotation().w();
 
   }
   catch (tf::TransformException &ex) {
 
   if(i == 1){
+  moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
+  std::vector<double> joint_group_positions;
+  current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);  //COMANDO NO ESPAÇO DAS JUNTAS
+  joint_group_positions[0] = 0;  //positivo esquerda , negativo direita , gira a base
+  joint_group_positions[1] = -0.006;  //  positivo abaixo, negativo acima, segundo link
+  joint_group_positions[2] = 2.052; // positivo pra frente, negativo pra trás, terceiro link
+  joint_group_positions[3] = 1.57;
+  joint_group_positions[4] = 0.68;
+  move_group.setJointValueTarget(joint_group_positions);
+  move_group.plan(my_plan);
+  while(move_group.plan(my_plan).val == -1){
+    move_group.plan(my_plan);
+  }
+  // move_group.execute(my_plan);
+  sleep (5.0);
+  }
+
+  if(i == 2){
   moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
   std::vector<double> joint_group_positions;
   current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);  //COMANDO NO ESPAÇO DAS JUNTAS
@@ -219,11 +245,11 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  move_group.execute(my_plan);
-  // sleep (10.0);
+  // move_group.execute(my_plan);
+  sleep (5.0);
   }
 
-  if(i == 2){
+  if(i == 3){
   moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
   std::vector<double> joint_group_positions;
   current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);  //COMANDO NO ESPAÇO DAS JUNTAS
@@ -237,11 +263,11 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  move_group.execute(my_plan);
-  // sleep (10.0);
+  // move_group.execute(my_plan);
+  sleep (5.0);
   }
 
-  if(i == 3){
+  if(i == 4){
   moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
   std::vector<double> joint_group_positions;
   current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);  //COMANDO NO ESPAÇO DAS JUNTAS
@@ -255,9 +281,9 @@ int main(int argc, char** argv)
   while(move_group.plan(my_plan).val == -1){
     move_group.plan(my_plan);
   }
-  move_group.execute(my_plan);
+  // move_group.execute(my_plan);
   i=0;
-  // sleep (10.0);
+  sleep (5.0);
   }
 
   goto posicao;
@@ -267,7 +293,7 @@ int main(int argc, char** argv)
   ROS_INFO("Aruco Detectado");
 
  
-  if (transform.getRotation().w() >= 0.9) { 
+  if (transform.getRotation().x() <= 0.5) { 
     ROS_INFO("Caixa na Horizontal");
     // box
     shape_msgs::SolidPrimitive primitive1;
@@ -279,8 +305,12 @@ int main(int argc, char** argv)
     // Define a pose for the box (specified relative to frame_id)
     geometry_msgs::Pose box_pose1;
     box_pose1.position.x = transform_fake_button_x ;
-    box_pose1.position.y = transform_fake_button_y-0.1;
-    box_pose1.position.z = transform_fake_button_z-0.35; 
+    box_pose1.position.y = transform_fake_button_y;
+    box_pose1.position.z = transform_fake_button_z-0.355; 
+    box_pose1.orientation.w = transform_fake_button_or_w;
+    box_pose1.orientation.x = transform_fake_button_or_x;
+    box_pose1.orientation.y = transform_fake_button_or_y;
+    box_pose1.orientation.z = transform_fake_button_or_z;
     //Collision box
     collision_object.primitives.push_back(primitive);
     collision_object.primitive_poses.push_back(box_pose);
@@ -295,19 +325,11 @@ int main(int argc, char** argv)
 
     planning_scene_interface.addCollisionObjects(collision_objects);
 
-      //CAIXA NA HORIZONTAL
-      // robot_state::RobotState start_state2(*move_group.getCurrentState());
-      // move_group.setStartState(start_state2);
-      // ROS_INFO("%f", &transform.getOrigin().x    ros::init(argc, argv, "add_objects");
-
-      // ROS_INFO("%f", &transform.getOrigin().y());
-      // ROS_INFO("%f", &transform.getOrigin().z());
-      //POSE
       geometry_msgs::Pose target_pose;
-      target_pose.orientation.w = transform.getRotation().w();//0.017736; // 0.474989;
-      target_pose.orientation.x = transform.getRotation().x();//0.686437; // -0.522257;
-      target_pose.orientation.y = transform.getRotation().y();//0.726780;  // 0.47662;
-      target_pose.orientation.z = transform.getRotation().z();//-0.016693;  // -0.523895
+      target_pose.orientation.w = transform.getRotation().w(); //0.000744;//transform.getRotation().w();// // 0.474989;
+      target_pose.orientation.x = transform.getRotation().x();//0.706395;//transform.getRotation().x();// // -0.522257;
+      target_pose.orientation.y = transform.getRotation().y();//-0.707817;//transform.getRotation().y();//  // 0.47662;
+      target_pose.orientation.z = transform.getRotation().z();// 0.000180;//transform.getRotation().z();//  // -0.523895
       target_pose.position.x = transform.getOrigin().x();  
       target_pose.position.y = transform.getOrigin().y();
       target_pose.position.z = transform.getOrigin().z();
@@ -320,60 +342,85 @@ int main(int argc, char** argv)
       while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
-      move_group.execute(my_plan); 
+      // move_group.execute(my_plan); 
       
 
-      // sleep(10.0);
+      sleep(10.0);
+
+      moveit::core::RobotStatePtr current_state_1 = move_group.getCurrentState();
+      std::vector<double> joint_group_positions_garra;
+      current_state_1->copyJointGroupPositions(joint_model_group, joint_group_positions_garra);  //COMANDO NO ESPAÇO DAS JUNTAS
+      // joint_group_positions[0] = 0.0;  //positivo esquerda , negativo direita , gira a base
+      // joint_group_positions[1] = -0.12;  //  positivo abaixo, negativo acima, segundo link
+      // joint_group_positions[2] = 2.2; // positivo pra frente, negativo pra trás, terceiro link
+      joint_group_positions_garra[3] = 1.57;
+      joint_group_positions_garra[4] = 1.21;
+      move_group.setJointValueTarget(joint_group_positions_garra);
+      moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+      move_group.plan(my_plan);
+      while(move_group.plan(my_plan).val == -1){
+        move_group.plan(my_plan);
+      }
+      sleep(11.0);
       // move_group.execute(my_plan);
 
       //PRESS BUTTON
 
       // robot_state::RobotState start_state3(*move_group.getCurrentState());
       // move_group.setStartState(start_state3);
-       moveit_msgs::CollisionObject box_collision;
-       std::vector<std::string> object_ids;
-       object_ids.push_back(box_collision.id);
-       planning_scene_interface.removeCollisionObjects(object_ids);
+      //  moveit_msgs::CollisionObject box_collision;
+      //  std::vector<std::string> object_ids;
+      //  object_ids.push_back(box_collision.id);
+      //  planning_scene_interface.removeCollisionObjects(object_ids);
 
        //ADDING CONSTRAINT TO END EFFECTOR
-        float w, x, y, z;
-        x = move_group.getCurrentPose().pose.orientation.x;
-        y = move_group.getCurrentPose().pose.orientation.y;
-        z = move_group.getCurrentPose().pose.orientation.z;
-        w = move_group.getCurrentPose().pose.orientation.w;
-       moveit_msgs::OrientationConstraint ocm;
-        ocm.link_name = "timon_link5";
-        ocm.header.frame_id = "world";
-        ocm.orientation.w = w;
-        ocm.orientation.x = x;
-        ocm.orientation.y = y;
-        ocm.orientation.z = z;
-        ocm.absolute_x_axis_tolerance = 0.3;
-        ocm.absolute_y_axis_tolerance = 0.3;
-        ocm.absolute_z_axis_tolerance = 0.3;
-        ocm.weight = 1.0;
+        // float or_w, or_x, or_y, or_z, x, y;
+        // x = move_group.getCurrentPose().pose.position.x;
+        // y = move_group.getCurrentPose().pose.position.y;
+        // or_x = move_group.getCurrentPose().pose.orientation.x;
+        // or_y = move_group.getCurrentPose().pose.orientation.y;
+        // or_z = move_group.getCurrentPose().pose.orientation.z;
+        // or_w = move_group.getCurrentPose().pose.orientation.w;
+      //  moveit_msgs::OrientationConstraint ocm;
+      //   ocm.link_name = "timon_link5";
+      //   ocm.header.frame_id = "world";
+      //   ocm.orientation.w = w;
+      //   ocm.orientation.x = x;
+      //   ocm.orientation.y = y;
+      //   ocm.orientation.z = z;
+      //   ocm.absolute_x_axis_tolerance = 0.3;
+      //   ocm.absolute_y_axis_tolerance = 0.3;
+      //   ocm.absolute_z_axis_tolerance = 0.3;
+      //   ocm.weight = 1.0;
 
-        moveit_msgs::Constraints test_constraints;
-        test_constraints.orientation_constraints.push_back(ocm);
-        move_group.setPathConstraints(test_constraints);
-
-       target_pose.position.z -=0.154;       
+        // moveit_msgs::Constraints test_constraints;
+        // test_constraints.orientation_constraints.push_back(ocm);
+        // move_group.setPathConstraints(test_constraints);
+       
+      //  target_pose.orientation.w = or_w; 
+      //  target_pose.orientation.x = or_x; 
+      //  target_pose.orientation.y = or_y;  
+      //  target_pose.orientation.z = or_z; 
+      //  target_pose.position.x =x;
+      //  target_pose.position.y =y;
+        //  move_group.setGoalOrientationTolerance(0.6);
+       target_pose.position.z -=0.174;       
        move_group.setPoseTarget(target_pose);
        move_group.plan(my_plan);  
        while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
-       move_group.execute(my_plan);
-      // //  move_group.execute(my_plan); 
+      //  move_group.execute(my_plan);
+      //  move_group.execute(my_plan); 
 
       // // robot_state::RobotState start_state4(*move_group.getCurrentState());
       // // move_group.setStartState(start_state4);
-      // sleep(5.0);
+      sleep(5.0);
 
       //  target_pose.position.z +=0.11;       
       //  move_group.setPoseTarget(target_pose);
       // //  moveit::planning_interface::MoveGroupInterface::Plan my_plan2;
-      move_group.clearPathConstraints();
+      // move_group.clearPathConstraints();
 
       moveit::core::RobotStatePtr current_state3 = move_group.getCurrentState();
       std::vector<double> joint_group_positions3;
@@ -388,7 +435,7 @@ int main(int argc, char** argv)
        while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
-       move_group.execute(my_plan);
+      //  move_group.execute(my_plan);
       //  move_group.execute(my_plan); 
       
   }
@@ -403,12 +450,16 @@ int main(int argc, char** argv)
     primitive1.type = primitive.BOX;
     primitive1.dimensions.resize(3);
     primitive1.dimensions[0] = 0.2;
-    primitive1.dimensions[1] = 0.2;
-    primitive1.dimensions[2] = 0.3;
+    primitive1.dimensions[1] = 0.3;
+    primitive1.dimensions[2] = 0.2;
     // Define a pose for the box (specified relative to frame_id)
     geometry_msgs::Pose box_pose1;
+        box_pose1.orientation.w = transform_fake_button_or_w;
+    box_pose1.orientation.x = transform_fake_button_or_x;
+    box_pose1.orientation.y = transform_fake_button_or_y;
+    box_pose1.orientation.z = transform_fake_button_or_z;
     box_pose1.position.x = transform_fake_button_x -0.1;
-    box_pose1.position.y = transform_fake_button_y+0.35;
+    box_pose1.position.y = transform_fake_button_y+0.318;
     box_pose1.position.z = transform_fake_button_z - 0.1;  
     //Collision box
     collision_object.primitives.push_back(primitive);
@@ -449,65 +500,67 @@ int main(int argc, char** argv)
       while (move_group.plan(my_plan).val != 1){
     move_group.plan(my_plan);
     }
-    move_group.execute(my_plan);
-    // sleep(10.0);
+    // move_group.execute(my_plan);
+    sleep(10.0);
     // moveit_msgs::CollisionObject box_collision;
     // std::vector<std::string> object_ids;
     // object_ids.push_back(box_collision.id);
     // planning_scene_interface.removeCollisionObjects(object_ids);
-  //  move_group.execute(my_plan); 
 
-    //ADDING ORIENTATION CONSTRAINT
-    //  float w, x, y, z;
-    //  x = move_group.getCurrentPose().pose.orientation.x;
-    //  y = move_group.getCurrentPose().pose.orientation.y;
-    //  z = move_group.getCurrentPose().pose.orientation.z;
-    //  w = move_group.getCurrentPose().pose.orientation.w;
-    //  std :: cout << w;
-    //  std::cout << move_group.getCurrentPose().pose.orientation;
-      // moveit_msgs::OrientationConstraint ocm;
-      // ocm.link_name = "timon_link6";
-      // ocm.header.frame_id = "world";
-      // ocm.orientation.w = w;
-      // ocm.orientation.x = x;
-      // ocm.orientation.y = y;
-      // ocm.orientation.z = z;
-      // ocm.absolute_x_axis_tolerance = 2;
-      // ocm.absolute_y_axis_tolerance = 2;
-      // ocm.absolute_z_axis_tolerance = 2;
-      // ocm.weight = 0.1;
+  
 
-      // moveit_msgs::Constraints test_constraints;
-      // test_constraints.orientation_constraints.push_back(ocm);
-      // move_group.setPathConstraints(test_constraints);
+      moveit::core::RobotStatePtr current_state_1 = move_group.getCurrentState();
+      std::vector<double> joint_group_positions_garra;
+      current_state_1->copyJointGroupPositions(joint_model_group, joint_group_positions_garra);  //COMANDO NO ESPAÇO DAS JUNTAS
+      // joint_group_positions[0] = 0.0;  //positivo esquerda , negativo direita , gira a base
+      // joint_group_positions[1] = -0.12;  //  positivo abaixo, negativo acima, segundo link
+      // joint_group_positions[2] = 2.2; // positivo pra frente, negativo pra trás, terceiro link
+      joint_group_positions_garra[3] = -2.12;
+      joint_group_positions_garra[4] = 1.21;
+      move_group.setJointValueTarget(joint_group_positions_garra);
+      moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+      move_group.plan(my_plan);
+      while(move_group.plan(my_plan).val == -1){
+        move_group.plan(my_plan);
+      }
+      sleep(10.0);
 
+    
+    
 
     //PRESS BUTTON
     // robot_state::RobotState start_state5(*move_group.getCurrentState());
     // move_group.setStartState(start_state5);
-    // target_pose.orientation.w = w; // 0.474989;
-    // target_pose.orientation.x = x; // -0.522257;
-    // target_pose.orientation.y = y;  // 0.47662;
-    // target_pose.orientation.z = z;  // -0.523895
-    target_pose.position.y +=0.125;
+    move_group.setGoalOrientationTolerance(0.9);
+    float or_w, or_x, or_y, or_z, x, y;
+    or_x = move_group.getCurrentPose().pose.orientation.x;
+    or_y = move_group.getCurrentPose().pose.orientation.y;
+    or_z = move_group.getCurrentPose().pose.orientation.z;
+    or_w = move_group.getCurrentPose().pose.orientation.w;
+    target_pose.orientation.w = or_w; 
+    target_pose.orientation.x = or_x; 
+    target_pose.orientation.y = or_y;  
+    target_pose.orientation.z = or_z;  
+    target_pose.position.y +=0.172;
+    target_pose.position.z += 0.018;
     move_group.setPoseTarget(target_pose);
     // moveit::planning_interface::MoveGroupInterface::Plan my_plan4;
     move_group.plan(my_plan);  
      while (move_group.plan(my_plan).val != 1){
        move_group.plan(my_plan);
        }
-    move_group.execute(my_plan); 
-    // sleep(5.0);
-    // move_group.clearPathConstraints();
+    // move_group.execute(my_plan); 
+    sleep(10.0);
+
 
     
-    target_pose.position.y -=0.031;
+    target_pose.position.y -=0.2;
     move_group.setPoseTarget(target_pose);
     move_group.plan(my_plan);  
     while (move_group.plan(my_plan).val != 1){
      move_group.plan(my_plan);
     }
-    move_group.execute(my_plan); 
+    // move_group.execute(my_plan); 
 
     // moveit::core::RobotStatePtr current_state4 = move_group.getCurrentState();
     //   std::vector<double> joint_group_positions4;
@@ -524,14 +577,7 @@ int main(int argc, char** argv)
     //    }
     // move_group.execute(my_plan); 
 
-    //GO BACK
-
-    // robot_state::RobotState start_state6(*move_group.getCurrentState());
-    // move_group.setStartState(start_state6);
-
-    
-    // move_group.plan(my_plan); 
-    // move_group.execute(my_plan);  
+     
   }
   
 
@@ -545,8 +591,8 @@ int main(int argc, char** argv)
 //  std::vector<double> joint_group_positions3;
  current_state->copyJointGroupPositions(joint_model_group, joint_group_positions);
  joint_group_positions[0] = 0.0;
- joint_group_positions[1] = -1.57;
- joint_group_positions[2] = 3.02;
+ joint_group_positions[1] = -0.12;
+ joint_group_positions[2] = 2.2;
  joint_group_positions[3] = 0;
  joint_group_positions[4] = 0.0;
  move_group.setJointValueTarget(joint_group_positions);
@@ -555,7 +601,7 @@ move_group.plan(my_plan);
 while (move_group.plan(my_plan).val != 1){
   move_group.plan(my_plan);
   }
-move_group.execute(my_plan); 
+// move_group.execute(my_plan); 
 
 
 
