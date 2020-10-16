@@ -7,7 +7,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 <center><img src="https://i.ibb.co/W3psqkZ/Screenshot-from-2020-10-15-17-49-09.png" class="centerImage"></center>
 
-## Open Source software and packages related to Timon-HM manipulator
+## Open Source software and packages related to JeRoTIMON manipulator
 ### Software
 - [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
 - [MoveIt](https://moveit.ros.org/install)
@@ -25,7 +25,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 ### Gazebo:
 `$ roslaunch manipulator_gazebo gazebo.launch`
 
-### Timon-HM MoveIt package:
+### JeRoTIMON MoveIt package:
 `$ roslaunch manipulator_gazebo moveit_demo.launch`
 
 ### BIR MARKER:
@@ -37,10 +37,10 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 ## How to change a box orientation
 For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
 
-# Timon-HM specifications
+# JeRoTIMON specifications
 
 ## Specifications table
-| Item  |  Timon-HM  |
+| Item  |  JeRoTIMON  |
 | :---: | :---: |
 |  DOF | 5 |
 | Payload| 1.94 kg|
@@ -63,7 +63,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 |Communication Baudrate |  1 Mbps |
 
 ## Dimension
-<img src="https://i.ibb.co/TK2LZQf/planta-2-D.jpg">
+<img src="https://i.ibb.co/VvmGbqQ/dimensions.png">
 
 ## Home Position
 <img src="https://i.ibb.co/VTdpTWw/begin-timon.png">
@@ -93,10 +93,10 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 
 ## Mass Property
 ### Coordinate
-<img src="https://i.ibb.co/ZSYPGyd/coordinates.jpg">
+<img src="https://i.ibb.co/rtG9x9L/coordinates.jpg">
 
 ### Link 0
-<img src="https://i.ibb.co/kMBGPZ4/link0.jpg">
+<img src="https://i.ibb.co/r5j3Dnn/link0.jpg">
 
 - **Mass:** 3.72264467 kg
 - **Volume:** 0.00412764 m³
@@ -110,7 +110,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
   - **Lyx:** -2.59829620e-6 **Lyy:** 4.86112355e-2 **Lyz:** 0.00000000e+0
   - **Lzx:** 1.68828926e-8 **Lzy:** 0.00000000e+0 **Lzz:** 5.38837109e-2
 ### Link 1
-<img src="https://i.ibb.co/PtcjdDy/link1.jpg">
+<img src="https://i.ibb.co/GxVBZkM/link1.jpg">
 
 - **Mass:** 1.00643107 kg
 - **Volume:** 0.00040209 m³
@@ -124,7 +124,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
   - **Lyx:** -4.82304098e-6 **Lyy:** 1.52709797e-3 **Lyz:** -2.55376135e-7
   - **Lzx:** -5.15873870e-5 **Lzy:** -2.55376135e-7 **Lzz:** 1.41817064e-3
 ### Link 2
-<img src="https://i.ibb.co/gJgfX27/link2.jpg">
+<img src="https://i.ibb.co/w0YmhvZ/link2.jpg">
 
 - **Mass:** 1.43140941 kg
 - **Volume:** 0.00072217 m³
@@ -137,8 +137,9 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
   - **Lxx:** 4.01177388e-2 **Lxy:** -1.99033225e-6 **Lxz:** 7.25766892e-4
   - **Lyx:** -1.99033225e-5 **Lyy:** 4.07927622e-2 **Lyz:** 1.35014731e-3
   - **Lzx:** 7.25766892e-4 **Lzy:** 1.35014731e-3 **Lzz:** 1.93910351e-3
+
 ### Link 3
-<img src="https://i.ibb.co/mCYG8wc/link3.jpg">
+<img src="https://i.ibb.co/0ZNpZfW/link3.jpg">
 
 - **Mass:** 1.02430185 kg
 - **Volume:** 0.00048651 m³
@@ -152,7 +153,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
   - **Lyx:** 4.48113214e-6 **Lyy:** 2.09581064e-2 **Lyz:** -9.20042318e-4
   - **Lzx:** 7.29467793e-6 **Lzy:** -9.20042318e-4 **Lzz:** 1.37743730e-3
 ### Link 4
-<img src="https://i.ibb.co/BTTmnhJ/link4.jpg">
+<img src="https://i.ibb.co/JstQ8Cn/link4.jpg">
 
 - **Mass:** 0.17387384 kg
 - **Volume:** 0.00008979 m³
@@ -166,7 +167,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
   - **Lyx:** 3.60335785e-7 **Lyy:** 9.11402947e-5 **Lyz:** 1.03937291e-8
   - **Lzx:** -1.43417976e-6 **Lzy:** 1.03937291e-8 **Lzz:** 4.72120463e-5
 ### Link 5
-<img src="https://i.ibb.co/hcXLvhr/link5.jpg">
+<img src="https://i.ibb.co/GJ7CJDZ/link5.jpg">
 
 - **Mass:** 0.01873963 kg
 - **Volume:** 0.00000694 m³
