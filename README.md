@@ -20,7 +20,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 - ros-melodic-position-controllers
 - ros-melodic-trac-ik-kinematics-plugin
 - [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings) (Branch: final_settings)
-- [def_cam_teledyne_nano](https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano)
+- [def_cam_teledyne_nano](https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano) (Branch: refactor_code)
 - [OpenCV 3](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
 
 ## Launchers
@@ -34,7 +34,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 `$ roslaunch timon_arm_controller moveit.launch`
 
-### Teledyne nano camera
+### Teledyne Nano camera
 `$ roslaunch def_cam_teledyne_nano camera_example.launch`
 
 ### JeRoTIMON MoveIt package:
