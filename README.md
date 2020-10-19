@@ -107,7 +107,7 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 
 ## Mass Property
 ### Coordinate
-<img src="https://i.ibb.co/rtG9x9L/coordinates.jpg">
+<img src="https://i.ibb.co/Dtcgfrs/coordinate.jpg">
 
 ### Link 0
 <img src="https://i.ibb.co/r5j3Dnn/link0.jpg">
