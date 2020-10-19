@@ -62,7 +62,8 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 |Operating voltage | 24 V |
 |Resolution| Joint 1, Joint 2, Joint 3, Joint 4: 1,003,846 pulse/rev |
 ||Joint 5: 607,500 pulse/rev|
-|Motors| Joint 1, Joint 2, Joint 3, Joint 4, : PH54-200-S500-R (200W) |
+|Motors| Joint 1, Joint 2, Joint 3 : PH54-200-S500-R (200W) |
+| | Joint 4: PH54-100-S500-R (100 W) |
 | | Joint 5: PH42-020-S300-R (20 W) |
 |Operating Range| Joint 1: -45°  ~  45°|
 | | Joint 2: -90°  ~  90° |
