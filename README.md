@@ -29,7 +29,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 `$ sudo apt install ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-controller-manager ros-melodic-joint-trajectory-controller ros-melodic-joint-state-controller ros-melodic-position-controllers ros-melodic-trac-ik-kinematics-plugin`
 
-`sudo apt-get install ros-melodic-moveit-visual-tools`
+`$ sudo apt-get install ros-melodic-moveit-visual-tools`
 
 ### Setup workspace
 ```
