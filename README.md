@@ -8,7 +8,6 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 <center><img src="https://i.ibb.co/W3psqkZ/Screenshot-from-2020-10-15-17-49-09.png" class="centerImage"></center>
 
 ## Open Source software and packages related
----
 ### Software
 - [ROS Melodic](http://wiki.ros.org/melodic)
 - [MoveIt](https://moveit.ros.org/)
@@ -19,7 +18,7 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 # User manual
 ## Simulate JeRoTIMON
----
+
 
 ### Install softwares and libraries:
 - [Install ROS Melodic on Ubuntu 18.04](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
@@ -62,7 +61,6 @@ $ catkin_make
 For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
 
 ## Operate JeRoTIMON robot
----
 Install the same software and packages than simulation and download and install the DALSA framework for Ubuntu. You need to sign up on their website to download it.
 
 ### Setup workspace
