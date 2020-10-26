@@ -260,7 +260,7 @@ int main(int argc, char** argv)
     std::vector<geometry_msgs::Pose> waypoints;
     
     // PRESS BUTTON
-    target_pose2.position.z -=0.1;
+    target_pose2.position.z -=0.13;
     waypoints.push_back(target_pose2);
     // move_group.setMaxVelocityScalingFactor(0.1);       
     moveit_msgs::RobotTrajectory trajectory;

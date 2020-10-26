@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tag">
+    <link name="tag_aruco_4">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0 "/> 
+            <mass value="1.0"/>
+            <inertia ixx="0.0741666666"  ixy="0.0"  ixz="0.0" iyy="0.0585461666" iyz="0.0" izz="0.02604166666" />
+        </inertial> 
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.1 0.1 0.1"/>   
+            </geometry>    
+        </collision>   
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>   
+            <geometry>
+                <mesh filename="package://manipulator_description/meshes/tag.dae"/>
+            </geometry>   
+        </visual>
+    </link>
+
+        <gazebo reference="tag_aruco_4">
+            <kp>100000.0</kp>
+            <kd>100000.0</kd>
+            <mu1>0.1</mu1>
+            <mu2>0.1</mu2>
+            <fdir1>1 0 0</fdir1>
+        </gazebo>
+
+    <joint name="box_to_tag" type="fixed">
+        <origin rpy="0 0 3.1415" xyz="0.0 -0.1 -0.013"/> <!--caixa na vertical: rpy="0 0 0" -->  <!-- horizontal: rpy="0 0 3.1415" -->
+        <parent link="botao"/>
+        <child link = "tag_aruco_4"/>
+    </joint> 
+
+</robot>
