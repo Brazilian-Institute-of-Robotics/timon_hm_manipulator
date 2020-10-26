@@ -62,7 +62,7 @@ $ catkin_make
 For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
 
 ## Operate JeRoTIMON manipulator
-<img src="https://i.ibb.co/c28BGtx/realgif.gif" class="centerImage">
+<img src="https://i.ibb.co/RTsbHtB/realgif.gif" class="centerImage" width="624">
 
 Install the same software and packages than simulation and download and install the DALSA framework for Ubuntu. You need to sign up on their website to download it.
 
