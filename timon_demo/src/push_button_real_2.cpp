@@ -274,7 +274,7 @@ int main(int argc, char** argv)
     moveit_msgs::RobotTrajectory trajectory;
     //  move_group.execute(my_plan); 
     const double jump_threshold = 0.0;
-    const double eef_step = 0.001; 
+    const double eef_step = 0.1; 
     move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
     // move_group.execute(trajectory);
 
@@ -370,7 +370,7 @@ int main(int argc, char** argv)
     // move_group.setMaxVelocityScalingFactor(0.1);
     moveit_msgs::RobotTrajectory trajectory;
     const double jump_threshold = 0.0;
-    const double eef_step = 0.001;
+    const double eef_step = 0.1;
     move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
 
     // move_group.execute(trajectory);
