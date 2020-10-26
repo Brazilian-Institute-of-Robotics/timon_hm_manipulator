@@ -59,7 +59,7 @@ $ catkin_make
 `$ roslaunch timon_demo push_button_simulation.launch`
 
 ### How to change a box orientation
-For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
+For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box_horizontal.urdf.xacro*.
 
 ## Operate JeRoTIMON manipulator
 <img src="https://i.ibb.co/RTsbHtB/realgif.gif" class="centerImage" width="624">
@@ -74,8 +74,12 @@ $ cd  catkin_ws/src
 $ git clone https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
 $ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
 $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+$ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
 $ git clone -b refactor_code https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano.git
+```
+Copy [this package](https://github.com/ROBOTIS-GIT/dynamixel-workbench/tree/feature-moveit-bridge/dynamixel_workbench_moveit_bridge) to dynamixel-workbench folder. 
 
+```
 $ cd ..
 
 $ catkin_make
