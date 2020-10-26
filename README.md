@@ -7,47 +7,100 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 
 <center><img src="https://i.ibb.co/W3psqkZ/Screenshot-from-2020-10-15-17-49-09.png" class="centerImage"></center>
 
-## Open Source software and packages related to JeRoTIMON manipulator
-### Software
-- [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
-- [MoveIt](https://moveit.ros.org/install)
-### Packages
-- ros-melodic-ros-control 
-- ros-melodic-gazebo-ros-control 
-- ros-melodic-controller-manager 
-- ros-melodic-joint-trajectory-controller 
-- ros-melodic-joint-state-controller
-- ros-melodic-position-controllers
-- ros-melodic-trac-ik-kinematics-plugin
-- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings) (Branch: final_settings)
-- [def_cam_teledyne_nano](https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano) (Branch: refactor_code)
-- [OpenCV 3](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
 
-## Launchers
-### Gazebo:
+## Open Source software and packages related
+### Software
+- [ROS Melodic](http://wiki.ros.org/melodic)
+- [MoveIt](https://moveit.ros.org/)
+### Packages
+- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings)
+- [def_cam_teledyne_nano](https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano) 
+- [OpenCV 3](https://opencv.org/)
+
+# User manual
+## Simulate JeRoTIMON
+<img src="https://i.ibb.co/CQBpPpz/simugif.gif" class="centerImage">
+
+### Install softwares and libraries:
+- [Install ROS Melodic on Ubuntu 18.04](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
+- [Intall OpenCV 3.3.1](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
+- [Install MoveIt](https://moveit.ros.org/install)
+
+### Install ROS melodic packages
+
+`$ sudo apt install ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-controller-manager ros-melodic-joint-trajectory-controller ros-melodic-joint-state-controller ros-melodic-position-controllers ros-melodic-trac-ik-kinematics-plugin`
+
+`$ sudo apt-get install ros-melodic-moveit-visual-tools`
+
+### Setup workspace
+```
+$ mkdir -p catkin_ws/src
+$ cd  catkin_ws/src 
+
+$ git clone -b feature/simulation https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
+$ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
+$ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+
+$ cd ..
+
+$ catkin_make
+```
+### Run application
+#### Gazebo simulation
 `$ roslaunch manipulator_gazebo gazebo.launch`
 
-### JeRoTIMON controllers:
-`$ roslaunch timon_arm_controller dxl_controllers.launch`
+#### Moveit 
+`$ roslaunch manipulator_gazebo moveit_demo.launch`
 
-`$ roslaunch timon_arm_controller dxl_moveit_bridge.launch`
+#### Marker localization
+`$ roslaunch timon_demo bir_marker_localization.launch`
+
+#### Execute mission
+`$ roslaunch timon_demo push_button_simulation.launch`
+
+### How to change a box orientation
+For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box_horizontal.urdf.xacro*.
+
+## Operate JeRoTIMON manipulator
+<img src="https://i.ibb.co/RTsbHtB/realgif.gif" class="centerImage" width="624">
+
+Install the same software and packages than simulation and download and install the DALSA framework for Ubuntu. You need to sign up on their website to download it.
+
+### Setup workspace
+```
+$ mkdir -p catkin_ws/src
+$ cd  catkin_ws/src 
+
+$ git clone https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
+$ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
+$ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+$ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+$ git clone -b refactor_code https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano.git
+```
+Copy [this package](https://github.com/ROBOTIS-GIT/dynamixel-workbench/tree/feature-moveit-bridge/dynamixel_workbench_moveit_bridge) to dynamixel-workbench folder. 
+
+```
+$ cd ..
+
+$ catkin_make
+```
+### Run application
+#### Controllers
+`$ roslaunch timon_arm_controller dxl_controllers.launch`
 
 `$ roslaunch timon_arm_controller moveit.launch`
 
-### Teledyne Nano camera
+`$ roslaunch timon_arm_controller dxl_moveit_bridge.launch`
+
+#### Camera
 `$ roslaunch def_cam_teledyne_nano camera_example.launch`
 
-### JeRoTIMON MoveIt package:
-`$ roslaunch manipulator_gazebo moveit_demo.launch`
-
-### BIR MARKER:
+#### Marker localization
 `$ roslaunch timon_demo bir_marker_localization.launch`
 
-### Search Marker and Push Button:
-`$ roslaunch timon_demo  push_button.launch`
+#### Execute mission
+`$ roslaunch timon_demo push_button_real.launch`
 
-## How to change a box orientation
-For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
 
 # JeRoTIMON specifications
 
@@ -62,7 +115,8 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 |Operating voltage | 24 V |
 |Resolution| Joint 1, Joint 2, Joint 3, Joint 4: 1,003,846 pulse/rev |
 ||Joint 5: 607,500 pulse/rev|
-|Motors| Joint 1, Joint 2, Joint 3, Joint 4, : PH54-200-S500-R (200W) |
+|Motors| Joint 1, Joint 2, Joint 3 : PH54-200-S500-R (200W) |
+| | Joint 4: PH54-100-S500-R (100 W) |
 | | Joint 5: PH42-020-S300-R (20 W) |
 |Operating Range| Joint 1: -45°  ~  45°|
 | | Joint 2: -90°  ~  90° |
