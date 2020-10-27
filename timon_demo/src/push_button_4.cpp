@@ -99,7 +99,7 @@ int main(int argc, char** argv)
 
   // robot_state::RobotState start_state(*move_group.getCurrentState());
   // move_group.setStartState(start_state);
-
+  ros::Time start_time = ros::Time::now();
   //JUNTAS
    moveit::core::RobotStatePtr current_state = move_group.getCurrentState();
   std::vector<double> joint_group_positions;
@@ -357,7 +357,7 @@ int main(int argc, char** argv)
       target_pose2.position.y = transform_button.getOrigin().y();
       target_pose2.position.z = transform_button.getOrigin().z();
       move_group.setPoseTarget(target_pose2);
-      std::cout << target_pose2;
+      // std::cout << target_pose2;
 
       move_group.plan(my_plan);
       while (move_group.plan(my_plan).val != 1){
@@ -613,7 +613,10 @@ while (move_group.plan(my_plan).val != 1){
   }
 move_group.execute(my_plan); 
 
+  ros::Duration delta_t = ros::Time::now() - start_time;
+  double delta_t_sec = delta_t.toSec();
 
+  std::cout<<delta_t_sec;
 
   // std::cout << move_group.getCurrentPose();
   ros::shutdown(); 
