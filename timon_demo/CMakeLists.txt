@@ -69,6 +69,10 @@ add_executable(push_button_3 src/push_button_3.cpp)
 target_link_libraries(push_button_3 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS push_button_3 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+add_executable(push_button_4 src/push_button_4.cpp)
+target_link_libraries(push_button_4 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS push_button_4 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 add_executable(tf_listener src/tf_listener.cpp)
 target_link_libraries(tf_listener ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS tf_listener DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})

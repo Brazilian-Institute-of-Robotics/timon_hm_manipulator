@@ -1,6 +1,6 @@
 <launch>
 
-  <node name="push_button_simulation" pkg="timon_demo" type="push_button_3" respawn="false" output="screen">
+  <node name="push_button_simulation" pkg="timon_demo" type="push_button_4" respawn="false" output="screen">
 	<remap from="/joint_states" to="/timon/joint_states"/>
   </node>
 

@@ -22,8 +22,8 @@
       <inertia ixx="8.08010910e-7" ixy="0" ixz="0" iyx="0" iyy="1.34192268e-6" iyz="0" izx="0" izy="0" izz="8.08010910e-7"/>
     </inertial>
   </link>
-  <link name="fake_botao">
-  </link>
+  <link name="fake_botao"/>
+  <link name="botao_press"/>
   
  <joint name="caixa_to_botao" type="fixed">
     <parent link="caixa"/>
@@ -32,6 +32,13 @@
     <!-- <axis xyz="0 1 0"/>
     <limit lower="0.0" upper="0.00" effort="1" velocity="1"/> -->
   </joint> 
+
+  <joint name = "botao_pressed" type="fixed">
+    <parent link="botao"/>
+    <child link="botao_press"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1"/>
+  </joint>
+
   <joint name ="botao_fake" type ="fixed">
     <parent link="botao"/>
     <child link="fake_botao"/>
