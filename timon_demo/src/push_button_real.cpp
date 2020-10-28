@@ -101,9 +101,9 @@ int main(int argc, char** argv)
     // ros::Time now = ros::Time::now();
     std::cout << i;
     i = i+1;
-    listener.waitForTransform("/invisible_link", "/fake_botao", 
+    listener.waitForTransform("/invisible_link", "/botao", 
                             ros::Time(0), ros::Duration(2.0));
-    listener.lookupTransform("/invisible_link", "/fake_botao",
+    listener.lookupTransform("/invisible_link", "/botao",
                             ros::Time(0), transform);
 
     transform_fake_button_x = transform.getOrigin().x();
@@ -263,12 +263,12 @@ int main(int argc, char** argv)
     }
     sleep(11.0);
 
-    move_group.setStartStateToCurrentState();
-    geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
+    // move_group.setStartStateToCurrentState();
+    // geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
 
     // PRESS BUTTON
-    target_pose2.position.z -=0.174;       
-    move_group.setPoseTarget(target_pose2);
+    target_pose.position.z -=0.174;       
+    move_group.setPoseTarget(target_pose);
     move_group.plan(my_plan);  
     while (move_group.plan(my_plan).val != 1){
       move_group.plan(my_plan);
@@ -312,7 +312,7 @@ int main(int argc, char** argv)
     box_pose1.orientation.y = transform_fake_button_or_y;
     box_pose1.orientation.z = transform_fake_button_or_z;
     box_pose1.position.x = transform_fake_button_x -0.1;
-    box_pose1.position.y = transform_fake_button_y+0.318;
+    box_pose1.position.y = transform_fake_button_y+0.33;
     box_pose1.position.z = transform_fake_button_z - 0.1;  
     //Collision box
     collision_object.primitives.push_back(primitive);
@@ -349,36 +349,36 @@ int main(int argc, char** argv)
     // move_group.execute(my_plan);
     sleep(10.0);
 
-    moveit::core::RobotStatePtr current_state_1 = move_group.getCurrentState();
-    std::vector<double> joint_group_positions_garra;
-    current_state_1->copyJointGroupPositions(joint_model_group, joint_group_positions_garra);  
-    joint_group_positions_garra[3] = 0;
-    joint_group_positions_garra[4] = 0;
-    move_group.setJointValueTarget(joint_group_positions_garra);
-    moveit::planning_interface::MoveGroupInterface::Plan my_plan;
-    move_group.plan(my_plan);
-    while(move_group.plan(my_plan).val == -1){
-      move_group.plan(my_plan);
-    }
-    sleep(10.0);
+    // moveit::core::RobotStatePtr current_state_1 = move_group.getCurrentState();
+    // std::vector<double> joint_group_positions_garra;
+    // current_state_1->copyJointGroupPositions(joint_model_group, joint_group_positions_garra);  
+    // joint_group_positions_garra[3] = -1.9;
+    // joint_group_positions_garra[4] = 1.21;
+    // move_group.setJointValueTarget(joint_group_positions_garra);
+    // moveit::planning_interface::MoveGroupInterface::Plan my_plan;
+    // move_group.plan(my_plan);
+    // while(move_group.plan(my_plan).val == -1){
+    //   move_group.plan(my_plan);
+    // }
+    // sleep(10.0);
 
     
-    //PRESS BUTTON
-    move_group.setStartStateToCurrentState();
-    geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
-    target_pose2.position.y +=0.172;
-    target_pose2.position.z += 0.018;
-    move_group.setPoseTarget(target_pose2);
-    move_group.plan(my_plan);  
-    while (move_group.plan(my_plan).val != 1){
-      move_group.plan(my_plan);
-    }
-    // move_group.execute(my_plan); 
-    sleep(10.0);
+    // //PRESS BUTTON
+    // move_group.setStartStateToCurrentState();
+    // // geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
+    // target_pose.position.y +=0.1724;
+    // target_pose.position.z += 0.018;
+    // move_group.setPoseTarget(target_pose);
+    // move_group.plan(my_plan);  
+    // while (move_group.plan(my_plan).val != 1){
+    //   move_group.plan(my_plan);
+    // }
+    // // move_group.execute(my_plan); 
+    // sleep(10.0);
     
     //GO BACK
-    target_pose2.position.y -=0.2;
-    move_group.setPoseTarget(target_pose2);
+    target_pose.position.y -=0.2;
+    move_group.setPoseTarget(target_pose);
     move_group.plan(my_plan);  
     while (move_group.plan(my_plan).val != 1){
      move_group.plan(my_plan);

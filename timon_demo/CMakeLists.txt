@@ -81,6 +81,10 @@ add_executable(push_button_real_2 src/push_button_real_2.cpp)
 target_link_libraries(push_button_real_2 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 install(TARGETS push_button_real_2 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
+add_executable(push_button_real_4 src/push_button_real_4.cpp)
+target_link_libraries(push_button_real_4 ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+install(TARGETS push_button_real_4 DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

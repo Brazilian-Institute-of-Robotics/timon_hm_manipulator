@@ -348,38 +348,38 @@ int main(int argc, char** argv)
     moveit::core::RobotStatePtr current_state_1 = move_group.getCurrentState();
     std::vector<double> joint_group_positions_garra;
     current_state_1->copyJointGroupPositions(joint_model_group, joint_group_positions_garra);  
-    joint_group_positions_garra[3] = 0;
-    joint_group_positions_garra[4] = 0;
+    joint_group_positions_garra[3] = -2.12;
+    joint_group_positions_garra[4] = 1.21;
     move_group.setJointValueTarget(joint_group_positions_garra);
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
     move_group.plan(my_plan);
     while(move_group.plan(my_plan).val == -1){
       move_group.plan(my_plan);
     }
-    sleep(10.0);
+    sleep(12.0);
 
     
     //PRESS BUTTON
     move_group.setStartStateToCurrentState();
-    geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
+    // geometry_msgs::Pose target_pose2 = move_group.getCurrentPose().pose;
     std::vector<geometry_msgs::Pose> waypoints;
-    target_pose2.position.y +=0.172;
+    target_pose.position.y +=0.17;
     // target_pose2.position.z += 0.018;
-    waypoints.push_back(target_pose2);
+    waypoints.push_back(target_pose);
 
     // move_group.setMaxVelocityScalingFactor(0.1);
     moveit_msgs::RobotTrajectory trajectory;
     const double jump_threshold = 0.0;
-    const double eef_step = 0.1;
+    const double eef_step = 0.01;
     move_group.computeCartesianPath(waypoints, eef_step, jump_threshold, trajectory);
 
     // move_group.execute(trajectory);
     sleep(10.0);
     
     //GO BACK
-    target_pose2 = move_group.getCurrentPose().pose;
-    target_pose2.position.y -=0.2;
-    move_group.setPoseTarget(target_pose2);
+    // target_pose2 = move_group.getCurrentPose().pose;
+    target_pose.position.y -=0.2;
+    move_group.setPoseTarget(target_pose);
     move_group.plan(my_plan);  
     while (move_group.plan(my_plan).val != 1){
      move_group.plan(my_plan);

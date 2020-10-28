@@ -1,23 +1,27 @@
 planner_configs:
   SBL:
     type: geometric::SBL
-    range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    projection_evaluator: joints(id_1,id_2,id_3)
+    range: 10  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
   EST:
     type: geometric::EST
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0 setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability. default: 0.05
   LBKPIECE:
     type: geometric::LBKPIECE
-    range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
+    range: 10.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     border_fraction: 0.9  # Fraction of time focused on boarder default: 0.9
-    min_valid_path_fraction: 0.5  # Accept partially valid moves above fraction. default: 0.5
+    min_valid_path_fraction: 0.01  # Accept partially valid moves above fraction. default: 0.5
+    projection_evaluator: joints(id_1,id_2,id_3)
   BKPIECE:
+    projection_evaluator: joints(id_1,id_2,id_3)
     type: geometric::BKPIECE
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     border_fraction: 0.9  # Fraction of time focused on boarder default: 0.9
     failed_expansion_score_factor: 0.5  # When extending motion fails, scale score by factor. default: 0.5
     min_valid_path_fraction: 0.5  # Accept partially valid moves above fraction. default: 0.5
   KPIECE:
+    projection_evaluator: joints(id_1,id_2,id_3)
     type: geometric::KPIECE
     range: 0.0  # Max motion added to tree. ==> maxDistance_ default: 0.0, if 0.0, set on setup()
     goal_bias: 0.05  # When close to goal select goal, with this probability. default: 0.05
@@ -120,8 +124,9 @@ planner_configs:
     sparse_delta_fraction: 0.25  # delta fraction for connection distance. This value represents the visibility range of sparse samples. default: 0.25
     dense_delta_fraction: 0.001  # delta fraction for interface detection. default: 0.001
     max_failures: 5000  # maximum consecutive failure limit. default: 5000
+
 arm:
-  default_planner_config: SBL
+  default_planner_config: None
   planner_configs:
     - SBL
     - EST
