@@ -34,11 +34,11 @@
   <joint name="botao_pressed" type="fixed">
     <parent link="botao"/>
     <child link="botao_press"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>  <!-- 0.0825-->
+    <origin rpy="0 0 0" xyz="0 0 0.075"/>  
   </joint> 
   
   <joint name ="botao_fake" type ="fixed">
-    <parent link="botao_press"/>
+    <parent link="botao"/>
     <child link="fake_botao"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.25"/>
   </joint>

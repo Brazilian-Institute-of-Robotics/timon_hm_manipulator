@@ -190,8 +190,8 @@ int main(int argc, char** argv)
 
   tf::TransformListener listener;
   //GETTING BUTTON POSE
-  tf::StampedTransform transform;
-  int i=3;
+  tf::StampedTransform transform, transform_button_;
+  int i=2;
   posicao:
   try{
   // ros::Time now = ros::Time::now();
@@ -289,8 +289,27 @@ int main(int argc, char** argv)
   goto posicao;
 
   }
+  try{
+  // ros::Time now = ros::Time::now();
+  listener.waitForTransform("/invisible_link", "/botao_press", 
+                           ros::Time(0), ros::Duration(2.0));
+  listener.lookupTransform("/invisible_link", "/botao_press",
+                           ros::Time(0), transform_button_);
+  std::cout<<"Pose do botão: x: "<< transform_button_.getOrigin().x()<<
+                           " y: "<< transform_button_.getOrigin().y()<<
+                           " z: "<< transform_button_.getOrigin().z();   
+
+  }
+  catch (tf::TransformException &ex) {
+  i=0;
+  goto posicao;
+  }
 
   ROS_INFO("Aruco Detectado");
+  ros::Duration delta_t1 = ros::Time::now() - start_time;
+  double delta_t1_sec = delta_t1.toSec();
+
+  std::cout<< "Tempo de busca: " << delta_t1_sec;
 
  
   if (transform.getRotation().x() <= 0.5) { 
@@ -404,7 +423,7 @@ int main(int argc, char** argv)
       //  target_pose.position.x =x;
       //  target_pose.position.y =y;
         //  move_group.setGoalOrientationTolerance(0.6);
-       target_pose.position.z -=0.174;       
+       target_pose.position.z -=0.175;       
       //  move_group.setPoseTarget(target_pose);
       //  move_group.plan(my_plan);  
       //  sleep(5.0);
@@ -428,8 +447,8 @@ int main(int argc, char** argv)
       // // move_group.setStartState(start_state4);
       geometry_msgs::Pose pose_real;
       pose_real = move_group.getCurrentPose().pose;
-      std:: cout << "Pose Alvo: " << target_pose;
-      std :: cout << "Pose Real: " << pose_real; 
+      // std:: cout << "Pose Alvo: " << target_pose;
+      std :: cout << "Pose Real: " << pose_real.position; 
       sleep(5.0);
 
       //  target_pose.position.z +=0.11;       
@@ -642,7 +661,7 @@ while (move_group.plan(my_plan).val != 1){
   move_group.plan(my_plan);
   }
 // move_group.execute(my_plan); 
-
+  sleep(5.0);
   ros::Duration delta_t = ros::Time::now() - start_time;
   double delta_t_sec = delta_t.toSec();
 
