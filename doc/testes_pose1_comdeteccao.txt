@@ -1,0 +1,436 @@
+TESTE 1 
+Pose do botão: x: 0.324898 y: 0.731024 z: 0.229167
+Tempo de busca: 26.5168
+Pose Real: x: 0.331645
+y: 0.723786
+z: 0.22889
+Tempo de missão: 86.7619
+REALIZADO
+
+TESTE 2 
+Pose do botão: x: 0.316846 y: 0.736071 z: 0.229434
+Tempo de busca: 29.2511
+Pose Real: x: 0.323967
+y: 0.728179
+z: 0.229111
+Tempo de missão: 92.4495
+REALIZADO
+
+TESTE 3
+Pose do botão: x: 0.318134 y: 0.735699 z: 0.229464
+Tempo de busca: 28.132
+Pose Real: x: 0.325346
+y: 0.727752
+z: 0.229131
+Tempo de missão: 93.3579
+REALIZADO
+
+TESTE 4
+Pose do botão: x: 0.328788 y: 0.757621 z: 0.223874
+Tempo de busca: 26.7564
+Pose Real: x: 0.326452
+y: 0.754398
+z: 0.223864
+Tempo de missão: 89.58
+NAO REALIZADO
+
+TESTE 5
+Pose do botão: x: 0.315146 y: 0.737376 z: 0.230085
+Tempo de busca: 27.1022
+Pose Real: x: 0.322282
+y: 0.729746
+z: 0.229767
+Tempo de missão: 93.9316
+REALIZADO
+
+TESTE 6
+Pose do botão: x: 0.323421 y: 0.731206 z: 0.230358
+Tempo de busca: 29.1912
+Pose Real: x: 0.330431
+y: 0.724441
+z: 0.230083
+Tempo de missão: 91.8192
+REALIZADO
+
+TESTE 7
+Pose do botão: x: 0.31511 y: 0.735896 z: 0.230258
+Tempo de busca: 27.3904
+Pose Real: x: 0.322092
+y: 0.728718
+z: 0.229975
+Tempo de missão: 95.6437
+REALIZADO
+
+TESTE 8
+Pose do botão: x: 0.320875 y: 0.735566 z: 0.228
+Tempo de busca: 28.4745
+Pose Real: x: 0.328564
+y: 0.727962
+z: 0.227663
+Tempo de missão: 90.5214
+REALIZADO
+
+TESTE 9
+Pose do botão: x: 0.320835 y: 0.734619 z: 0.228949
+Tempo de busca: 27.725
+Pose Real: x: 0.328646
+y: 0.726693
+z: 0.228596
+Tempo de missão: 98.7845
+REALIZADO
+
+TESTE 10
+Pose do botão: x: 0.322339 y: 0.735129 z: 0.228549
+Tempo de busca: 28.8388
+Pose Real: x: 0.329594
+y: 0.727459
+z: 0.228231
+Tempo de missão: 94.6226
+REALIZADO
+
+TESTE 11
+Pose do botão: x: 0.32307 y: 0.730016 z: 0.228501
+Tempo de busca: 29.1519
+Pose Real: x: 0.330317
+y: 0.722941
+z: 0.228203
+Tempo de missão: 101.842
+REALIZADO
+
+TESTE 12
+Pose do botão: x: 0.322358 y: 0.733897 z: 0.229197
+Tempo de busca: 30.2186
+Pose Real: x: 0.32992
+y: 0.726343
+z: 0.228873
+Tempo de missão: 90.1885
+REALIZADO
+
+TESTE 13
+Pose do botão: x: 0.319944 y: 0.736102 z: 0.227836
+Tempo de busca: 30.2317
+Pose Real: x: 0.32749
+y: 0.728235
+z: 0.22749
+Tempo de missão: 94.0104
+REALIZADO
+
+TESTE 14
+Pose do botão: x: 0.320221 y: 0.734306 z: 0.229076
+Tempo de busca: 28.9793
+Pose Real: x: 0.327584
+y: 0.726869
+z: 0.228763
+Tempo de missão: 96.2312
+REALIZADO
+
+TESTE 15
+Pose do botão: x: 0.315668 y: 0.738128 z: 0.229626
+Tempo de busca: 29.072
+Pose Real: x: 0.322585
+y: 0.730427
+z: 0.229324
+Tempo de missão: 103.616
+REALIZADO
+
+TESTE 16
+Pose do botão: x: 0.316271 y: 0.738543 z: 0.229353
+Tempo de busca: 28.6952
+Pose Real: x: 0.323062
+y: 0.730846
+z: 0.229056
+Tempo de missão: 93.0651
+REALIZADO
+
+TESTE 17
+Pose do botão: x: 0.31695 y: 0.737276 z: 0.229099
+Tempo de busca: 28.642
+Pose Real: x: 0.323888
+y: 0.729763
+z: 0.228798
+Tempo de missão: 87.212
+REALIZADO
+
+TESTE 18
+Pose do botão: x: 0.319991 y: 0.762883 z: 0.22356
+Tempo de busca: 26.8585
+Pose Real: x: 0.317603
+y: 0.759576
+z: 0.223512
+Tempo de missão: 86.4156
+REALIZADO
+
+TESTE 19
+Pose do botão: x: 0.317304 y: 0.75919 z: 0.225796
+Tempo de busca: 26.1808
+Pose Real: x: 0.314219
+y: 0.756014
+z: 0.225744
+Tempo de missão: 85.7109
+REALIZADO
+
+TESTE 20
+Pose do botão: x: 0.31597 y: 0.73441 z: 0.232066
+Tempo de busca: 30.0858
+Pose Real: x: 0.322115
+y: 0.726544
+z: 0.231779
+Tempo de missão: 90.4296
+REALIZADO
+
+TESTE 21
+Pose do botão: x: 0.317024 y: 0.732562 z: 0.231166
+Tempo de busca: 28.2042
+Pose Real: x: 0.323135
+y: 0.724964
+z: 0.23089
+Tempo de missão: 86.8758
+REALIZADO
+
+TESTE 22
+Pose do botão: x: 0.316633 y: 0.734404 z: 0.231809
+Tempo de busca: 28.6983
+Pose Real: x: 0.322985
+y: 0.726257
+z: 0.231509
+Tempo de missão: 92.2869
+REALIZADO
+
+TESTE 23
+Pose do botão: x: 0.316841 y: 0.733339 z: 0.231548
+Tempo de busca: 29.432
+Pose Real: x: 0.323136
+y: 0.7255
+z: 0.231252
+Tempo de missão: 94.3545
+REALIZADO
+
+TESTE 24
+Pose do botão: x: 0.316077 y: 0.734483 z: 0.231384
+Tempo de busca: 28.1812
+Pose Real: x: 0.322398
+y: 0.726543
+z: 0.231085
+Tempo de missão: 90.6696
+REALIZADO
+
+TESTE 25
+Pose do botão: x: 0.322744 y: 0.731536 z: 0.23151
+Tempo de busca: 29.2442
+Pose Real: x: 0.328918
+y: 0.723522
+z: 0.231218
+Tempo de missão: 87.1852
+REALIZADO
+
+TESTE 26
+Pose do botão: x: 0.314674 y: 0.735134 z: 0.231208
+Tempo de busca: 28.9948
+Pose Real: x: 0.320856
+y: 0.727145
+z: 0.230915
+Tempo de missão: 88.3569
+REALIZADO
+
+TESTE 27
+Pose do botão: x: 0.314674 y: 0.735134 z: 0.231208
+Tempo de busca: 28.9948
+Pose Real: x: 0.320856
+y: 0.727145
+z: 0.230915
+Tempo de missão: 88.3569
+NAO REALIZADO
+
+TESTE 28
+Pose do botão: x: 0.322152 y: 0.737508 z: 0.235817
+Tempo de busca: 32.9496
+Pose Real: x: 0.328933
+y: 0.728157
+z: 0.235434
+Tempo de missão: 102.364
+REALIZADO
+
+TESTE 29
+Pose do botão: x: 0.3665 y: 0.713399 z: 0.234415
+Tempo de busca: 34.7259
+Pose Real: x: 0.373016
+y: 0.704241
+z: 0.234057
+Tempo de missão: 98.7636
+REALIZADO
+
+TESTE 30
+Pose do botão: x: 0.3213 y: 0.735509 z: 0.232864
+Tempo de busca: 31.178
+Pose Real: x: 0.328401
+y: 0.726867
+z: 0.232509
+Tempo de missão: 113.05
+REALIZADO
+
+TESTE 31
+Pose do botão: x: 0.314157 y: 0.739097 z: 0.232463[ 
+Tempo de busca: 28.7923[ 
+Pose Real: x: 0.320529
+y: 0.731171
+z: 0.232165
+Tempo de missão: 88.9735
+REALIZADO
+
+TESTE 32
+Pose do botão: x: 0.361773 y: 0.717704 z: 0.232323
+Tempo de busca: 28.8178
+Pose Real: x: 0.367343
+y: 0.709395
+z: 0.232038
+Tempo de missão: 91.8702
+REALIZADO
+
+TESTE 33
+Pose do botão: x: 0.313797 y: 0.738017 z: 0.232907
+Tempo de busca: 29.0347
+Pose Real: x: 0.320093
+y: 0.730297
+z: 0.232625
+Tempo de missão: 86.7183
+REALIZADO
+
+TESTE 34
+Pose do botão: x: 0.346999 y: 0.724969 z: 0.232532
+Tempo de busca: 28.2422
+Pose Real: x: 0.353124
+y: 0.716477
+z: 0.232219
+Tempo de missão: 99.1881
+REALIZADO
+
+TESTE 35
+Pose do botão: x: 0.317235 y: 0.737706 z: 0.233588
+Tempo de busca: 28.2118
+Pose Real: x: 0.323868
+y: 0.729264
+z: 0.233262
+Tempo de missão: 91.7459
+REALIZADO
+
+TESTE 36
+Pose do botão: x: 0.322189 y: 0.762993 z: 0.226901
+Tempo de busca: 28.4826
+Pose Real: x: 0.319016
+y: 0.759845
+z: 0.226854
+Tempo de missão: 88.1583
+NAO REALIZADO
+
+TESTE 37
+Pose do botão: x: 0.319072 y: 0.736131 z: 0.233485[ INFO] [1604086446.164790822]: Aruco Detectado
+Tempo de busca: 28.7112[ INFO] [1604086446.164849003]: Caixa na Horizontal
+Pose Real: x: 0.325734
+y: 0.728563
+z: 0.233195
+Tempo de missão: 87.9372
+REALIZADO
+
+TESTE 38
+Pose do botão: x: 0.319356 y: 0.738153 z: 0.232999
+Tempo de busca: 28.8792
+Pose Real: x: 0.326415
+y: 0.730366
+z: 0.232673
+Tempo de missão: 92.9002
+REALIZADO
+
+TESTE 39
+Pose do botão: x: 0.317919 y: 0.738092 z: 0.23336
+Tempo de busca: 29.142
+Pose Real: x: 0.32464
+y: 0.730608
+z: 0.233084
+Tempo de missão: 91.591
+REALIZADO
+
+TESTE 40
+Pose do botão: x: 0.320485 y: 0.736605 z: 0.233131
+Tempo de busca: 29.0783
+Pose Real: x: 0.327374
+y: 0.72879
+z: 0.232814
+Tempo de missão: 94.3296
+REALIZADO
+
+TESTE 41
+Pose do botão: x: 0.319714 y: 0.737227 z: 0.233555
+Tempo de busca: 27.9274
+Pose Real: x: 0.326488
+y: 0.729626
+z: 0.233262
+Tempo de missão: 88.6971
+REALIZADO
+
+TESTE 42
+Pose do botão: x: 0.319097 y: 0.737435 z: 0.233902[ INFO] [1604087005.044044644]: Aruco Detectado
+Tempo de busca: 29.7805[ INFO] [1604087005.044115039]: Caixa na Horizontal
+Pose Real: x: 0.32588
+y: 0.729714
+z: 0.233593
+Tempo de missão: 100.18
+REALIZADO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

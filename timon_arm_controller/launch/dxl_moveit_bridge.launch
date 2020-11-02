@@ -1,0 +1,9 @@
+<launch>
+  <arg name="robot_name"       default="timon"/>
+  <arg name="planning_group"   default="arm"/>
+
+  <node name="$(arg planning_group)" pkg="timon_arm_controller" type="moveit_bridge" output="screen">
+    <param name="planning_group"      value="$(arg planning_group)"/>
+    <remap from="$(arg planning_group)/joint_trajectory" to="$(arg robot_name)/joint_trajectory"/>
+  </node>
+</launch>

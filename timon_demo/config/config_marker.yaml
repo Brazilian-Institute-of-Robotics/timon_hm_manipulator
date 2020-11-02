@@ -2,10 +2,10 @@ debug: true
 image_topic: /timon/camera/image_raw
 enable_tf: true
 marker_dictionary: 0
-markers_length: [100] # length in mm.
-markers_100: [4] # Markers id with length 90.
-camera_matrix: [1544.5179908685989, 0.0, 1296.5, 0.0, 1544.5179908685989, 1024.5, 0.0, 0.0, 1.0]
-camera_distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
+markers_length: [58] # length in mm.
+markers_58: [4] # Markers id with length 90.
+camera_matrix: [851.23144, 0.0, 325.47841, 0.0, 852.46834, 253.47602, 0.0, 0.0, 1.0]
+camera_distortion: [-0.107958, 0.072164, 0.000900, -0.001374, 0.000000]
 static_variance: false
 static_camera_transform: false
 static_marker: false

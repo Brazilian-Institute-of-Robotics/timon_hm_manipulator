@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<group ns="/box">
+        <!-- Robot model -->
+        <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find manipulator_description)/urdf/box.urdf.xacro'" /> 
+                                            <!-- horizontal: box.urdf.xacro // vertical: box_vertical.urdf.xacro-->
+    
+
+                <!-- Robot state publisher -->
+        <node name="box_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+        respawn="false" output="screen">
+            <!-- <remap from="/joint_states" to="/revel/joint_states" /> -->
+        </node>
+    </group>
+</launch>

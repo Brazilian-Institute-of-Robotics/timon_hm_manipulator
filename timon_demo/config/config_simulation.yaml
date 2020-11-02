@@ -1,0 +1,24 @@
+debug: true
+image_topic: /timon/camera/image_raw
+enable_tf: true
+marker_dictionary: 0
+markers_length: [100] # length in mm.
+markers_100: [4] # Markers id with length 90.
+camera_matrix: [1544.5179908685989, 0.0, 1296.5, 0.0, 1544.5179908685989, 1024.5, 0.0, 0.0, 1.0]
+camera_distortion: [0.0, 0.0, 0.0, 0.0, 0.0]
+static_variance: false
+static_camera_transform: false
+static_marker: false
+static_markers_id: [4]
+map_tf_name: box_link
+base_tf_name: world
+marker_tf_name: tag_aruco_
+camera_tf_name: virtual_camera
+pose_topic: pose
+robot_as_parent: true
+variance_matrix: [0.01, 0, 0, 0, 0, 0, 
+                  0, 0.01, 0, 0, 0, 0,
+                  0, 0, 0.01, 0, 0, 0,
+                  0, 0, 0, 0.01, 0, 0,
+                  0, 0, 0, 0, 0.01, 0,
+                  0, 0, 0, 0, 0, 0.01]
