@@ -32,6 +32,7 @@ Pose Real: x: -0.183348
 y: 0.743918
 z: 0.226671
 Tempo de missão: 84.3043
+REALIZADO
 
 TESTE 5
 Pose do botão: x: -0.198933 y: 0.775328 z: 0.236835
@@ -247,6 +248,7 @@ Pose Real: x: -0.200861
 y: 0.768892
 z: 0.231569
 Tempo de missão: 81.1574
+REALIZADO
 
 TESTE 29
 Pose do botão: x: -0.199623 y: 0.775462 z: 0.236542
@@ -363,6 +365,7 @@ Pose Real: x: -0.207795
 y: 0.767818
 z: 0.2377
 Tempo de missão: 73.9818
+REALIZADO
 
 TESTE 42
 Pose do botão: x: -0.204942 y: 0.776765 z: 0.236259
