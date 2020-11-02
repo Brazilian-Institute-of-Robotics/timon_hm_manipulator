@@ -1,68 +1,140 @@
-# Timon-HM Manipulator
-<center><img src="https://i.ibb.co/M2nPsrL/readme.jpg" class="centerImage"></center>
+<img src="https://i.ibb.co/Yfj2n1k/jerotimon-logo.png" align="center" width="600" alt="header pic"/>
 
-Timon-HM is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
+<!-- # BIR 2.0 CHALLENGE - JeRoTIMON Manipulator -->
 
-## Open Source software and packages related to Timon-HM manipulator
+
+JeRoTIMON is a manipulator that is being designed, simulated and built in order to meet demands related to the recognition of visual markers and in response to actuate switches, keys or buttons. These buttons and markers can be viewed horizontally or vertically.
+
+<center><img src="https://i.ibb.co/W3psqkZ/Screenshot-from-2020-10-15-17-49-09.png" class="centerImage"></center>
+
+
+## Open Source software and packages related
 ### Software
-- [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
-- [MoveIt](https://moveit.ros.org/install)
+- [ROS Melodic](http://wiki.ros.org/melodic)
+- [MoveIt](https://moveit.ros.org/)
 ### Packages
-- ros-melodic-ros-control 
-- ros-melodic-gazebo-ros-control 
-- ros-melodic-controller-manager 
-- ros-melodic-joint-trajectory-controller 
-- ros-melodic-joint-state-controller
-- ros-melodic-position-controllers
-- ros-melodic-trac-ik-kinematics-plugin
-- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings) (Branch: final_settings)
+- [BIR Marker](https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization/tree/final_settings)
+- [def_cam_teledyne_nano](https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano) 
+- [OpenCV 3](https://opencv.org/)
 
-## Launchers
-### Gazebo:
+# User manual
+## Simulate JeRoTIMON
+<img src="https://i.ibb.co/CQBpPpz/simugif.gif" class="centerImage">
+
+### Install softwares and libraries:
+- [Install ROS Melodic on Ubuntu 18.04](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
+- [Intall OpenCV 3.3.1](https://www.learnopencv.com/install-opencv3-on-ubuntu/)
+- [Install MoveIt](https://moveit.ros.org/install)
+
+### Install ROS melodic packages
+
+`$ sudo apt install ros-melodic-ros-control ros-melodic-gazebo-ros-control ros-melodic-controller-manager ros-melodic-joint-trajectory-controller ros-melodic-joint-state-controller ros-melodic-position-controllers ros-melodic-trac-ik-kinematics-plugin`
+
+`$ sudo apt-get install ros-melodic-moveit-visual-tools`
+
+### Setup workspace
+```
+$ mkdir -p catkin_ws/src
+$ cd  catkin_ws/src 
+
+$ git clone -b feature/simulation https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
+$ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
+$ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+
+$ cd ..
+
+$ catkin_make
+```
+### Run application
+#### Gazebo simulation
 `$ roslaunch manipulator_gazebo gazebo.launch`
 
-### Timon-HM MoveIt package:
+#### Moveit 
 `$ roslaunch manipulator_gazebo moveit_demo.launch`
 
-### BIR MARKER:
+#### Marker localization
 `$ roslaunch timon_demo bir_marker_localization.launch`
 
-### Search Marker and Push Button:
-`$ roslaunch timon_demo  push_button.launch`
+#### Execute mission
+`$ roslaunch timon_demo push_button_simulation.launch`
 
-## How to change a box orientation
-For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box.urdf.xacro*.
+### How to change a box orientation
+For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launch* and change *box_vertical.urdf.xacro* for *box_horizontal.urdf.xacro*.
 
-# Timon-HM specifications
+## Operate JeRoTIMON manipulator
+<img src="https://i.ibb.co/RTsbHtB/realgif.gif" class="centerImage" width="624">
+
+Install the same software and packages than simulation and download and install the DALSA framework for Ubuntu. You need to sign up on their website to download it.
+
+### Setup workspace
+```
+$ mkdir -p catkin_ws/src
+$ cd  catkin_ws/src 
+
+$ git clone https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
+$ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
+$ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
+$ git clone https://github.com/ROBOTIS-GIT/dynamixel-workbench.git
+$ git clone -b refactor_code https://github.com/Brazilian-Institute-of-Robotics/def_cam_teledyne_nano.git
+```
+Copy [this package](https://github.com/ROBOTIS-GIT/dynamixel-workbench/tree/feature-moveit-bridge/dynamixel_workbench_moveit_bridge) to dynamixel-workbench folder. 
+
+```
+$ cd ..
+
+$ catkin_make
+```
+### Run application
+#### Controllers
+`$ roslaunch timon_arm_controller dxl_controllers.launch`
+
+`$ roslaunch timon_arm_controller moveit.launch`
+
+`$ roslaunch timon_arm_controller dxl_moveit_bridge.launch`
+
+#### Camera
+`$ roslaunch def_cam_teledyne_nano camera_example.launch`
+
+#### Marker localization
+`$ roslaunch timon_demo bir_marker_localization.launch`
+
+#### Execute mission
+`$ roslaunch timon_demo push_button_real.launch`
+
+
+# JeRoTIMON specifications
 
 ## Specifications table
-| Item  |  Timon-HM  |
+| Item  |  JeRoTIMON  |
 | :---: | :---: |
 |  DOF | 5 |
-| Payload| 1.94 kg|
-|Reach| 979 mm|
-|Weight| 7.38 kg|
+| Payload| 2 kg|
+|Reach| 981 mm|
+|Weight (with base) | 10 kg|
+|Weight (without base) | 6.4 kg|
 |Operating voltage | 24 V |
-|Resolution| Joint 1, Joinnt 2: 4096 pulse/rev |
-|| Joint 3, Joint 4, Joint 5: 1,003,846 pulse/rev|
-|Motors| Joint 1, Joint 2: H54-200-S500-R (200W) |
-| | Joint 3(2), Joint 4, Joint 5: MX-106 (65W) |
-|Operating Range| Joint 1: -π/2 (rad)  ~  π/2 (rad)|
-| | Joint 2: -π/2 (rad)  ~  π/2 (rad) |
-| | Joint 3: -π/2 (rad)  ~  3π/4 (rad) |
-| | Joint 4: -π (rad)  ~  π (rad) |
-| | Joint 5: -π/2 (rad)  ~  π/2 (rad) |
-|Camera| Teledyne Genie Nano |
+|Resolution| Joint 1, Joint 2, Joint 3, Joint 4: 1,003,846 pulse/rev |
+||Joint 5: 607,500 pulse/rev|
+|Motors| Joint 1, Joint 2, Joint 3 : PH54-200-S500-R (200W) |
+| | Joint 4: PH54-100-S500-R (100 W) |
+| | Joint 5: PH42-020-S300-R (20 W) |
+|Operating Range| Joint 1: -45°  ~  45°|
+| | Joint 2: -90°  ~  90° |
+| | Joint 3: -43°  ~  173° |
+| | Joint 4: -90°  ~  90° |
+| | Joint 5: -90°  ~  90° |
+|Camera| Teledyne Genie Nano C290 |
 |Position sensor type| Homing: Absolute Encoder |
 | | Control: Incremental Encoder  |
-|Communications | RS485 |
-|Communication Baudrate |  1 Mbps |
+|Communication | USB |
+|Electrical pattern | RS485 |
+|Communication Baudrate |  57,600 bps |
 
 ## Dimension
-<img src="https://i.ibb.co/TK2LZQf/planta-2-D.jpg">
+<img src="https://i.ibb.co/VvmGbqQ/dimensions.png">
 
 ## Home Position
-<img src="https://i.ibb.co/VTdpTWw/begin-timon.png">
+<img src="https://i.ibb.co/ypbScLn/manipulator-home.jpg">
 
 ## Workspace
 ### XY
@@ -89,90 +161,91 @@ For change the box orientation, go to *manipulator_gazebo/launch/spawn_box.launc
 
 ## Mass Property
 ### Coordinate
-<img src="https://i.ibb.co/ZSYPGyd/coordinates.jpg">
+<img src="https://i.ibb.co/Dtcgfrs/coordinate.jpg">
 
 ### Link 0
-<img src="https://i.ibb.co/kMBGPZ4/link0.jpg">
+<img src="https://i.ibb.co/r5j3Dnn/link0.jpg">
 
-- **Mass:** 3.72264467 kg
-- **Volume:** 0.00412764 m³
-- **Surface area:** 0.28500950 m²
+- **Mass:** 3.72384654 kg
+- **Volume:** 0.00413037 m³
+- **Surface area:** 0.28622123 m²
 - **Center of mass:**
-  - X: -0.00000012 m
+  - X: -0.00000147 m
   - Y: 0.00000000 m
-  - Z: 0.03490035 m
+  - Z: 0.03504069 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 1.06821989e-2 **Lxy:** -2.59829620e-6 **Lxz:** 1.68828926e-8
-  - **Lyx:** -2.59829620e-6 **Lyy:** 4.86112355e-2 **Lyz:** 0.00000000e+0
-  - **Lzx:** 1.68828926e-8 **Lzy:** 0.00000000e+0 **Lzz:** 5.38837109e-2
+  - **Lxx:** 0.01072644 **Lxy:** -9.465e-9 **Lxz:** -3.247e-8
+  - **Lyx:** -9.465e-9 **Lyy:** 0.04865651 **Lyz:** 6.830e-13
+  - **Lzx:** -3.247e-8 **Lzy:** 6.830e-13 **Lzz:** 0.05388213
 ### Link 1
-<img src="https://i.ibb.co/PtcjdDy/link1.jpg">
+<img src="https://i.ibb.co/GxVBZkM/link1.jpg">
 
-- **Mass:** 1.00643107 kg
-- **Volume:** 0.00040209 m³
-- **Surface area:** 0.05733417 m²
+- **Mass:** 1.03781084 kg
+- **Volume:** 0.00040169 m³
+- **Surface area:** 0.05853078 m²
 - **Center of mass:**
-  - X: 0.01039500 m
-  - Y: 0.00005146 m
-  - Z: 0.16006794 m
+  - X: 0.00814457 m
+  - Y: 4.45597047e − 8 m
+  - Z: 0.16022275 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 5.52840983e-4 **Lxy:** -4.82304098e-6 **Lxz:** -5.15873870e-5
-  - **Lyx:** -4.82304098e-6 **Lyy:** 1.52709797e-3 **Lyz:** -2.55376135e-7
-  - **Lzx:** -5.15873870e-5 **Lzy:** -2.55376135e-7 **Lzz:** 1.41817064e-3
+  - **Lxx:** 0.0005687 **Lxy:** 2.602e-10 **Lxz:** -0.00004027
+  - **Lyx:** 2.602e-10 **Lyy:** 0.00166759 **Lyz:** -2.222e-10
+  - **Lzx:** -0.00004027 **Lzy:** -2.222e-10 **Lzz:** 0.00155695
 ### Link 2
-<img src="https://i.ibb.co/gJgfX27/link2.jpg">
+<img src="https://i.ibb.co/w0YmhvZ/link2.jpg">
 
-- **Mass:** 1.43140941 kg
-- **Volume:** 0.00072217 m³
-- **Surface area:** 0.30338280 m²
+- **Mass:** 2.05026959 kg
+- **Volume:** 0.00077667 m³
+- **Surface area:** 0.29790369 m²
 - **Center of mass:**
-  - X: 0.00402379 m
-  - Y: -0.00489519 m
-  - Z: 0.42191352 m
+  - X: 0.00294129 m
+  - Y: −0.01058166 m
+  - Z: 0.48960322 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 4.01177388e-2 **Lxy:** -1.99033225e-6 **Lxz:** 7.25766892e-4
-  - **Lyx:** -1.99033225e-5 **Lyy:** 4.07927622e-2 **Lyz:** 1.35014731e-3
-  - **Lzx:** 7.25766892e-4 **Lzy:** 1.35014731e-3 **Lzz:** 1.93910351e-3
+  - **Lxx:** 0.06174738 **Lxy:** -0.00003476 **Lxz:** 0.00098626
+  - **Lyx:** -0.00003476 **Lyy:** 0.06319525 **Lyz:** 0.00311701
+  - **Lzx:** 0.00098626 **Lzy:** 0.00311701 **Lzz:** 0.0034029
+
 ### Link 3
-<img src="https://i.ibb.co/mCYG8wc/link3.jpg">
+<img src="https://i.ibb.co/0ZNpZfW/link3.jpg">
 
-- **Mass:** 1.02430185 kg
-- **Volume:** 0.00048651 m³
-- **Surface area:** 0.27643743 m²
+- **Mass:** 1.83580505 kg
+- **Volume:** 0.00081683 m³
+- **Surface area:** 0.32055793 m²
 - **Center of mass:**
-  - X: 0.00177442 m
-  - Y: -0.02543863 m
-  - Z: 0.88744337 m
+  - X: 0.00257384 m
+  - Y: 0.00207951 m
+  - Z: 0.91287054 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 2.15420518e-2 **Lxy:** 4.48113214e-6 **Lxz:** 7.29467793e-6
-  - **Lyx:** 4.48113214e-6 **Lyy:** 2.09581064e-2 **Lyz:** -9.20042318e-4
-  - **Lzx:** 7.29467793e-6 **Lzy:** -9.20042318e-4 **Lzz:** 1.37743730e-3
+  - **Lxx:** 0.03439469 **Lxy:** -0.00000261 **Lxz:** -0.00001194
+  - **Lyx:** -0.00000261 **Lyy:** 0.03489631 **Lyz:** -0.0001288
+  - **Lzx:** -0.00001194 **Lzy:** -0.0001288 **Lzz:** 0.0023687
 ### Link 4
-<img src="https://i.ibb.co/BTTmnhJ/link4.jpg">
+<img src="https://i.ibb.co/JstQ8Cn/link4.jpg">
 
-- **Mass:** 0.17387384 kg
-- **Volume:** 0.00008979 m³
-- **Surface area:** 0.02133374 m²
+- **Mass:** 0.39425655 kg
+- **Volume:** 0.00014602 m³
+- **Surface area:** 0.03018022 m²
 - **Center of mass:**
-  - X: 0.00204423 m
-  - Y: -0.03416008 m
-  - Z: 1.09140950 m
+  - X: 0.00257156 m
+  - Y: 0.00133073 m
+  - Z: 1.09673426 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 7.27594009e-5 **Lxy:** 3.60335785e-7 **Lxz:** -1.43417976e-6
-  - **Lyx:** 3.60335785e-7 **Lyy:** 9.11402947e-5 **Lyz:** 1.03937291e-8
-  - **Lzx:** -1.43417976e-6 **Lzy:** 1.03937291e-8 **Lzz:** 4.72120463e-5
+  - **Lxx:** 0.00028795 **Lxy:** 2.010e-10 **Lxz:** -8.166e-13
+  - **Lyx:** 2.010e-10 **Lyy:** 0.00011981 **Lyz:** -0.00000446
+  - **Lzx:** -8.166e-13 **Lzy:** -0.00000446 **Lzz:** 0.0002842
 ### Link 5
-<img src="https://i.ibb.co/hcXLvhr/link5.jpg">
+<img src="https://i.ibb.co/GJ7CJDZ/link5.jpg">
 
-- **Mass:** 0.01873963 kg
-- **Volume:** 0.00000694 m³
-- **Surface area:** 0.00883439 m²
+- **Mass:** 0.08694786 kg
+- **Volume:** 0.0000322 m³
+- **Surface area:** 0.02435944 m²
 - **Center of mass:**
-  - X: 0.00184227 m
-  - Y: -0.03451643 m
-  - Z: 1.13452531 m
+  - X: 0.00257155 m
+  - Y: 0.00684212 m
+  - Z: 1.13578562 m
 - **Moments of inertia: kg m²**
-  - **Lxx:** 4.49832477e-6 **Lxy:** 1.27964175e-7 **Lxz:** 9.56680130e-10
-  - **Lyx:** 1.27964175e-7 **Lyy:** 1.12015451e-5 **Lyz:** 4.61798902e-9
-  - **Lzx:** 9.56680130e-10 **Lzy:** 4.61798902e-9 **Lzz:** 1.08114418e-5
+  - **Lxx:** 0.00012963 **Lxy:** -5.235e-13 **Lxz:** -9.996e-14
+  - **Lyx:** -5.235e-13 **Lyy:** 0.00003703 **Lyz:** 0.00000247
+  - **Lzx:** -9.996e-14 **Lzy:** 0.00000247 **Lzz:** 0.00012613
 
