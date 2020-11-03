@@ -37,7 +37,10 @@ JeRoTIMON is a manipulator that is being designed, simulated and built in order 
 $ mkdir -p catkin_ws/src
 $ cd  catkin_ws/src 
 
+For simulation:
 $ git clone -b feature/simulation https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
+For real manipulator:
+$ git clone https://github.com/Brazilian-Institute-of-Robotics/timon_hm_manipulator.git
 $ git clone -b final_settings https://github.com/Brazilian-Institute-of-Robotics/bir_marker_localization.git
 $ git clone https://github.com/ROBOTIS-GIT/open_manipulator_msgs.git
 
