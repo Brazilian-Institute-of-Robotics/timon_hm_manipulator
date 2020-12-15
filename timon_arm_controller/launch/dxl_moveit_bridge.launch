@@ -1,6 +1,6 @@
 <launch>
-  <arg name="robot_name"       default="timon"/>
-  <arg name="planning_group"   default="arm"/>
+  <arg name="robot_name"       default="warthog_arm"/>
+  <arg name="planning_group"   default="warthog_arm"/>
 
   <node name="$(arg planning_group)" pkg="timon_arm_controller" type="moveit_bridge" output="screen">
     <param name="planning_group"      value="$(arg planning_group)"/>

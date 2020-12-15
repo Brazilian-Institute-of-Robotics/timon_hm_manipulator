@@ -1,8 +1,9 @@
+ 
 <launch>
   <arg name="usb_port"                default="/dev/ttyUSB0"/>
   <arg name="dxl_baud_rate"           default="57600"/>
-  <arg name="namespace"               default="timon_arm_controller"/>
-  <arg name="robot_name"               default="timon"/>
+  <arg name="namespace"               default="warthog_arm_controller"/>
+  <arg name="robot_name"               default="warthog_arm"/>
 
   <arg name="use_moveit"              default="true"/>
   <arg name="use_joint_state"         default="true"/>
